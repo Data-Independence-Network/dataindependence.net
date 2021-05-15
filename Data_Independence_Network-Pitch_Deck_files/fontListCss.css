@@ -1,0 +1,776 @@
+.commonLayout .h1 {
+    font-family: Muli;
+    font-size: 84px;
+    font-weight: 800;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+}
+.commonLayout .h2 {
+    font-family: Muli;
+    font-size: 68px;
+    font-weight: 800;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.24;
+    letter-spacing: -0.5px;
+}
+.commonLayout .h3 {
+    font-family: Muli;
+    font-size: 54px;
+    font-weight: 800;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.26;
+    letter-spacing: -0.86px;
+}
+.commonLayout .h4 {
+    font-family: Muli;
+    font-size: 40px;
+    font-weight: 800;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.3;
+    letter-spacing: -0.6px;
+}
+.commonLayout .h5 {
+    font-family: Muli;
+    font-size: 32px;
+    font-weight: 800;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.25;
+    letter-spacing: -0.3px;
+}
+.commonLayout .h6 {
+    font-family: Muli;
+    font-size: 22px;
+    font-weight: 700;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.4;
+    letter-spacing: -0.45px;
+}
+.commonLayout .h7 {
+    font-family: Muli, sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.38;
+    letter-spacing: 0.4px;
+}
+.commonLayout .p1 {
+    font-family: Muli;
+    font-size: 32px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.38;
+    letter-spacing: -0.9px;
+}
+.commonLayout .p2 {
+    font-family: Muli;
+    font-size: 24px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.67;
+    letter-spacing: -0.5px;
+}
+.commonLayout .p3 {
+    font-family: Muli;
+    font-size: 22px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.64;
+    letter-spacing: -0.4px;
+}
+.commonLayout .p4 {
+    font-family: Muli;
+    font-size: 18px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.64;
+    letter-spacing: -0.5px;
+}
+.commonLayout .p5 {
+    font-family: Muli;
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: -0.4px;
+}
+.commonLayout .p6 {
+    font-family: Muli, sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.75;
+    letter-spacing: -0.2px;
+}
+.commonLayout .n1 {
+    font-family: Oswald;
+    font-size: 64px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: 1.2px;
+}
+
+/* //new css */
+/* Muli Font */
+.Muli_Muli .h1 {
+    font-family: Muli;
+    font-size: 84px;
+    font-weight: 800;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+  }
+  .Muli_Muli .h2 {
+    font-family: Muli;
+    font-size: 68px;
+    font-weight: 800;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.24;
+    letter-spacing: -0.5px;
+  }
+  .Muli_Muli .h3 {
+    font-family: Muli;
+    font-size: 54px;
+    font-weight: 800;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.26;
+    letter-spacing: -0.86px;
+  }
+  .Muli_Muli .h4 {
+    font-family: Muli;
+    font-size: 40px;
+    font-weight: 800;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.3;
+    letter-spacing: -0.6px;
+  }
+  .Muli_Muli .h5 {
+    font-family: Muli;
+    font-size: 32px;
+    font-weight: 800;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.25;
+    letter-spacing: -0.3px;
+  }
+  .Muli_Muli .h6 {
+    font-family: Muli;
+    font-size: 22px;
+    font-weight: 700;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.4;
+    letter-spacing: -0.45px;
+  }
+  .Muli_Muli .p1 {
+    font-family: Muli;
+    font-size: 32px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.38;
+    letter-spacing: -0.9px;
+  }
+  .Muli_Muli .p2 {
+    font-family: Muli;
+    font-size: 24px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.67;
+    letter-spacing: -0.5px;
+  }
+  .Muli_Muli .p3 {
+    font-family: Muli;
+    font-size: 22px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.64;
+    letter-spacing: -0.4px;
+  }
+  .Muli_Muli .p4 {
+    font-family: Muli;
+    font-size: 18px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.64;
+    letter-spacing: -0.5px;
+  }
+  .Muli_Muli .p5 {
+    font-family: Muli;
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: -0.4px;
+  }
+  .Muli_Muli .n1 {
+    font-family: Oswald;
+    font-size: 64px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: 1.2px;
+  }
+  .Muli_Muli .hl1 {
+    font-family: Muli;
+    font-size: 62px;
+    font-weight: 200;
+    font-stretch: normal;
+    font-style: italic;
+    line-height: 1.16;
+    letter-spacing: normal;
+  }
+  .Muli_Muli .hl2 {
+    font-family: Muli;
+    font-size: 32px;
+    font-weight: 700;
+    font-stretch: normal;
+    font-style: italic;
+    line-height: 1.38;
+    letter-spacing: -0.3px;
+  }
+
+/* Poppins Font */
+.Poppins_Roboto .h1 {
+    font-family: Poppins;
+    font-size: 84px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.1;
+    letter-spacing: -0.85px;
+
+}
+.Poppins_Roboto .h2 {
+    font-family: Poppins;
+    font-size: 68px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.24;
+    letter-spacing: -0.85px;
+}
+
+.Poppins_Roboto .h3 {
+    font-family: Poppins;
+    font-size: 54px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.26;
+    letter-spacing: -0.64px;
+}
+
+.Poppins_Roboto .h4 {
+    font-family: Poppins;
+    font-size: 40px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.3;
+    letter-spacing: -0.85px;
+}
+
+.Poppins_Roboto .h5 {
+    font-family: Poppins;
+    font-size: 32px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.25;
+    letter-spacing: -0.65px;
+
+}
+.Poppins_Roboto .h6 {
+    font-family: Poppins;
+    font-size: 22px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.4;
+    letter-spacing: -0.45px;
+
+}
+.Poppins_Roboto .p1 {
+    font-family: Roboto;
+    font-size: 32px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.38;
+    letter-spacing: -0.2px;
+
+}
+.Poppins_Roboto .p2 {
+    font-family: Roboto;
+    font-size: 24px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.67;
+    letter-spacing: -0.2px;
+}
+.Poppins_Roboto .p3 {
+    font-family: Roboto;
+    font-size: 22px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.64;
+    letter-spacing: -0.2px;
+}
+.Poppins_Roboto .p4 {
+    font-family: Roboto;
+    font-size: 18px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.64;
+    letter-spacing: -0.2px;
+}
+.Poppins_Roboto .p5 {
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: -0.2px;
+}
+.Poppins_Roboto .n1 {
+    font-family: Barlow;
+    font-size: 64px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.2;
+    letter-spacing: normal;
+}
+.Poppins_Roboto .hl1 {
+    font-family: "Playfair Display";
+    font-size: 62px;
+    font-weight: 700;
+    font-stretch: normal;
+    font-style: italic;
+    line-height: 1.16;
+    letter-spacing: normal;
+}
+.Poppins_Roboto .hl2 {
+    font-family: "Playfair Display";
+    font-size: 32px;
+    font-weight: 700;
+    font-stretch: normal;
+    font-style: italic;
+    line-height: 1.38;
+    letter-spacing: -0.3px;
+}
+
+/* Roboto Slab Font */
+.RobotoSlab_Heebo .h1 {
+    font-family: "Roboto Slab";
+    font-size: 84px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.1;
+    letter-spacing: -0.85px;
+}
+.RobotoSlab_Heebo .h2 {
+    font-family: "Roboto Slab";
+    font-size: 68px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.24;
+    letter-spacing: -0.85px;
+}
+
+.RobotoSlab_Heebo .h3 {
+    font-family: "Roboto Slab";
+    font-size: 54px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.26;
+    letter-spacing: -1.15px;
+}
+
+.RobotoSlab_Heebo .h4 {
+    font-family: "Roboto Slab";
+    font-size: 40px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.3;
+    letter-spacing: -0.85px;
+}
+.RobotoSlab_Heebo .h5 {
+    font-family: "Roboto Slab";
+    font-size: 32px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.25;
+    letter-spacing: -0.65px;
+}
+.RobotoSlab_Heebo .h6 {
+    font-family: "Roboto Slab";
+    font-size: 22px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.4;
+    letter-spacing: -0.45px;
+}
+.RobotoSlab_Heebo .p1 {
+    font-family: Heebo;
+    font-size: 32px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.38;
+    letter-spacing: 0.1px;
+}
+.RobotoSlab_Heebo .p2 {
+    font-family: Heebo;
+    font-size: 24px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.67;
+    letter-spacing: normal;
+}
+.RobotoSlab_Heebo .p3 {
+    font-family: Roboto;
+    font-size: 22px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.64;
+    letter-spacing: normal;
+}
+.RobotoSlab_Heebo .p4 {
+    font-family: Heebo;
+    font-size: 18px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.64;
+    letter-spacing: normal;
+}
+.RobotoSlab_Heebo .p5 {
+    font-family: Heebo;
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+}
+.RobotoSlab_Heebo .n1 {
+    font-family: "Roboto Slab";
+    font-size: 64px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.25;
+    letter-spacing: 2px;
+}
+.RobotoSlab_Heebo .hl1 {
+    font-family: Montserrat;
+    font-size: 62px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: italic;
+    line-height: 1.16;
+    letter-spacing: normal;
+}
+.RobotoSlab_Heebo .hl2 {
+    font-family: Heebo;
+    font-size: 32px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.38;
+    letter-spacing: normal;
+}
+
+/* Dm Serif Display Font */
+.Dmserif_Lato .h1 {
+    font-family: "DM Serif Display";
+    font-size: 84px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.1;
+    letter-spacing: -0.55px;
+}
+.Dmserif_Lato .h2 {
+    font-family: "DM Serif Display";
+    font-size: 68px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.24;
+    letter-spacing: -0.55px;
+}
+.Dmserif_Lato .h3 {
+    font-family: "DM Serif Display";
+    font-size: 54px;    
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.26;
+    letter-spacing: -0.74px;
+}
+.Dmserif_Lato .h4 {
+    font-family: "DM Serif Display";
+    font-size: 40px;    
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.3;
+    letter-spacing: -0.55px;
+}
+.Dmserif_Lato .h5 {
+    font-family: "DM Serif Display";
+    font-size: 32px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.25;
+    letter-spacing: -0.45px;
+}
+.Dmserif_Lato .h6 {
+    font-family: "DM Serif Display";
+    font-size: 22px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.4;
+    letter-spacing: -0.2px;
+}
+.Dmserif_Lato .p1 {
+    font-family: Lato;
+    font-size: 32px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.38;
+    letter-spacing: -0.2px;
+}
+.Dmserif_Lato .p2 {
+    font-family: Lato;
+    font-size: 24px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.67;
+    letter-spacing: -0.1px;
+}
+.Dmserif_Lato .p3 {
+    font-family: Lato;
+    font-size: 22px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.64;
+    letter-spacing: -0.1px;
+}
+.Dmserif_Lato .p4 {
+    font-family: Lato;
+    font-size: 18px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.64;
+    letter-spacing: -0.1px;
+}
+.Dmserif_Lato .p5 {
+    font-family: Lato;
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: -0.1px;
+}
+.Dmserif_Lato .n1 {
+    font-family: "DM Serif Display";
+    font-size: 64px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.2;
+    letter-spacing: normal;
+}
+.Dmserif_Lato .hl1 {
+    font-family: "Playfair Display";
+    font-size: 62px;
+    font-weight: 700;
+    font-stretch: normal;
+    font-style: italic;
+    line-height: 1.16;
+    letter-spacing: normal;
+}
+.Dmserif_Lato .hl2 {
+    font-family: "Playfair Display";
+    font-size: 32px;
+    font-weight: 700;
+    font-stretch: normal;
+    font-style: italic;
+    line-height: 1.38;
+    letter-spacing: -0.3px;
+}
+
+/* Montserrat Slab Font */
+.Montserrat_Notosans .h1 {
+    font-family: Montserrat;
+    font-size: 84px;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.1;
+    letter-spacing: -1.2px;
+}
+.Montserrat_Notosans .h2 {
+    font-family: Montserrat;
+    font-size: 68px;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.24;
+    letter-spacing: -1.2px;
+}
+.Montserrat_Notosans .h3 {
+    font-family: Montserrat;
+    font-size: 54px;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.26;
+    letter-spacing: -1.62px;
+}
+.Montserrat_Notosans .h4 {
+    font-family: Montserrat;
+    font-size: 40px;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.3;
+    letter-spacing: -1.2px;
+}
+.Montserrat_Notosans .h5 {
+    font-family: Montserrat;
+    font-size: 32px;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.25;
+    letter-spacing: -0.65px;
+}
+.Montserrat_Notosans .h6 {
+    font-family: Montserrat;
+    font-size: 22px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.4;
+    letter-spacing: -0.45px;
+}
+.Montserrat_Notosans .p1 {
+    font-family: "Noto Sans";
+    font-size: 32px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.38;
+    letter-spacing: -0.4px;
+}
+.Montserrat_Notosans .p2 {
+    font-family: "Noto Sans";
+    font-size: 24px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.67;
+    letter-spacing: -0.4px;
+}
+.Montserrat_Notosans .p3 {
+    font-family: "Noto Sans";
+    font-size: 22px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.64;
+    letter-spacing: -0.3px;
+}
+.Montserrat_Notosans .p4 {
+    font-family: "Noto Sans";
+    font-size: 18px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.64;
+    letter-spacing: -0.3px;
+}
+.Montserrat_Notosans .p5 {
+    font-family: "Noto Sans";
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: -0.4px;
+}
+.Montserrat_Notosans .n1 {
+    font-family: Rubik;
+    font-size: 64px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.31;
+    letter-spacing: normal;
+}
+.Montserrat_Notosans .hl1 {
+    font-family: Montserrat;
+    font-size: 62px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.16;
+    letter-spacing: -1.1px;
+}
+.Montserrat_Notosans .hl2 {
+    font-family: "Noto Sans";
+    font-size: 32px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: italic;
+    line-height: 1.38;
+    letter-spacing: -0.3px;
+}

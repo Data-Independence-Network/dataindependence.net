@@ -1,0 +1,429 @@
+.moodBackground {
+    width: 100% !important;
+    height: 100% !important;
+    position: absolute !important;
+    /* transition: all 2s 0.4s; */
+    overflow: hidden !important;
+    background-size: cover;
+    background-position: center;
+    display: flex !important;
+    padding: 0 !important;
+    background-color: transparent;
+}
+
+.lottieAnimDiv {
+    pointer-events: none;
+    z-index: 10;
+    width: 100% !important;
+    height: 100% !important;
+    position: absolute !important;
+    top: 0px !important;
+    left: 0px !important;
+    background-color: transparent !important;
+    display: block !important;
+}
+
+.moodParentDiv {
+    width: 100% !important;
+    height: 100% !important;
+    display: flex !important;
+}
+
+.moodSlideParent {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    position: absolute;
+    z-index: 0;
+}
+
+.moodSlideContentParentDiv {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    position: absolute;
+    overflow: hidden;
+}
+
+.transitionParent {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    z-index: 1;
+}
+
+.transitionCircle {
+    width: 1500px;
+    height: 1500px;
+    opacity: 0;
+    position: absolute;
+    border-radius: 100%;
+    z-index: 2;
+}
+
+.noAnimation {
+    animation-duration: 0s !important;
+    animation-delay: 0s !important;
+}
+
+/* Slide 1 Transition Animation */
+.slide1shape1 {
+    opacity: 0;
+    animation-name: slide1shape1Animation;
+    animation-fill-mode: forwards;
+    background: linear-gradient(to left top, rgba(var(--item1-color-rgb), 0) 25%, var(--item1-color) 130%);
+    animation-delay: 0s;
+    animation-duration: 1.5s;
+    animation-timing-function: linear;
+    left: -532px;
+    top: -976px;
+    transform: scale(0.72);
+}
+
+@keyframes slide1shape1Animation {
+    20% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+        transform: scale(0.72) rotate(324deg);
+    }
+    100% {
+        transform: scale(0.72) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.slide1shape2 {
+    opacity: 0;
+    animation-name: slide1shape2Animation;
+    animation-fill-mode: forwards;
+    background: linear-gradient(to left bottom, rgba(var(--item1-color-rgb), 0) 35%, var(--item3-color) 190%);
+    animation-delay: 0.3s;
+    animation-duration: 1.5s;
+    animation-timing-function: linear;
+    left: -590px;
+    top: -62px;
+    transform: scale(0.44);
+}
+
+@keyframes slide1shape2Animation {
+    20% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+        transform: scale(0.44) rotate(324deg);
+    }
+    100% {
+        transform: scale(0.44) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.slide1shape3 {
+    opacity: 0;
+    animation-name: slide1shape3Animation;
+    animation-fill-mode: forwards;
+    background: linear-gradient(to right bottom, rgba(var(--item1-color-rgb), 0) 35%, var(--item6-color) 190%);
+    animation-delay: 0.6s;
+    animation-duration: 1.5s;
+    animation-timing-function: linear;
+    left: 526px;
+    top: -142px;
+    transform: scale(1);
+}
+
+@keyframes slide1shape3Animation {
+    20% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+        transform: scale(1) rotate(324deg);
+    }
+    100% {
+        transform: scale(1) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* SLIDE 2 */
+.slide2shape1 {
+    opacity: 0;
+    animation-name: slide2shape1Animation;
+    animation-fill-mode: forwards;
+    background: linear-gradient(to left top, rgba(var(--item1-color-rgb), 0) 25%, var(--item1-color) 130%);
+    animation-delay: 0s;
+    animation-duration: 1.5s;
+    animation-timing-function: linear;
+    left: -882px;
+    top: -650px;
+    transform: scale(1);
+}
+
+@keyframes slide2shape1Animation {
+    20% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+        transform: scale(1) rotate(324deg);
+    }
+    100% {
+        transform: scale(1) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.slide2shape2 {
+    opacity: 0;
+    animation-name: slide2shape2Animation;
+    animation-fill-mode: forwards;
+    background: linear-gradient(to right top, rgba(var(--item1-color-rgb), 0) 35%, var(--item3-color) 190%);
+    animation-delay: 0.3s;
+    animation-duration: 1.5s;
+    animation-timing-function: linear;
+    left: 210px;
+    top: -766px;
+    transform: scale(0.44);
+}
+
+@keyframes slide2shape2Animation {
+    20% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+        transform: scale(0.44) rotate(324deg);
+    }
+    100% {
+        transform: scale(0.44) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.slide2shape3 {
+    opacity: 0;
+    animation-name: slide2shape3Animation;
+    animation-fill-mode: forwards;
+    background: linear-gradient(to right bottom, rgba(var(--item1-color-rgb), 0) 35%, var(--item6-color) 190%);
+    animation-delay: 0.6s;
+    animation-duration: 1.5s;
+    animation-timing-function: linear;
+    left: 327.3636px;
+    top: 341.5px;
+    transform: scale(1);
+}
+
+@keyframes slide2shape3Animation {
+    20% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+        transform: scale(1) rotate(324deg);
+    }
+    100% {
+        transform: scale(1) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* SLIDE 3 */
+.slide3shape1 {
+    opacity: 0;
+    animation-name: slide3shape1Animation;
+    animation-fill-mode: forwards;
+    background: linear-gradient(to left top, rgba(var(--item1-color-rgb), 0) 25%, var(--item1-color) 130%);
+    animation-delay: 0s;
+    animation-duration: 1.5s;
+    animation-timing-function: linear;
+    left: -430.5px;
+    top: -777.5px;
+    transform: scale(0.53);
+}
+
+@keyframes slide3shape1Animation {
+    20% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+        transform: scale(0.53) rotate(324deg);
+    }
+    100% {
+        transform: scale(0.53) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.slide3shape2 {
+    opacity: 0;
+    animation-name: slide3shape2Animation;
+    animation-fill-mode: forwards;
+    background: linear-gradient(to left bottom, rgba(var(--item1-color-rgb), 0) 35%, var(--item3-color) 190%);
+    animation-delay: 0.3s;
+    animation-duration: 1.5s;
+    animation-timing-function: linear;
+    left: -446px;
+    top: 80px;
+    transform: scale(0.58);
+}
+
+@keyframes slide3shape2Animation {
+    20% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+        transform: scale(0.58) rotate(324deg);
+    }
+    100% {
+        transform: scale(0.58) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.slide3shape3 {
+    opacity: 0;
+    animation-name: slide3shape3Animation;
+    animation-fill-mode: forwards;
+    background: linear-gradient(to right, rgba(var(--item1-color-rgb), 0) 35%, var(--item6-color) 190%);
+    animation-delay: 0.6s;
+    animation-duration: 1.5s;
+    animation-timing-function: linear;
+    left: 528.1818px;
+    top: -394px;
+    transform: scale(0.8);
+}
+
+@keyframes slide3shape3Animation {
+    20% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+        transform: scale(0.8) rotate(324deg);
+    }
+    100% {
+        transform: scale(0.8) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* SLIDE 4 */
+.slide4shape1 {
+    opacity: 0;
+    animation-name: slide4shape1Animation;
+    animation-fill-mode: forwards;
+    background: linear-gradient(to left top, rgba(var(--item1-color-rgb), 0) 25%, var(--item1-color) 130%);
+    animation-delay: 0s;
+    animation-duration: 1.5s;
+    animation-timing-function: linear;
+    left: -394px;
+    top: -778px;
+    transform: scale(0.98);
+}
+
+@keyframes slide4shape1Animation {
+    20% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+        transform: scale(0.98) rotate(324deg);
+    }
+    100% {
+        transform: scale(0.98) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.slide4shape2 {
+    opacity: 0;
+    animation-name: slide4shape2Animation;
+    animation-fill-mode: forwards;
+    background: linear-gradient(to right top, rgba(var(--item1-color-rgb), 0) 35%, var(--item3-color) 190%);
+    animation-delay: 0.3s;
+    animation-duration: 1.5s;
+    animation-timing-function: linear;
+    left: 674.5px;
+    top: -710.5px;
+    transform: scale(0.39);
+}
+
+@keyframes slide4shape2Animation {
+    20% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+        transform: scale(0.39) rotate(324deg);
+    }
+    100% {
+        transform: scale(0.39) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.slide4shape3 {
+    opacity: 0;
+    animation-name: slide4shape3Animation;
+    animation-fill-mode: forwards;
+    background: linear-gradient(to right bottom, rgba(var(--item1-color-rgb), 0) 35%, var(--item6-color) 190%);
+    animation-delay: 0.6s;
+    animation-duration: 1.5s;
+    animation-timing-function: linear;
+    left: 479.8182px;
+    top: -13.5px;
+    transform: scale(0.53);
+}
+
+@keyframes slide4shape3Animation {
+    20% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+        transform: scale(0.53) rotate(324deg);
+    }
+    100% {
+        transform: scale(0.53) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* SLIDE ANIMATION */
+.slideShow {
+    opacity: 0;
+    animation-name: slideShowAnimation;
+    animation-fill-mode: forwards;
+    animation-delay: 0.8s;
+    animation-duration: 1.5s;
+    animation-timing-function: linear;
+}
+
+@keyframes slideShowAnimation {
+    100% {
+        opacity: 1;
+    }
+}
+
+.slideHide {
+    opacity: 1;
+    animation-name: slideHideAnimation;
+    animation-fill-mode: forwards;
+    animation-delay: 0s;
+    animation-duration: 1.5s;
+    animation-timing-function: linear;
+}
+
+@keyframes slideHideAnimation {
+    100% {
+        opacity: 0;
+    }
+}

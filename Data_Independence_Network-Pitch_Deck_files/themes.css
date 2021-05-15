@@ -1,0 +1,1928 @@
+:root {
+    --theme-color: rgb(var(--theme-color-rgb));
+    --accent1-color-rgb: var(--theme-color-rgb);
+    --accent1-color: rgb(var(--theme-color-rgb));
+    --accent2-color: rgb(var(--accent2-color-rgb));
+    --accent3-color: rgb(var(--accent3-color-rgb));
+    --accent4-color: rgb(var(--accent4-color-rgb));
+    --accent5-color: rgb(var(--accent5-color-rgb));
+    --accent6-color: rgb(var(--accent6-color-rgb));
+    --contrast-color: rgb(var(--contrast-color-rgb));
+    --dark-color: rgb(var(--dark-color-rgb));
+    --white-color: rgb(var(--white-color-rgb));
+    --darkgray-color: rgb(var(--darkgray-color-rgb));
+    --lightgray-color: rgb(var(--lightgray-color-rgb));
+}
+:root {
+    --css-text-hover-color: #2188ff;
+    --css-text-bg-color: rgba(33, 136, 255, 0.1);
+    --color: 240, 240, 240;
+    --lightgreybg-color: var(--white-color);
+    --darkgreybg-color: var(--dark-color);
+    --ts-highlight-color: var(--theme-color);
+    --l-color: var(--theme-color);
+}
+.mltHighlightWhitebg:not(.blackandwhite),
+.mltItemHighlightWhitebg:not(.blackandwhite),
+.mnoHighlightWhitebg:not(.blackandwhite),
+.secHighlightWhitebg:not(.blackandwhite),
+.sngHighlightWhitebg:not(.blackandwhite),
+.tntBlackWhitebg:not(.blackandwhite),
+.trtHighlightWhitebg:not(.blackandwhite) {
+    --accent7-color: rgb(var(--accent7-color-rgb));
+    --accent8-color: rgb(var(--accent8-color-rgb));
+    --accent9-color: rgb(var(--accent9-color-rgb));
+    --accent10-color: rgb(var(--accent10-color-rgb));
+    --accent11-color: rgb(var(--accent11-color-rgb));
+    --accent12-color: rgb(var(--accent12-color-rgb));
+
+    --l-highlight-color: var(--dark-color);
+}
+.mltHighlightBlackbg:not(.blackandwhite),
+.mltItemHighlightBlackbg:not(.blackandwhite),
+.mnoHighlightBlackbg:not(.blackandwhite),
+.secHighlightBlackbg:not(.blackandwhite),
+.shdWhiteBlackbg:not(.blackandwhite),
+.sngHighlightBlackbg:not(.blackandwhite),
+.trtHighlightBlackbg:not(.blackandwhite) {
+    --accent7-color: rgb(var(--accent7-color-rgb));
+    --accent8-color: rgb(var(--accent8-color-rgb));
+    --accent9-color: rgb(var(--accent9-color-rgb));
+    --accent10-color: rgb(var(--accent10-color-rgb));
+    --accent11-color: rgb(var(--accent11-color-rgb));
+    --accent12-color: rgb(var(--accent12-color-rgb));
+
+    --l-highlight-color: var(--white-color);
+}
+.commonLayout.simplecss,
+.commonLayout.minimalistcss {
+    --lightgreybg-color: #f5f5f5;
+    --darkgreybg-color: #141414;
+}
+.commonLayout.bubblecss {
+    --lightgreybg-color: #f2f4f5;
+    --darkgreybg-color: #141415;
+}
+.commonLayout.minimalcss {
+    --lightgreybg-color: #f0f0f0;
+    --darkgreybg-color: #0d0d0d;
+}
+.commonLayout {
+    --contrast1-color: var(--dark-color);
+    --contrast2-color: var(--dark-color);
+    --contrast3-color: var(--dark-color);
+    --contrast4-color: var(--dark-color);
+    --contrast5-color: var(--dark-color);
+    --contrast6-color: var(--dark-color);
+    --contrast7-color: var(--dark-color);
+    --contrast8-color: var(--dark-color);
+    --contrast9-color: var(--dark-color);
+    --contrast10-color: var(--dark-color);
+    --contrast11-color: var(--dark-color);
+    --contrast12-color: var(--dark-color);
+    --white1-color: var(--white-color);
+    --white2-color: var(--white-color);
+    --white3-color: var(--white-color);
+    --white4-color: var(--white-color);
+    --white5-color: var(--white-color);
+    --white6-color: var(--white-color);
+    --white7-color: var(--white-color);
+    --white8-color: var(--white-color);
+    --white9-color: var(--white-color);
+    --white10-color: var(--white-color);
+    --white11-color: var(--white-color);
+    --white12-color: var(--white-color);
+
+    --contrast1-color-rgb: var(--dark-color-rgb);
+    --contrast2-color-rgb: var(--dark-color-rgb);
+    --contrast3-color-rgb: var(--dark-color-rgb);
+    --contrast4-color-rgb: var(--dark-color-rgb);
+    --contrast5-color-rgb: var(--dark-color-rgb);
+    --contrast6-color-rgb: var(--dark-color-rgb);
+    --contrast7-color-rgb: var(--dark-color-rgb);
+    --contrast8-color-rgb: var(--dark-color-rgb);
+    --contrast9-color-rgb: var(--dark-color-rgb);
+    --contrast10-color-rgb: var(--dark-color-rgb);
+    --contrast11-color-rgb: var(--dark-color-rgb);
+    --contrast12-color-rgb: var(--dark-color-rgb);
+    --white1-color-rgb: var(--white-color-rgb);
+    --white2-color-rgb: var(--white-color-rgb);
+    --white3-color-rgb: var(--white-color-rgb);
+    --white4-color-rgb: var(--white-color-rgb);
+    --white5-color-rgb: var(--white-color-rgb);
+    --white6-color-rgb: var(--white-color-rgb);
+    --white7-color-rgb: var(--white-color-rgb);
+    --white8-color-rgb: var(--white-color-rgb);
+    --white9-color-rgb: var(--white-color-rgb);
+    --white10-color-rgb: var(--white-color-rgb);
+    --white11-color-rgb: var(--white-color-rgb);
+    --white12-color-rgb: var(--white-color-rgb);
+}
+.commonLayout.multiColorDark {
+    --contrast1-color: #2e2e2e;
+    --contrast2-color: #494949;
+    --contrast3-color: #5b5b5b;
+    --contrast4-color: #707070;
+    --contrast5-color: #828282;
+    --contrast6-color: #9e9e9e;
+    --contrast7-color: #292929;
+    --contrast8-color: #414141;
+    --contrast9-color: #515151;
+    --contrast10-color: #646464;
+    --contrast11-color: #747474;
+    --contrast12-color: #8d8d8d;
+
+    --white1-color: #ffffff;
+    --white2-color: #e5e5e5;
+    --white3-color: #e9e9e9;
+    --white4-color: #d1d1d1;
+    --white5-color: #c7c7c7;
+    --white6-color: #b2b2b2;
+    --white7-color: #b4b4b4;
+    --white8-color: #a1a1a1;
+    --white9-color: #989898;
+    --white10-color: #888888;
+    --white11-color: #878787;
+    --white12-color: #797979;
+
+    --contrast1-color-rgb: 46, 46, 46;
+    --contrast2-color-rgb: 73, 73, 73;
+    --contrast3-color-rgb: 91, 91, 91;
+    --contrast4-color-rgb: 112, 112, 112;
+    --contrast5-color-rgb: 130, 130, 130;
+    --contrast6-color-rgb: 158, 158, 158;
+    --contrast7-color-rgb: 41, 41, 41;
+    --contrast8-color-rgb: 65, 65, 65;
+    --contrast9-color-rgb: 81, 81, 81;
+    --contrast10-color-rgb: 100, 100, 100;
+    --contrast11-color-rgb: 116, 116, 116;
+    --contrast12-color-rgb: 141, 141, 141;
+    --white1-color-rgb: 255, 255, 255;
+    --white2-color-rgb: 229, 229, 229;
+    --white3-color-rgb: 233, 233, 233;
+    --white4-color-rgb: 209, 209, 209;
+    --white5-color-rgb: 199, 199, 199;
+    --white6-color-rgb: 178, 178, 178;
+    --white7-color-rgb: 180, 180, 180;
+    --white8-color-rgb: 161, 161, 161;
+    --white9-color-rgb: 152, 152, 152;
+    --white10-color-rgb: 136, 136, 136;
+    --white11-color-rgb: 135, 135, 135;
+    --white12-color-rgb: 121, 121, 121;
+}
+.commonLayout.multiColorLight {
+    --white1-color: #2e2e2e;
+    --white2-color: #494949;
+    --white3-color: #5b5b5b;
+    --white4-color: #707070;
+    --white5-color: #828282;
+    --white6-color: #9e9e9e;
+    --white7-color: #292929;
+    --white8-color: #414141;
+    --white9-color: #515151;
+    --white10-color: #646464;
+    --white11-color: #747474;
+    --white12-color: #8d8d8d;
+    --contrast1-color: #ffffff;
+    --contrast2-color: #e5e5e5;
+    --contrast3-color: #e9e9e9;
+    --contrast4-color: #d1d1d1;
+    --contrast5-color: #c7c7c7;
+    --contrast6-color: #b2b2b2;
+    --contrast7-color: #b4b4b4;
+    --contrast8-color: #a1a1a1;
+    --contrast9-color: #989898;
+    --contrast10-color: #888888;
+    --contrast11-color: #878787;
+    --contrast12-color: #797979;
+
+    --white1-color-rgb: 46, 46, 46;
+    --white2-color-rgb: 73, 73, 73;
+    --white3-color-rgb: 91, 91, 91;
+    --white4-color-rgb: 112, 112, 112;
+    --white5-color-rgb: 130, 130, 130;
+    --white6-color-rgb: 158, 158, 158;
+    --white7-color-rgb: 41, 41, 41;
+    --white8-color-rgb: 65, 65, 65;
+    --white9-color-rgb: 81, 81, 81;
+    --white10-color-rgb: 100, 100, 100;
+    --white11-color-rgb: 116, 116, 116;
+    --white12-color-rgb: 141, 141, 141;
+    --contrast1-color-rgb: 255, 255, 255;
+    --contrast2-color-rgb: 229, 229, 229;
+    --contrast3-color-rgb: 233, 233, 233;
+    --contrast4-color-rgb: 209, 209, 209;
+    --contrast5-color-rgb: 199, 199, 199;
+    --contrast6-color-rgb: 178, 178, 178;
+    --contrast7-color-rgb: 180, 180, 180;
+    --contrast8-color-rgb: 161, 161, 161;
+    --contrast9-color-rgb: 152, 152, 152;
+    --contrast10-color-rgb: 136, 136, 136;
+    --contrast11-color-rgb: 135, 135, 135;
+    --contrast12-color-rgb: 121, 121, 121;
+}
+.mltHighlightWhitebg,
+.mltItemHighlightWhitebg,
+.mnoHighlightWhitebg,
+.secHighlightWhitebg,
+.sngHighlightWhitebg,
+.tntBlackWhitebg,
+.trtHighlightWhitebg,
+.dualColorWhitebg {
+    --bg-color: var(--white-color);
+    --bg-color-rgb: var(--white-color-rgb);
+    --alter-bg-color: var(--lightgreybg-color);
+    --single-bg-color: var(--white-color);
+    --single-bg-color-rgb: var(--white-color-rgb);
+    --title-color: var(--dark-color);
+    --title-highlight-color: var(--ts-highlight-color);
+    --subtitle-color: var(--darkgray-color);
+    --subtitle-highlight-color: var(--ts-highlight-color);
+    --label-color: var(--l-color);
+    --label-highlight-color: var(--l-highlight-color);
+    --alter-color: var(--white-color);
+    --secondary-color: var(--dark-color);
+    --alter-secondary-color: var(--white-color);
+    --tertiary-color: var(--darkgray-color);
+    --alter-tertiary-color: var(--white-color);
+    --inner-color: var(--white-color);
+    --icon-color: var(--dark-color);
+    --inner-icon-color: var(--dark-color);
+    --item-icon-color: var(--dark-color);
+    --border-color: rgba(62, 64, 65, 0.4);
+    --table-highlight-bg: var(--theme-color);
+    --table-highlight-font-bg: var(--dark-color);
+    --table-highlight-inner-bg: var(--white-color);
+    --table-normal-bg: var(--single-bg-color);
+    --table-normal-font-bg: var(--theme-color);
+    --table-normal-inner-bg: var(--dark-color);
+    --secondary-color-rgb: var(--dark-color-rgb);
+    --tertiary-color-rgb: var(--darkgray-color-rgb);
+    --unique-color: var(--white-color);
+}
+.mnoHighlightWhitebg {
+    --title-highlight-color: var(--accent2-color);
+    --subtitle-highlight-color: var(--accent2-color);
+    --label-color: var(--accent2-color);
+}
+.trtHighlightWhitebg {
+    --title-highlight-color: var(--accent3-color);
+    --subtitle-highlight-color: var(--accent3-color);
+    --label-color: var(--accent3-color);
+}
+.mltHighlightWhitebg {
+    --title-highlight-color: var(--accent4-color);
+    --subtitle-highlight-color: var(--accent4-color);
+    --label-color: var(--accent4-color);
+}
+.tntBlackWhitebg {
+    --title-highlight-color: var(--accent5-color);
+    --subtitle-highlight-color: var(--accent5-color);
+    --label-color: var(--accent5-color);
+}
+.mltItemHighlightWhitebg {
+    --title-highlight-color: var(--accent6-color);
+    --subtitle-highlight-color: var(--accent6-color);
+    --label-color: var(--accent6-color);
+}
+.mltHighlightBlackbg,
+.mltItemHighlightBlackbg,
+.mnoHighlightBlackbg,
+.secHighlightBlackbg,
+.shdWhiteBlackbg,
+.sngHighlightBlackbg,
+.trtHighlightBlackbg,
+.dualColorBlackbg {
+    --bg-color: var(--dark-color);
+    --bg-color-rgb: var(--dark-color-rgb);
+    --alter-bg-color: var(--darkgreybg-color);
+    --single-bg-color: var(--dark-color);
+    --single-bg-color-rgb: var(--dark-color-rgb);
+    --title-color: var(--white-color);
+    --title-highlight-color: var(--ts-highlight-color);
+    --subtitle-color: var(--lightgray-color);
+    --subtitle-highlight-color: var(--ts-highlight-color);
+    --label-color: var(--l-color);
+    --label-highlight-color: var(--l-highlight-color);
+    --secondary-color: var(--white-color);
+    --alter-secondary-color: var(--dark-color);
+    --tertiary-color: var(--lightgray-color);
+    --alter-tertiary-color: var(--dark-color);
+    --inner-color: var(--dark-color);
+    --icon-color: var(--white-color);
+    --inner-icon-color: var(--white-color);
+    --item-icon-color: var(--white-color);
+    --border-color: rgba(222, 222, 222, 0.6);
+    --table-highlight-bg: var(--theme-color);
+    --table-highlight-font-bg: var(--white-color);
+    --table-highlight-inner-bg: var(--dark-color);
+    --table-normal-bg: var(--single-bg-color);
+    --table-normal-font-bg: var(--theme-color);
+    --table-normal-inner-bg: var(--white-color);
+    --secondary-color-rgb: var(--white-color-rgb);
+    --tertiary-color-rgb: var(--lightgray-color-rgb);
+    --unique-color: var(--dark-color);
+}
+.mnoHighlightBlackbg {
+    --title-highlight-color: var(--accent2-color);
+    --subtitle-highlight-color: var(--accent2-color);
+    --label-color: var(--accent2-color);
+}
+.trtHighlightBlackbg {
+    --title-highlight-color: var(--accent3-color);
+    --subtitle-highlight-color: var(--accent3-color);
+    --label-color: var(--accent3-color);
+}
+.mltHighlightBlackbg {
+    --title-highlight-color: var(--accent4-color);
+    --subtitle-highlight-color: var(--accent4-color);
+    --label-color: var(--accent4-color);
+}
+.shdWhiteBlackbg {
+    --title-highlight-color: var(--accent5-color);
+    --subtitle-highlight-color: var(--accent5-color);
+    --label-color: var(--accent5-color);
+}
+.mltItemHighlightBlackbg {
+    --title-highlight-color: var(--accent6-color);
+    --subtitle-highlight-color: var(--accent6-color);
+    --label-color: var(--accent6-color);
+}
+.sngBlackHighlightbg,
+.tntBlackHighlightbg {
+    --theme-color: var(--accent2-color) !important;
+}
+.blackHighlight1bg,
+.whiteHighlight1bg {
+    --theme-color: var(--accent3-color) !important;
+}
+.blackHighlight2bg,
+.whiteHighlight2bg {
+    --theme-color: var(--accent4-color) !important;
+}
+.blackHighlight3bg,
+.whiteHighlight3bg {
+    --theme-color: var(--accent5-color) !important;
+}
+.blackHighlight4bg,
+.whiteHighlight4bg {
+    --theme-color: var(--accent6-color) !important;
+}
+.double1bg,
+.double2bg,
+.gradient1bg,
+.gradient2bg,
+.gradient3bg,
+.sngWhiteHighlightbg,
+.shdWhiteHighlightbg {
+    --unique-color: var(--color1);
+    --unique-color-rgb: var(--color1-rgb);
+    --alter-unique-color: var(--alter-color1);
+    --table-highlight-bg: var(--color1);
+    --table-highlight-font-bg: var(--alter-color1);
+    --table-highlight-inner-bg: var(--theme-color);
+    --table-normal-bg: var(--single-bg-color);
+    --table-normal-font-bg: var(--color1);
+    --table-normal-inner-bg: var(--alter-color1);
+}
+.sngBlackHighlightbg,
+.tntBlackHighlightbg {
+    --unique-color: var(--color2);
+    --unique-color-rgb: var(--color2-rgb);
+    --alter-unique-color: var(--alter-color2);
+    --table-highlight-bg: var(--color2);
+    --table-highlight-font-bg: var(--alter-color2);
+    --table-highlight-inner-bg: var(--accent2-color);
+    --table-normal-bg: var(--single-bg-color);
+    --table-normal-font-bg: var(--color2);
+    --table-normal-inner-bg: var(--alter-color2);
+}
+.blackHighlight1bg,
+.whiteHighlight1bg {
+    --unique-color: var(--color3);
+    --unique-color-rgb: var(--color3-rgb);
+    --alter-unique-color: var(--alter-color3);
+    --table-highlight-bg: var(--color3);
+    --table-highlight-font-bg: var(--alter-color3);
+    --table-highlight-inner-bg: var(--accent3-color);
+    --table-normal-bg: var(--single-bg-color);
+    --table-normal-font-bg: var(--color3);
+    --table-normal-inner-bg: var(--alter-color3);
+}
+.blackHighlight2bg,
+.whiteHighlight2bg {
+    --unique-color: var(--color4);
+    --unique-color-rgb: var(--color4-rgb);
+    --alter-unique-color: var(--alter-color4);
+    --table-highlight-bg: var(--color4);
+    --table-highlight-font-bg: var(--alter-color4);
+    --table-highlight-inner-bg: var(--accent4-color);
+    --table-normal-bg: var(--single-bg-color);
+    --table-normal-font-bg: var(--color4);
+    --table-normal-inner-bg: var(--alter-color4);
+}
+.blackHighlight3bg,
+.whiteHighlight3bg {
+    --unique-color: var(--color5);
+    --unique-color-rgb: var(--color5-rgb);
+    --alter-unique-color: var(--alter-color5);
+    --table-highlight-bg: var(--color5);
+    --table-highlight-font-bg: var(--alter-color5);
+    --table-highlight-inner-bg: var(--accent5-color);
+    --table-normal-bg: var(--single-bg-color);
+    --table-normal-font-bg: var(--color5);
+    --table-normal-inner-bg: var(--alter-color5);
+}
+.blackHighlight4bg,
+.whiteHighlight4bg {
+    --unique-color: var(--color6);
+    --unique-color-rgb: var(--color6-rgb);
+    --alter-unique-color: var(--alter-color6);
+    --table-highlight-bg: var(--color6);
+    --table-highlight-font-bg: var(--alter-color6);
+    --table-highlight-inner-bg: var(--accent6-color);
+    --table-normal-bg: var(--single-bg-color);
+    --table-normal-font-bg: var(--color6);
+    --table-normal-inner-bg: var(--alter-color6);
+}
+.double1bg,
+.double2bg,
+.gradient1bg,
+.gradient2bg,
+.gradient3bg,
+.shdWhiteHighlightbg,
+.tntBlackHighlightbg,
+.whiteHighlight1bg,
+.whiteHighlight2bg,
+.whiteHighlight3bg,
+.whiteHighlight4bg,
+.blackHighlight1bg,
+.blackHighlight2bg,
+.blackHighlight3bg,
+.blackHighlight4bg,
+.sngBlackHighlightbg,
+.sngWhiteHighlightbg {
+    --bg-color: var(--theme-color);
+    --bg-color-rgb: var(--theme-color-rgb);
+    --alter-bg-color: var(--theme-color);
+    --single-bg-color: var(--theme-color);
+    --single-bg-color-rgb: var(--theme-color-rgb);
+    --title-color: var(--unique-color);
+    --title-highlight-color: var(--alter-unique-color);
+    --subtitle-color: var(--unique-color);
+    --subtitle-highlight-color: var(--alter-unique-color);
+    --label-color: var(--alter-unique-color);
+    --label-highlight-color: var(--unique-color);
+    --secondary-color: var(--unique-color);
+    --alter-secondary-color: var(--alter-unique-color);
+    --tertiary-color: var(--unique-color);
+    --alter-tertiary-color: var(--alter-unique-color);
+    --inner-color: var(--unique-color);
+    --inner-icon-color: var(--theme-color);
+    --item-icon-color: var(--unique-color);
+    --icon-color: var(--unique-color);
+    --contrast-color: var(--alter-unique-color);
+    --border-color: rgba(62, 64, 65, 0.4);
+    --item1-color: var(--white1-color);
+    --item2-color: var(--white2-color);
+    --item3-color: var(--white3-color);
+    --item4-color: var(--white4-color);
+    --item5-color: var(--white5-color);
+    --item6-color: var(--white6-color);
+    --item7-color: var(--white7-color);
+    --item8-color: var(--white8-color);
+    --item9-color: var(--white9-color);
+    --item10-color: var(--white10-color);
+    --item11-color: var(--white11-color);
+    --item12-color: var(--white12-color);
+    --item1-color-rgb: var(--white1-color-rgb);
+    --item2-color-rgb: var(--white2-color-rgb);
+    --item3-color-rgb: var(--white3-color-rgb);
+    --item4-color-rgb: var(--white4-color-rgb);
+    --item5-color-rgb: var(--white5-color-rgb);
+    --item6-color-rgb: var(--white6-color-rgb);
+    --item7-color-rgb: var(--white7-color-rgb);
+    --item8-color-rgb: var(--white8-color-rgb);
+    --item9-color-rgb: var(--white9-color-rgb);
+    --item10-color-rgb: var(--white10-color-rgb);
+    --item11-color-rgb: var(--white11-color-rgb);
+    --item12-color-rgb: var(--white12-color-rgb);
+    --secondary-color-rgb: var(--unique-color-rgb);
+    --tertiary-color-rgb: var(--unique-color-rgb);
+}
+.gradient1bg {
+    --bg-color: linear-gradient(150deg, var(--theme-color), var(--accent4-color));
+}
+.gradient2bg {
+    --bg-color: radial-gradient(circle at top center, var(--accent4-color), var(--theme-color) 75%);
+}
+.gradient3bg {
+    --bg-color: radial-gradient(var(--accent4-color), var(--theme-color)) !important;
+}
+.secHighlightBlackbg,
+.secHighlightWhitebg {
+    --item1-color: var(--theme-color);
+    --item2-color: var(--accent2-color);
+    --item3-color: var(--accent3-color);
+    --item4-color: var(--accent4-color);
+    --item5-color: var(--accent5-color);
+    --item6-color: var(--accent6-color);
+    --item7-color: var(--accent7-color);
+    --item8-color: var(--accent8-color);
+    --item9-color: var(--accent9-color);
+    --item10-color: var(--accent10-color);
+    --item11-color: var(--accent11-color);
+    --item12-color: var(--accent12-color);
+    --item1-color-rgb: var(--theme-color-rgb);
+    --item2-color-rgb: var(--accent2-color-rgb);
+    --item3-color-rgb: var(--accent3-color-rgb);
+    --item4-color-rgb: var(--accent4-color-rgb);
+    --item5-color-rgb: var(--accent5-color-rgb);
+    --item6-color-rgb: var(--accent6-color-rgb);
+    --item7-color-rgb: var(--accent7-color-rgb);
+    --item8-color-rgb: var(--accent8-color-rgb);
+    --item9-color-rgb: var(--accent9-color-rgb);
+    --item10-color-rgb: var(--accent10-color-rgb);
+    --item11-color-rgb: var(--accent11-color-rgb);
+    --item12-color-rgb: var(--accent12-color-rgb);
+}
+.sngHighlightBlackbg,
+.sngHighlightWhitebg {
+    --item1-color: var(--theme-color);
+    --item2-color: var(--theme-color);
+    --item3-color: var(--theme-color);
+    --item4-color: var(--theme-color);
+    --item5-color: var(--theme-color);
+    --item6-color: var(--theme-color);
+    --item7-color: var(--theme-color);
+    --item8-color: var(--theme-color);
+    --item9-color: var(--theme-color);
+    --item10-color: var(--theme-color);
+    --item11-color: var(--theme-color);
+    --item12-color: var(--theme-color);
+    --item1-color-rgb: var(--theme-color-rgb);
+    --item2-color-rgb: var(--theme-color-rgb);
+    --item3-color-rgb: var(--theme-color-rgb);
+    --item4-color-rgb: var(--theme-color-rgb);
+    --item5-color-rgb: var(--theme-color-rgb);
+    --item6-color-rgb: var(--theme-color-rgb);
+    --item7-color-rgb: var(--theme-color-rgb);
+    --item8-color-rgb: var(--theme-color-rgb);
+    --item9-color-rgb: var(--theme-color-rgb);
+    --item10-color-rgb: var(--theme-color-rgb);
+    --item11-color-rgb: var(--theme-color-rgb);
+    --item12-color-rgb: var(--theme-color-rgb);
+}
+.mnoHighlightBlackbg,
+.mnoHighlightWhitebg {
+    --item1-color: var(--accent2-color);
+    --item2-color: var(--accent2-color);
+    --item3-color: var(--accent2-color);
+    --item4-color: var(--accent2-color);
+    --item5-color: var(--accent2-color);
+    --item6-color: var(--accent2-color);
+    --item7-color: var(--accent2-color);
+    --item8-color: var(--accent2-color);
+    --item9-color: var(--accent2-color);
+    --item10-color: var(--accent2-color);
+    --item11-color: var(--accent2-color);
+    --item12-color: var(--accent2-color);
+    --item1-color-rgb: var(--accent2-color-rgb);
+    --item2-color-rgb: var(--accent2-color-rgb);
+    --item3-color-rgb: var(--accent2-color-rgb);
+    --item4-color-rgb: var(--accent2-color-rgb);
+    --item5-color-rgb: var(--accent2-color-rgb);
+    --item6-color-rgb: var(--accent2-color-rgb);
+    --item7-color-rgb: var(--accent2-color-rgb);
+    --item8-color-rgb: var(--accent2-color-rgb);
+    --item9-color-rgb: var(--accent2-color-rgb);
+    --item10-color-rgb: var(--accent2-color-rgb);
+    --item11-color-rgb: var(--accent2-color-rgb);
+    --item12-color-rgb: var(--accent2-color-rgb);
+}
+.trtHighlightBlackbg,
+.trtHighlightWhitebg {
+    --item1-color: var(--accent3-color);
+    --item2-color: var(--accent3-color);
+    --item3-color: var(--accent3-color);
+    --item4-color: var(--accent3-color);
+    --item5-color: var(--accent3-color);
+    --item6-color: var(--accent3-color);
+    --item7-color: var(--accent3-color);
+    --item8-color: var(--accent3-color);
+    --item9-color: var(--accent3-color);
+    --item10-color: var(--accent3-color);
+    --item11-color: var(--accent3-color);
+    --item12-color: var(--accent3-color);
+    --item1-color-rgb: var(--accent3-color-rgb);
+    --item2-color-rgb: var(--accent3-color-rgb);
+    --item3-color-rgb: var(--accent3-color-rgb);
+    --item4-color-rgb: var(--accent3-color-rgb);
+    --item5-color-rgb: var(--accent3-color-rgb);
+    --item6-color-rgb: var(--accent3-color-rgb);
+    --item7-color-rgb: var(--accent3-color-rgb);
+    --item8-color-rgb: var(--accent3-color-rgb);
+    --item9-color-rgb: var(--accent3-color-rgb);
+    --item10-color-rgb: var(--accent3-color-rgb);
+    --item11-color-rgb: var(--accent3-color-rgb);
+    --item12-color-rgb: var(--accent3-color-rgb);
+}
+.mltHighlightBlackbg,
+.mltHighlightWhitebg {
+    --item1-color: var(--accent4-color);
+    --item2-color: var(--accent4-color);
+    --item3-color: var(--accent4-color);
+    --item4-color: var(--accent4-color);
+    --item5-color: var(--accent4-color);
+    --item6-color: var(--accent4-color);
+    --item7-color: var(--accent4-color);
+    --item8-color: var(--accent4-color);
+    --item9-color: var(--accent4-color);
+    --item10-color: var(--accent4-color);
+    --item11-color: var(--accent4-color);
+    --item12-color: var(--accent4-color);
+    --item1-color-rgb: var(--accent4-color-rgb);
+    --item2-color-rgb: var(--accent4-color-rgb);
+    --item3-color-rgb: var(--accent4-color-rgb);
+    --item4-color-rgb: var(--accent4-color-rgb);
+    --item5-color-rgb: var(--accent4-color-rgb);
+    --item6-color-rgb: var(--accent4-color-rgb);
+    --item7-color-rgb: var(--accent4-color-rgb);
+    --item8-color-rgb: var(--accent4-color-rgb);
+    --item9-color-rgb: var(--accent4-color-rgb);
+    --item10-color-rgb: var(--accent4-color-rgb);
+    --item11-color-rgb: var(--accent4-color-rgb);
+    --item12-color-rgb: var(--accent4-color-rgb);
+}
+.dualColorWhitebg,
+.dualColorBlackbg {
+    --item1-color: var(--theme-color);
+    --item2-color: var(--contrast-color);
+    --item3-color: var(--theme-color);
+    --item4-color: var(--contrast-color);
+    --item5-color: var(--theme-color);
+    --item6-color: var(--contrast-color);
+    --item7-color: var(--theme-color);
+    --item8-color: var(--contrast-color);
+    --item9-color: var(--theme-color);
+    --item10-color: var(--contrast-color);
+    --item11-color: var(--theme-color);
+    --item12-color: var(--contrast-color);
+    --item1-color-rgb: var(--theme-color-rgb);
+    --item2-color-rgb: var(--contrast-color-rgb);
+    --item3-color-rgb: var(--theme-color-rgb);
+    --item4-color-rgb: var(--contrast-color-rgb);
+    --item5-color-rgb: var(--theme-color-rgb);
+    --item6-color-rgb: var(--contrast-color-rgb);
+    --item7-color-rgb: var(--theme-color-rgb);
+    --item8-color-rgb: var(--contrast-color-rgb);
+    --item9-color-rgb: var(--theme-color-rgb);
+    --item10-color-rgb: var(--contrast-color-rgb);
+    --item11-color-rgb: var(--theme-color-rgb);
+    --item12-color-rgb: var(--contrast-color-rgb);
+}
+.shdWhiteBlackbg,
+.tntBlackWhitebg {
+    --item1-color: var(--accent5-color);
+    --item2-color: var(--accent5-color);
+    --item3-color: var(--accent5-color);
+    --item4-color: var(--accent5-color);
+    --item5-color: var(--accent5-color);
+    --item6-color: var(--accent5-color);
+    --item7-color: var(--accent5-color);
+    --item8-color: var(--accent5-color);
+    --item9-color: var(--accent5-color);
+    --item10-color: var(--accent5-color);
+    --item11-color: var(--accent5-color);
+    --item12-color: var(--accent5-color);
+    --item1-color-rgb: var(--accent5-color-rgb);
+    --item2-color-rgb: var(--accent5-color-rgb);
+    --item3-color-rgb: var(--accent5-color-rgb);
+    --item4-color-rgb: var(--accent5-color-rgb);
+    --item5-color-rgb: var(--accent5-color-rgb);
+    --item6-color-rgb: var(--accent5-color-rgb);
+    --item7-color-rgb: var(--accent5-color-rgb);
+    --item8-color-rgb: var(--accent5-color-rgb);
+    --item9-color-rgb: var(--accent5-color-rgb);
+    --item10-color-rgb: var(--accent5-color-rgb);
+    --item11-color-rgb: var(--accent5-color-rgb);
+    --item12-color-rgb: var(--accent5-color-rgb);
+}
+.mltItemHighlightBlackbg,
+.mltItemHighlightWhitebg {
+    --item1-color: var(--accent6-color);
+    --item2-color: var(--accent6-color);
+    --item3-color: var(--accent6-color);
+    --item4-color: var(--accent6-color);
+    --item5-color: var(--accent6-color);
+    --item6-color: var(--accent6-color);
+    --item7-color: var(--accent6-color);
+    --item8-color: var(--accent6-color);
+    --item9-color: var(--accent6-color);
+    --item10-color: var(--accent6-color);
+    --item11-color: var(--accent6-color);
+    --item12-color: var(--accent6-color);
+    --item1-color-rgb: var(--accent6-color-rgb);
+    --item2-color-rgb: var(--accent6-color-rgb);
+    --item3-color-rgb: var(--accent6-color-rgb);
+    --item4-color-rgb: var(--accent6-color-rgb);
+    --item5-color-rgb: var(--accent6-color-rgb);
+    --item6-color-rgb: var(--accent6-color-rgb);
+    --item7-color-rgb: var(--accent6-color-rgb);
+    --item8-color-rgb: var(--accent6-color-rgb);
+    --item9-color-rgb: var(--accent6-color-rgb);
+    --item10-color-rgb: var(--accent6-color-rgb);
+    --item11-color-rgb: var(--accent6-color-rgb);
+    --item12-color-rgb: var(--accent6-color-rgb);
+}
+.item1 {
+    --icon-color: var(--item-icon-color);
+    fill: var(--item1-color) !important;
+    stroke: var(--item1-color) !important;
+    background-color: var(--item1-color) !important;
+    stop-color: var(--item1-color) !important;
+    flood-color: var(--item1-color) !important;
+}
+.item2 {
+    --icon-color: var(--item-icon-color);
+    fill: var(--item2-color) !important;
+    stroke: var(--item2-color) !important;
+    background-color: var(--item2-color) !important;
+    stop-color: var(--item2-color) !important;
+    flood-color: var(--item2-color) !important;
+}
+.item3 {
+    --icon-color: var(--item-icon-color);
+    fill: var(--item3-color) !important;
+    stroke: var(--item3-color) !important;
+    background-color: var(--item3-color) !important;
+    stop-color: var(--item3-color) !important;
+    flood-color: var(--item3-color) !important;
+}
+.item4 {
+    --icon-color: var(--item-icon-color);
+    fill: var(--item4-color) !important;
+    stroke: var(--item4-color) !important;
+    background-color: var(--item4-color) !important;
+    stop-color: var(--item4-color) !important;
+    flood-color: var(--item4-color) !important;
+}
+.item5 {
+    --icon-color: var(--item-icon-color);
+    fill: var(--item5-color) !important;
+    stroke: var(--item5-color) !important;
+    background-color: var(--item5-color) !important;
+    stop-color: var(--item5-color) !important;
+    flood-color: var(--item5-color) !important;
+}
+.item6 {
+    --icon-color: var(--item-icon-color);
+    fill: var(--item6-color) !important;
+    stroke: var(--item6-color) !important;
+    background-color: var(--item6-color) !important;
+    stop-color: var(--item6-color) !important;
+    flood-color: var(--item6-color) !important;
+}
+.item7 {
+    --icon-color: var(--item-icon-color);
+    fill: var(--item7-color) !important;
+    stroke: var(--item7-color) !important;
+    background-color: var(--item7-color) !important;
+    stop-color: var(--item7-color) !important;
+    flood-color: var(--item7-color) !important;
+}
+.item8 {
+    --icon-color: var(--item-icon-color);
+    fill: var(--item8-color) !important;
+    stroke: var(--item8-color) !important;
+    background-color: var(--item8-color) !important;
+    stop-color: var(--item8-color) !important;
+    flood-color: var(--item8-color) !important;
+}
+.item9 {
+    --icon-color: var(--item-icon-color);
+    fill: var(--item9-color) !important;
+    stroke: var(--item9-color) !important;
+    background-color: var(--item9-color) !important;
+    stop-color: var(--item9-color) !important;
+    flood-color: var(--item9-color) !important;
+}
+.item10 {
+    --icon-color: var(--item-icon-color);
+    fill: var(--item10-color) !important;
+    stroke: var(--item10-color) !important;
+    background-color: var(--item10-color) !important;
+    stop-color: var(--item10-color) !important;
+    flood-color: var(--item10-color) !important;
+}
+.item11 {
+    --icon-color: var(--item-icon-color);
+    fill: var(--item11-color) !important;
+    stroke: var(--item11-color) !important;
+    background-color: var(--item11-color) !important;
+    stop-color: var(--item11-color) !important;
+    flood-color: var(--item11-color) !important;
+}
+.item12 {
+    --icon-color: var(--item-icon-color);
+    fill: var(--item12-color) !important;
+    stroke: var(--item12-color) !important;
+    background-color: var(--item12-color) !important;
+    stop-color: var(--item12-color) !important;
+    flood-color: var(--item12-color) !important;
+}
+.outerColor1 {
+    fill: var(--primary-color);
+    stroke: var(--primary-color);
+    flood-color: var(--primary-color);
+}
+.theme-color {
+    color: var(--item1-color) !important;
+}
+.theme-bg-color {
+    background-color: var(--item1-color) !important;
+}
+.theme-border-color {
+    border-color: var(--item1-color) !important;
+}
+.theme-fill {
+    fill: var(--item1-color) !important;
+    --icon-color: var(--item-icon-color);
+}
+.theme-stroke {
+    stroke: var(--item1-color) !important;
+}
+.accent1-color {
+    color: var(--item1-color) !important;
+}
+.accent1-bg-color {
+    background-color: var(--item1-color) !important;
+}
+.accent1-border-color {
+    border-color: var(--item1-color) !important;
+}
+.accent1-fill {
+    fill: var(--item1-color) !important;
+    --icon-color: var(--item-icon-color);
+}
+.accent1-stroke {
+    stroke: var(--item1-color) !important;
+}
+.accent2-color {
+    color: var(--item2-color) !important;
+}
+.accent2-bg-color {
+    background-color: var(--item2-color) !important;
+}
+.accent2-border-color {
+    border-color: var(--item2-color) !important;
+}
+.accent2-fill {
+    fill: var(--item2-color) !important;
+    --icon-color: var(--item-icon-color);
+}
+.accent2-stroke {
+    stroke: var(--item2-color) !important;
+}
+.accent3-color {
+    color: var(--item3-color) !important;
+}
+.accent3-bg-color {
+    background-color: var(--item3-color) !important;
+}
+.accent3-border-color {
+    border-color: var(--item3-color) !important;
+}
+.accent3-fill {
+    fill: var(--item3-color) !important;
+    --icon-color: var(--item-icon-color);
+}
+.accent3-stroke {
+    stroke: var(--item3-color) !important;
+}
+.accent4-color {
+    color: var(--item4-color) !important;
+}
+.accent4-bg-color {
+    background-color: var(--item4-color) !important;
+}
+.accent4-border-color {
+    border-color: var(--item4-color) !important;
+}
+.accent4-fill {
+    fill: var(--item4-color) !important;
+    --icon-color: var(--item-icon-color);
+}
+.accent4-stroke {
+    stroke: var(--item4-color) !important;
+}
+.accent5-color {
+    color: var(--item5-color) !important;
+}
+.accent5-bg-color {
+    background-color: var(--item5-color) !important;
+}
+.accent5-border-color {
+    border-color: var(--item5-color) !important;
+}
+.accent5-fill {
+    fill: var(--item5-color) !important;
+    --icon-color: var(--item-icon-color);
+}
+.accent5-stroke {
+    stroke: var(--item5-color) !important;
+}
+.accent6-color {
+    color: var(--item6-color) !important;
+}
+.accent6-bg-color {
+    background-color: var(--item6-color) !important;
+}
+.accent6-border-color {
+    border-color: var(--item6-color) !important;
+}
+.accent6-fill {
+    fill: var(--item6-color) !important;
+    --icon-color: var(--item-icon-color);
+}
+.accent6-stroke {
+    stroke: var(--item6-color) !important;
+}
+.accent7-color {
+    color: var(--item7-color) !important;
+}
+.accent7-bg-color {
+    background-color: var(--item7-color) !important;
+}
+.accent7-border-color {
+    border-color: var(--item7-color) !important;
+}
+.accent7-fill {
+    fill: var(--item7-color) !important;
+    --icon-color: var(--item-icon-color);
+}
+.accent7-stroke {
+    stroke: var(--item7-color) !important;
+}
+.accent8-color {
+    color: var(--item8-color) !important;
+}
+.accent8-bg-color {
+    background-color: var(--item8-color) !important;
+}
+.accent8-border-color {
+    border-color: var(--item8-color) !important;
+}
+.accent8-fill {
+    fill: var(--item8-color) !important;
+    --icon-color: var(--item-icon-color);
+}
+.accent8-stroke {
+    stroke: var(--item8-color) !important;
+}
+.accent9-color {
+    color: var(--item9-color) !important;
+}
+.accent9-bg-color {
+    background-color: var(--item9-color) !important;
+}
+.accent9-border-color {
+    border-color: var(--item9-color) !important;
+}
+.accent9-fill {
+    fill: var(--item9-color) !important;
+    --icon-color: var(--item-icon-color);
+}
+.accent9-stroke {
+    stroke: var(--item9-color) !important;
+}
+.accent10-color {
+    color: var(--item10-color) !important;
+}
+.accent10-bg-color {
+    background-color: var(--item10-color) !important;
+}
+.accent10-border-color {
+    border-color: var(--item10-color) !important;
+}
+.accent10-fill {
+    fill: var(--item10-color) !important;
+    --icon-color: var(--item-icon-color);
+}
+.accent10-stroke {
+    stroke: var(--item10-color) !important;
+}
+.accent11-color {
+    color: var(--item11-color) !important;
+}
+.accent11-bg-color {
+    background-color: var(--item11-color) !important;
+}
+.accent11-border-color {
+    border-color: var(--item11-color) !important;
+}
+.accent11-fill {
+    fill: var(--item11-color) !important;
+    --icon-color: var(--item-icon-color);
+}
+.accent11-stroke {
+    stroke: var(--item11-color) !important;
+}
+.accent12-color {
+    color: var(--item12-color) !important;
+}
+.accent12-bg-color {
+    background-color: var(--item12-color) !important;
+}
+.accent12-border-color {
+    border-color: var(--item12-color) !important;
+}
+.accent12-fill {
+    fill: var(--item12-color) !important;
+    --icon-color: var(--item-icon-color);
+}
+.accent12-stroke {
+    stroke: var(--item12-color) !important;
+}
+.contrast-color {
+    color: var(--contrast-color) !important;
+}
+.contrast-bg-color {
+    background-color: var(--contrast-color) !important;
+}
+.contrast-border-color {
+    border-color: var(--contrast-color) !important;
+}
+.contrast-fill {
+    fill: var(--contrast-color) !important;
+}
+.contrast-stroke {
+    stroke: var(--contrast-color) !important;
+}
+.secondary-color {
+    color: var(--secondary-color) !important;
+}
+.secondary-bg-color {
+    background-color: var(--secondary-color) !important;
+}
+.secondary-border-color {
+    border-color: var(--secondary-color) !important;
+}
+.secondary-fill {
+    fill: var(--secondary-color) !important;
+}
+.secondary-stroke {
+    stroke: var(--secondary-color) !important;
+}
+.alter-secondary-color {
+    color: var(--alter-secondary-color) !important;
+}
+.alter-secondary-bg-color {
+    background-color: var(--alter-secondary-color) !important;
+}
+.alter-secondary-border-color {
+    border-color: var(--alter-secondary-color) !important;
+}
+.alter-secondary-fill {
+    fill: var(--alter-secondary-color) !important;
+}
+.alter-secondary-stroke {
+    stroke: var(--alter-secondary-color) !important;
+}
+.tertiary-color {
+    color: var(--tertiary-color) !important;
+}
+.tertiary-bg-color {
+    background-color: var(--tertiary-color) !important;
+}
+.tertiary-border-color {
+    border-color: var(--tertiary-color) !important;
+}
+.tertiary-fill {
+    fill: var(--tertiary-color) !important;
+}
+.tertiary-stroke {
+    stroke: var(--tertiary-color) !important;
+}
+.alter-tertiary-color {
+    color: var(--alter-tertiary-color) !important;
+}
+.alter-tertiary-bg-color {
+    background-color: var(--alter-tertiary-color) !important;
+}
+.alter-tertiary-border-color {
+    border-color: var(--alter-tertiary-color) !important;
+}
+.alter-tertiary-fill {
+    fill: var(--alter-tertiary-color) !important;
+}
+.alter-tertiary-stroke {
+    stroke: var(--alter-tertiary-color) !important;
+}
+.background-color {
+    color: var(--single-bg-color) !important;
+}
+.background-bg-color {
+    background: var(--single-bg-color) !important;
+}
+.background-border-color {
+    border-color: var(--single-bg-color) !important;
+}
+.background-fill {
+    fill: var(--single-bg-color) !important;
+}
+.background-stroke {
+    stroke: var(--single-bg-color) !important;
+}
+.alter-background-color {
+    color: var(--title-highlight-color) !important;
+}
+.alter-background-bg-color {
+    background-color: var(--title-highlight-color) !important;
+}
+.alter-background-border-color {
+    border-color: var(--title-highlight-color) !important;
+}
+.alter-background-fill {
+    fill: var(--title-highlight-color) !important;
+}
+.alter-background-stroke {
+    stroke: var(--title-highlight-color) !important;
+}
+.inner-color {
+    color: var(--inner-color) !important;
+}
+.inner-bg-color {
+    background-color: var(--inner-color) !important;
+}
+.inner-border-color {
+    border-color: var(--inner-color) !important;
+}
+.inner-fill {
+    --icon-color: var(--inner-color);
+    fill: var(--inner-color) !important;
+}
+.inner-stroke {
+    --icon-color: var(--inner-color);
+    stroke: var(--inner-color) !important;
+}
+.commonLayout,
+.commonLayout .BG {
+    background-color: var(--alter-bg-color) !important;
+    fill: var(--alter-bg-color) !important;
+}
+
+/* title subtitle label background color as bg */
+.titleNode.transparentBg,
+.titleNode.backgroundColorBg,
+.TITLE.transparentBg,
+.TITLE.backgroundColorBg {
+    color: var(--title-color) !important;
+}
+.TEXTBOX .REMOVE_TEXTBOX_HIGHLIGHT {
+    color: var(--title-color) !important;
+}
+.subTitleNode.transparentBg,
+.subTitleNode.backgroundColorBg,
+.textBoxEditor.transparentBg,
+.textBoxEditor.backgroundColorBg,
+.SUBTITLE.transparentBg,
+.SUBTITLE.backgroundColorBg {
+    color: var(--subtitle-color) !important;
+}
+#slideplaceholdertext.transparentBg,
+#slideplaceholdertext.backgroundColorBg,
+.titleLabelNode.transparentBg,
+.titleLabelNode.backgroundColorBg,
+.SLIDE_LABEL.transparentBg,
+.SLIDE_LABEL.backgroundColorBg {
+    color: var(--label-color) !important;
+}
+.textBg.transparentBg,
+.SUBTITLE.transparentBg.backgroundBg {
+    background-color: transparent !important;
+    border-color: var(--label-color) !important;
+}
+.textBg.backgroundColorBg,
+.SUBTITLE.backgroundColorBg.backgroundBg {
+    background-color: var(--alter-bg-color) !important;
+    border-color: var(--label-color) !important;
+}
+/* title subtitle label color based on image */
+.commonLayout.fixedlightText .TITLE.transparentBg,
+.commonLayout.fixedlightText .textBg.transparentBg {
+    background-color: transparent !important;
+    color: var(--alter-secondary-color) !important;
+    border-color: var(--alter-secondary-color) !important;
+}
+.commonLayout.fixedlightText .SUBTITLE.transparentBg {
+    background-color: transparent !important;
+    color: var(--alter-secondary-color) !important;
+}
+.commonLayout.fixedlightText #slideplaceholdertext.transparentBg,
+.commonLayout.fixedlightText .SLIDE_LABEL.transparentBg {
+    background-color: transparent !important;
+    color: var(--alter-secondary-color) !important;
+}
+.commonLayout.fixeddarkText .TITLE.transparentBg,
+.commonLayout.fixeddarkText .textBg.transparentBg {
+    background-color: transparent !important;
+    color: var(--secondary-color) !important;
+    border-color: var(--secondary-color) !important;
+}
+.commonLayout.fixeddarkText .SUBTITLE.transparentBg {
+    background-color: transparent !important;
+    color: var(--secondary-color) !important;
+}
+.commonLayout.fixeddarkText #slideplaceholdertext.transparentBg,
+.commonLayout.fixeddarkText .SLIDE_LABEL.transparentBg {
+    background-color: transparent !important;
+    color: var(--secondary-color) !important;
+}
+
+/* title subtitle label color based on image */
+.commonLayout.lightText .TITLE.transparentBg,
+.commonLayout.lightText .textBg.transparentBg {
+    background-color: transparent !important;
+    color: var(--secondary-color) !important;
+    border-color: var(--secondary-color) !important;
+}
+.commonLayout.lightText .SUBTITLE.transparentBg {
+    background-color: transparent !important;
+    color: var(--secondary-color) !important;
+}
+.commonLayout.lightText #slideplaceholdertext.transparentBg,
+.commonLayout.lightText .SLIDE_LABEL.transparentBg {
+    background-color: transparent !important;
+    color: var(--secondary-color) !important;
+}
+.commonLayout.darkText .TITLE.transparentBg,
+.commonLayout.darkText .textBg.transparentBg {
+    background-color: transparent !important;
+    color: var(--secondary-color) !important;
+    border-color: var(--secondary-color) !important;
+}
+.commonLayout.darkText .SUBTITLE.transparentBg {
+    background-color: transparent !important;
+    color: var(--secondary-color) !important;
+}
+.commonLayout.darkText #slideplaceholdertext.transparentBg,
+.commonLayout.darkText .SLIDE_LABEL.transparentBg {
+    background-color: transparent !important;
+    color: var(--secondary-color) !important;
+}
+/* title subtitle label heighlight background color as bg */
+.titleNode.transparentBg .TITLE_HIGHLIGHT,
+.clsPrimaryText.transparentBg .TITLE_HIGHLIGHT,
+.primaryText.transparentBg .TITLE_HIGHLIGHT,
+.labeltext.transparentBg .TITLE_HIGHLIGHT,
+.TITLE.transparentBg .TITLE_HIGHLIGHT,
+.TITLE.backgroundColorBg .TITLE_HIGHLIGHT,
+.TEXTBOX .TEXTBOX_HIGHLIGHT {
+    color: var(--title-highlight-color) !important;
+}
+.subTitleNode.transparentBg .SUBTITLE_HIGHLIGHT,
+.clsSubTitleText.transparentBg .SUBTITLE_HIGHLIGHT,
+.secondaryText.transparentBg .SUBTITLE_HIGHLIGHT,
+.labeltext.transparentBg .SUBTITLE_HIGHLIGHT,
+.textBoxEditor.transparentBg .SUBTITLE_HIGHLIGHT,
+.textBoxEditor.backgroundColorBg .SUBTITLE_HIGHLIGHT,
+.SUBTITLE.transparentBg .SUBTITLE_HIGHLIGHT,
+.SUBTITLE.backgroundColorBg .SUBTITLE_HIGHLIGHT {
+    color: var(--subtitle-highlight-color) !important;
+}
+.titleLabelNode.transparentBg .SLIDE_LABEL_HIGHLIGHT,
+.clsHolderText.transparentBg .SLIDE_LABEL_HIGHLIGHT,
+.textNode.transparentBg .SLIDE_LABEL_HIGHLIGHT,
+.labeltext.transparentBg .SLIDE_LABEL_HIGHLIGHT,
+.SLIDE_LABEL.transparentBg .SLIDE_LABEL_HIGHLIGHT,
+.SLIDE_LABEL.backgroundColorBg .SLIDE_LABEL_HIGHLIGHT {
+    color: var(--label-highlight-color) !important;
+}
+.commonLayout.fixeddarkText #slideplaceholdertext.transparentBg .SLIDE_LABEL_HIGHLIGHT,
+.commonLayout.fixeddarkText .SLIDE_LABEL.transparentBg .SLIDE_LABEL_HIGHLIGHT,
+.commonLayout.fixedlightText #slideplaceholdertext.transparentBg .SLIDE_LABEL_HIGHLIGHT,
+.commonLayout.fixedlightText .SLIDE_LABEL.transparentBg .SLIDE_LABEL_HIGHLIGHT,
+.commonLayout.darkText #slideplaceholdertext.transparentBg .SLIDE_LABEL_HIGHLIGHT,
+.commonLayout.darkText .SLIDE_LABEL.transparentBg .SLIDE_LABEL_HIGHLIGHT,
+.commonLayout.lightText #slideplaceholdertext.transparentBg .SLIDE_LABEL_HIGHLIGHT,
+.commonLayout.lightText .SLIDE_LABEL.transparentBg .SLIDE_LABEL_HIGHLIGHT {
+    color: var(--title-highlight-color) !important;
+}
+
+/* title subtitle label dark color as bg */
+.titleNode.subtitleColorBg,
+.TITLE.subtitleColorBg {
+    color: var(--single-bg-color) !important;
+}
+.subTitleNode.subtitleColorBg,
+.textBoxEditor.subtitleColorBg,
+.SUBTITLE.subtitleColorBg {
+    color: var(--single-bg-color) !important;
+}
+#slideplaceholdertext.subtitleColorBg,
+.titleLabelNode.subtitleColorBg,
+.SLIDE_LABEL.subtitleColorBg {
+    color: var(--label-color) !important;
+}
+.textBg.subtitleColorBg,
+.SUBTITLE.subtitleColorBg.backgroundBg {
+    background-color: var(--title-color) !important;
+    border-color: var(--label-color) !important;
+}
+
+/* title subtitle label heighlight dark color as bg */
+.titleNode.subtitleColorBg .TITLE_HIGHLIGHT,
+.clsPrimaryText.subtitleColorBg .TITLE_HIGHLIGHT,
+.primaryText.subtitleColorBg .TITLE_HIGHLIGHT,
+.subTitleNode.subtitleColorBg .SUBTITLE_HIGHLIGHT,
+.clsSubTitleText.subtitleColorBg .SUBTITLE_HIGHLIGHT,
+.secondaryText.subtitleColorBg .SUBTITLE_HIGHLIGHT,
+.textBoxEditor.subtitleColorBg .SUBTITLE_HIGHLIGHT,
+.labeltext.subtitleColorBg .SUBTITLE_HIGHLIGHT,
+.TITLE.subtitleColorBg .TITLE_HIGHLIGHT,
+.SUBTITLE.subtitleColorBg .SUBTITLE_HIGHLIGHT {
+    color: var(--label-color) !important;
+}
+.titleLabelNode.subtitleColorBg .SLIDE_LABEL_HIGHLIGHT,
+.clsHolderText.subtitleColorBg .SLIDE_LABEL_HIGHLIGHT,
+.textNode.subtitleColorBg .SLIDE_LABEL_HIGHLIGHT,
+.SLIDE_LABEL.subtitleColorBg .SLIDE_LABEL_HIGHLIGHT {
+    color: var(--single-bg-color) !important;
+}
+/* title subtitle label dark color as bg */
+.titleNode.titleColorBg,
+.subTitleNode.titleColorBg,
+.TITLE.titleColorBg,
+.textBoxEditor.titleColorBg,
+.SUBTITLE.titleColorBg {
+    color: var(--single-bg-color) !important;
+}
+#slideplaceholdertext.titleColorBg,
+.titleLabelNode.titleColorBg,
+.SLIDE_LABEL.titleColorBg {
+    color: var(--title-color) !important;
+}
+.textBg.titleColorBg,
+.SUBTITLE.titleColorBg.backgroundBg {
+    background-color: var(--label-color) !important;
+    border-color: var(--title-color) !important;
+}
+/* title subtitle label heighlight dark color as bg */
+.titleNode.titleColorBg .TITLE_HIGHLIGHT,
+.clsPrimaryText.titleColorBg .TITLE_HIGHLIGHT,
+.primaryText.titleColorBg .TITLE_HIGHLIGHT,
+.labeltext.titleColorBg .TITLE_HIGHLIGHT,
+.subTitleNode.titleColorBg .SUBTITLE_HIGHLIGHT,
+.clsSubTitleText.titleColorBg .SUBTITLE_HIGHLIGHT,
+.secondaryText.titleColorBg .SUBTITLE_HIGHLIGHT,
+.labeltext.titleColorBg .SUBTITLE_HIGHLIGHT,
+.textBoxEditor.titleColorBg .SUBTITLE_HIGHLIGHT,
+.TITLE.titleColorBg .TITLE_HIGHLIGHT,
+.SUBTITLE.titleColorBg .SUBTITLE_HIGHLIGHT {
+    color: var(--title-color) !important;
+}
+.titleLabelNode.titleColorBg .SLIDE_LABEL_HIGHLIGHT,
+.clsHolderText.titleColorBg .SLIDE_LABEL_HIGHLIGHT,
+.textNode.titleColorBg .SLIDE_LABEL_HIGHLIGHT,
+.SLIDE_LABEL.titleColorBg .SLIDE_LABEL_HIGHLIGHT {
+    color: var(--single-bg-color) !important;
+}
+/* text elements */
+#textElement,
+#textElement[data-bg-color="transparentBg"],
+#textElement[data-bg-color="subtitleColorBg"],
+#textElement[data-bg-color="backgroundColorBg"],
+#textElementSG,
+#textElementSG[data-bg-color="transparentBg"],
+#textElementSG[data-bg-color="subtitleColorBg"],
+#textElementSG[data-bg-color="backgroundColorBg"] {
+    background-color: var(--label-color) !important;
+    fill: var(--label-color) !important;
+    stroke: var(--label-color) !important;
+}
+#textElement[data-bg-color="titleColorBg"] {
+    background-color: var(--title-color) !important;
+    fill: var(--title-color) !important;
+    stroke: var(--title-color) !important;
+}
+/* text background floter */
+.floaterTextBackground1 {
+    background-color: var(--title-color) !important;
+}
+.floaterTextBackground2 {
+    background-color: var(--alter-bg-color) !important;
+}
+.floaterTextBackground3 {
+    background-color: var(--title-highlight-color) !important;
+}
+/* table */
+.commonLayout td {
+    color: var(--secondary-color);
+    border: 1px solid;
+    border-color: var(--border-color) !important;
+}
+.GRAPHIC .tableTopLeftHighlightAltV tr:nth-child(odd) td,
+.GRAPHIC .tableTopHighlightAltV tr:nth-child(odd) td,
+.GRAPHIC .tableLeftHighlightAltV tr:nth-child(odd) td,
+.GRAPHIC .tableRightHighlightAltV tr:nth-child(odd) td {
+    background-color: #f0f0f0;
+    color: var(--dark);
+}
+.commonLayout .tableLeftBottomHighlight tr td:nth-child(2),
+.commonLayout .tableLeftBottomHighlight tr:last-child td,
+.commonLayout .tableLeftHighlight tr td:nth-child(2),
+.commonLayout .tableLeftHighlightAltV tr td:nth-child(2),
+.commonLayout .tableLeftRightHighlight tr td:nth-child(2),
+.commonLayout .tableLeftRightHighlight tr td:last-child,
+.commonLayout .tableRightBottomHighlight tr td:last-child,
+.commonLayout .tableRightBottomHighlight tr:last-child td,
+.commonLayout .tableRightHighlightAltV tr td:last-child,
+.commonLayout .tableTopBottomHighlight tr:first-child td,
+.commonLayout .tableTopBottomHighlight tr:last-child td,
+.commonLayout .tableTopHighlight tr:first-child td,
+.commonLayout .tableTopHighlightAltV tr:first-child td,
+.commonLayout .tableTopLeftHighlight tr td:nth-child(2),
+.commonLayout .tableTopLeftHighlight tr:first-child td,
+.commonLayout .tableTopLeftHighlightAltV tr td:nth-child(2),
+.commonLayout .tableTopLeftHighlightAltV tr:first-child td,
+.customTableHighlightCell {
+    background-color: var(--table-highlight-bg) !important;
+    color: var(--single-bg-color) !important;
+    fill: var(--single-bg-color) !important;
+    /* font-weight: bold; */
+}
+.table-theme-color {
+    fill: var(--table-highlight-font-bg);
+    color: var(--table-highlight-font-bg);
+    background-color: var(--table-highlight-bg);
+    --icon-color: var(--table-highlight-inner-bg);
+}
+.table-inner-color {
+    fill: var(--table-normal-font-bg);
+    color: var(--table-normal-font-bg);
+    background-color: var(--table-normal-bg) !important;
+    --icon-color: var(--table-normal-inner-bg);
+}
+.commonLayout .tableSlideElementBase td {
+    background-color: var(--alter-bg-color);
+}
+/* //footer */
+.FOOTER {
+    color: var(--tertiary-color) !important;
+}
+.propSlideThemeColorsListItemColorDiv {
+    background-color: var(--alter-bg-color) !important;
+}
+.propSlideThemeColorsListItemLabel {
+    color: var(--title-color) !important;
+}
+/* title subtitle label heighlight dark color as bg */
+.titleNode.titleColorBg .highlightbg,
+.clsPrimaryText.titleColorBg .highlightbg,
+.primaryText.titleColorBg .highlightbg,
+.labeltext.titleColorBg .highlightbg,
+.subTitleNode.titleColorBg .highlightbg,
+.clsSubTitleText.titleColorBg .highlightbg,
+.secondaryText.titleColorBg .highlightbg,
+.labeltext.titleColorBg .highlightbg,
+.TITLE.titleColorBg .highlightbg,
+.SUBTITLE.titleColorBg .highlightbg {
+    color: var(--single-bg-color) !important;
+    background-image: linear-gradient(to left, transparent, transparent 50%, var(--title-color) 50%, var(--title-color));
+}
+.titleNode.titleColorBg .animatehighlightbginvert,
+.clsPrimaryText.titleColorBg .animatehighlightbginvert,
+.primaryText.titleColorBg .animatehighlightbginvert,
+.labeltext.titleColorBg .animatehighlightbginvert,
+.subTitleNode.titleColorBg .animatehighlightbginvert,
+.clsSubTitleText.titleColorBg .animatehighlightbginvert,
+.secondaryText.titleColorBg .animatehighlightbginvert,
+.TITLE.titleColorBg .animatehighlightbginvert,
+.SUBTITLE.titleColorBg .animatehighlightbginvert {
+    color: var(--label-color) !important;
+    background-image: linear-gradient(to left, transparent, transparent 50%, var(--single-bg-color) 50%, var(--single-bg-color));
+}
+.titleNode.titleColorBg .animatehighlightline,
+.clsPrimaryText.titleColorBg .animatehighlightline,
+.primaryText.titleColorBg .animatehighlightline,
+.labeltext.titleColorBg .animatehighlightline,
+.subTitleNode.titleColorBg .animatehighlightline,
+.clsSubTitleText.titleColorBg .animatehighlightline,
+.secondaryText.titleColorBg .animatehighlightline,
+.TITLE.titleColorBg .animatehighlightline,
+.SUBTITLE.titleColorBg .animatehighlightline {
+    background-image: linear-gradient(to right, var(--title-color) 0%, var(--title-color) 100%);
+}
+.titleNode.titleColorBg .animatehighlightborder,
+.clsPrimaryText.titleColorBg .animatehighlightborder,
+.primaryText.titleColorBg .animatehighlightborder,
+.labeltext.titleColorBg .animatehighlightborder,
+.subTitleNode.titleColorBg .animatehighlightborder,
+.clsSubTitleText.titleColorBg .animatehighlightborder,
+.secondaryText.titleColorBg .animatehighlightborder,
+.TITLE.titleColorBg .animatehighlightborder,
+.SUBTITLE.titleColorBg .animatehighlightborder {
+    background-image: linear-gradient(to right, var(--title-color) 100%, var(--title-color) 100%), linear-gradient(to bottom, var(--title-color) 100%, var(--title-color) 100%),
+        linear-gradient(to right, var(--title-color) 100%, var(--title-color) 100%), linear-gradient(to bottom, var(--title-color) 100%, var(--title-color) 100%);
+}
+.titleLabelNode.titleColorBg .highlightbg,
+.clsHolderText.titleColorBg .highlightbg,
+.textNode.titleColorBg .highlightbg,
+.SLIDE_LABEL.titleColorBg .highlightbg {
+    color: var(--single-bg-color) !important;
+    background-image: linear-gradient(to left, transparent, transparent 50%, var(--single-bg-color) 50%, var(--single-bg-color));
+}
+.titleLabelNode.titleColorBg .animatehighlightbginvert,
+.clsHolderText.titleColorBg .animatehighlightbginvert,
+.textNode.titleColorBg .animatehighlightbginvert,
+.SLIDE_LABEL.titleColorBg .animatehighlightbginvert {
+    color: var(--label-color) !important;
+    background-image: linear-gradient(to left, transparent, transparent 50%, var(--title-color) 50%, var(--title-color));
+}
+.titleLabelNode.titleColorBg .animatehighlightline,
+.clsHolderText.titleColorBg .animatehighlightline,
+.textNode.titleColorBg .animatehighlightline,
+.titleLabelNode.subtitleColorBg .animatehighlightline,
+.clsHolderText.subtitleColorBg .animatehighlightline,
+.textNode.subtitleColorBg .animatehighlightline,
+.SLIDE_LABEL.titleColorBg .animatehighlightline,
+.SLIDE_LABEL.subtitleColorBg .animatehighlightline {
+    background-image: linear-gradient(to right, var(--single-bg-color) 0%, var(--single-bg-color) 100%);
+}
+.titleLabelNode.titleColorBg .animatehighlightborder,
+.clsHolderText.titleColorBg .animatehighlightborder,
+.textNode.titleColorBg .animatehighlightborder,
+.titleLabelNode.subtitleColorBg .animatehighlightborder,
+.clsHolderText.subtitleColorBg .animatehighlightborder,
+.textNode.subtitleColorBg .animatehighlightborder,
+.SLIDE_LABEL.titleColorBg .animatehighlightborder,
+.SLIDE_LABEL.subtitleColorBg .animatehighlightborder {
+    background-image: linear-gradient(to right, var(--single-bg-color) 100%, var(--single-bg-color) 100%), linear-gradient(to bottom, var(--single-bg-color) 100%, var(--single-bg-color) 100%),
+        linear-gradient(to right, var(--single-bg-color) 100%, var(--single-bg-color) 100%), linear-gradient(to bottom, var(--single-bg-color) 100%, var(--single-bg-color) 100%);
+}
+/* title subtitle label heighlight dark color as bg */
+.titleNode.subtitleColorBg .highlightbg,
+.clsPrimaryText.subtitleColorBg .highlightbg,
+.primaryText.subtitleColorBg .highlightbg,
+.subTitleNode.subtitleColorBg .highlightbg,
+.clsSubTitleText.subtitleColorBg .highlightbg,
+.secondaryText.subtitleColorBg .highlightbg,
+.TITLE.subtitleColorBg .highlightbg,
+.SUBTITLE.subtitleColorBg .highlightbg {
+    color: var(--single-bg-color) !important;
+    background-image: linear-gradient(to left, transparent, transparent 50%, var(--label-color) 50%, var(--label-color));
+}
+.titleNode.subtitleColorBg .animatehighlightbginvert,
+.clsPrimaryText.subtitleColorBg .animatehighlightbginvert,
+.primaryText.subtitleColorBg .animatehighlightbginvert,
+.subTitleNode.subtitleColorBg .animatehighlightbginvert,
+.clsSubTitleText.subtitleColorBg .animatehighlightbginvert,
+.secondaryText.subtitleColorBg .animatehighlightbginvert,
+.TITLE.subtitleColorBg .animatehighlightbginvert,
+.SUBTITLE.subtitleColorBg .animatehighlightbginvert {
+    color: var(--title-color) !important;
+    background-image: linear-gradient(to left, transparent, transparent 50%, var(--single-bg-color) 50%, var(--single-bg-color));
+}
+.titleNode.subtitleColorBg .animatehighlightline,
+.clsPrimaryText.subtitleColorBg .animatehighlightline,
+.primaryText.subtitleColorBg .animatehighlightline,
+.subTitleNode.subtitleColorBg .animatehighlightline,
+.clsSubTitleText.subtitleColorBg .animatehighlightline,
+.secondaryText.subtitleColorBg .animatehighlightline,
+.TITLE.subtitleColorBg .animatehighlightline,
+.SUBTITLE.subtitleColorBg .animatehighlightline {
+    background-image: linear-gradient(to right, var(--label-color) 0%, var(--label-color) 100%);
+}
+.titleNode.subtitleColorBg .animatehighlightborder,
+.clsPrimaryText.subtitleColorBg .animatehighlightborder,
+.primaryText.subtitleColorBg .animatehighlightborder,
+.subTitleNode.subtitleColorBg .animatehighlightborder,
+.clsSubTitleText.subtitleColorBg .animatehighlightborder,
+.secondaryText.subtitleColorBg .animatehighlightborder,
+.TITLE.subtitleColorBg .animatehighlightborder,
+.SUBTITLE.subtitleColorBg .animatehighlightborder {
+    background-image: linear-gradient(to right, var(--label-color) 100%, var(--label-color) 100%), linear-gradient(to bottom, var(--label-color) 100%, var(--label-color) 100%),
+        linear-gradient(to right, var(--label-color) 100%, var(--label-color) 100%), linear-gradient(to bottom, var(--label-color) 100%, var(--label-color) 100%);
+}
+.titleLabelNode.subtitleColorBg .highlightbg,
+.clsHolderText.subtitleColorBg .highlightbg,
+.textNode.subtitleColorBg .highlightbg,
+.SLIDE_LABEL.subtitleColorBg .highlightbg {
+    color: var(--single-bg-color) !important;
+    background-image: linear-gradient(to left, transparent, transparent 50%, var(--single-bg-color) 50%, var(--single-bg-color));
+}
+.titleLabelNode.subtitleColorBg .animatehighlightbginvert,
+.clsHolderText.subtitleColorBg .animatehighlightbginvert,
+.textNode.subtitleColorBg .animatehighlightbginvert,
+.SLIDE_LABEL.subtitleColorBg .animatehighlightbginvert {
+    color: var(--label-color) !important;
+    background-image: linear-gradient(to left, transparent, transparent 50%, var(--single-bg-color) 50%, var(--single-bg-color));
+}
+
+/* title subtitle label heighlight background color as bg */
+.titleNode.transparentBg .highlightbg,
+.clsPrimaryText.transparentBg .highlightbg,
+.primaryText.transparentBg .highlightbg,
+.labeltext.transparentBg .highlightbg,
+.TITLE.transparentBg .highlightbg,
+.TITLE.backgroundColorBg .highlightbg {
+    color: var(--single-bg-color) !important;
+    background-image: linear-gradient(to left, transparent, transparent 50%, var(--title-highlight-color) 50%, var(--title-highlight-color));
+}
+.titleNode.transparentBg .animatehighlightbginvert,
+.clsPrimaryText.transparentBg .animatehighlightbginvert,
+.primaryText.transparentBg .animatehighlightbginvert,
+.labeltext.transparentBg .animatehighlightbginvert,
+.TITLE.transparentBg .animatehighlightbginvert,
+.TITLE.backgroundColorBg .animatehighlightbginvert {
+    color: var(--single-bg-color) !important;
+    background-image: linear-gradient(to left, transparent, transparent 50%, var(--title-color) 50%, var(--title-color));
+}
+.titleNode.transparentBg .animatehighlightline,
+.clsPrimaryText.transparentBg .animatehighlightline,
+.primaryText.transparentBg .animatehighlightline,
+.labeltext.transparentBg .animatehighlightline,
+.TITLE.transparentBg .animatehighlightline,
+.TITLE.backgroundColorBg .animatehighlightline {
+    background-image: linear-gradient(to right, var(--title-highlight-color) 0%, var(--title-highlight-color) 100%);
+}
+.subTitleNode.transparentBg .highlightbg,
+.clsSubTitleText.transparentBg .highlightbg,
+.secondaryText.transparentBg .highlightbg,
+.textBoxEditor.transparentBg .highlightbg,
+.SUBTITLE.transparentBg .highlightbg,
+.SUBTITLE.backgroundColorBg .highlightbg {
+    color: var(--single-bg-color) !important;
+    background-image: linear-gradient(to left, transparent, transparent 50%, var(--title-highlight-color) 50%, var(--title-highlight-color));
+}
+.subTitleNode.transparentBg .animatehighlightbginvert,
+.clsSubTitleText.transparentBg .animatehighlightbginvert,
+.secondaryText.transparentBg .animatehighlightbginvert,
+.textBoxEditor.transparentBg .animatehighlightbginvert,
+.SUBTITLE.transparentBg .animatehighlightbginvert,
+.SUBTITLE.backgroundColorBg .animatehighlightbginvert {
+    color: var(--single-bg-color) !important;
+    background-image: linear-gradient(to left, transparent, transparent 50%, var(--subtitle-color) 50%, var(--subtitle-color));
+}
+.subTitleNode.transparentBg .animatehighlightline,
+.clsSubTitleText.transparentBg .animatehighlightline,
+.secondaryText.transparentBg .animatehighlightline,
+.textBoxEditor.transparentBg .animatehighlightline,
+.SUBTITLE.transparentBg .animatehighlightline,
+.SUBTITLE.backgroundColorBg .animatehighlightline {
+    background-image: linear-gradient(to right, var(--subtitle-highlight-color) 0%, var(--subtitle-highlight-color) 100%);
+}
+.titleNode.transparentBg .animatehighlightborder,
+.clsPrimaryText.transparentBg .animatehighlightborder,
+.primaryText.transparentBg .animatehighlightborder,
+.labeltext.transparentBg .animatehighlightborder,
+.TITLE.transparentBg .animatehighlightborder,
+.TITLE.backgroundColorBg .animatehighlightborder {
+    background-image: linear-gradient(to right, var(--title-highlight-color) 100%, var(--title-highlight-color) 100%),
+        linear-gradient(to bottom, var(--title-highlight-color) 100%, var(--title-highlight-color) 100%),
+        linear-gradient(to right, var(--title-highlight-color) 100%, var(--title-highlight-color) 100%),
+        linear-gradient(to bottom, var(--title-highlight-color) 100%, var(--title-highlight-color) 100%);
+}
+.subTitleNode.transparentBg .animatehighlightborder,
+.clsSubTitleText.transparentBg .animatehighlightborder,
+.secondaryText.transparentBg .animatehighlightborder,
+.textBoxEditor.transparentBg .animatehighlightborder,
+.SUBTITLE.transparentBg .animatehighlightborder,
+.SUBTITLE.backgroundColorBg .animatehighlightborder {
+    background-image: linear-gradient(to right, var(--subtitle-highlight-color) 100%, var(--subtitle-highlight-color) 100%),
+        linear-gradient(to bottom, var(--subtitle-highlight-color) 100%, var(--subtitle-highlight-color) 100%),
+        linear-gradient(to right, var(--subtitle-highlight-color) 100%, var(--subtitle-highlight-color) 100%),
+        linear-gradient(to bottom, var(--subtitle-highlight-color) 100%, var(--subtitle-highlight-color) 100%);
+}
+.titleLabelNode.transparentBg .highlightbg,
+.clsHolderText.transparentBg .highlightbg,
+.textNode.transparentBg .highlightbg,
+.SLIDE_LABEL.transparentBg .highlightbg,
+.SLIDE_LABEL.backgroundColorBg .highlightbg {
+    color: var(--single-bg-color) !important;
+    background-image: linear-gradient(to left, transparent, transparent 50%, var(--label-highlight-color) 50%, var(--label-highlight-color));
+}
+.titleLabelNode.transparentBg .animatehighlightbginvert,
+.clsHolderText.transparentBg .animatehighlightbginvert,
+.textNode.transparentBg .animatehighlightbginvert,
+.SLIDE_LABEL.transparentBg .animatehighlightbginvert,
+.SLIDE_LABEL.backgroundColorBg .animatehighlightbginvert {
+    color: var(--single-bg-color) !important;
+    background-image: linear-gradient(to left, transparent, transparent 50%, var(--label-color) 50%, var(--label-highlight-color));
+}
+.titleLabelNode.transparentBg .animatehighlightline,
+.clsHolderText.transparentBg .animatehighlightline,
+.textNode.transparentBg .animatehighlightline,
+.SLIDE_LABEL.transparentBg .animatehighlightline,
+.SLIDE_LABEL.backgroundColorBg .animatehighlightline {
+    background-image: linear-gradient(to right, var(--label-highlight-color) 0%, var(--label-highlight-color) 100%);
+}
+.titleLabelNode.transparentBg .animatehighlightborder,
+.clsHolderText.transparentBg .animatehighlightborder,
+.textNode.transparentBg .animatehighlightborder,
+.SLIDE_LABEL.transparentBg .animatehighlightborder,
+.SLIDE_LABEL.backgroundColorBg .animatehighlightborder {
+    box-shadow: inset 0 0 0 2px var(--label-highlight-color);
+}
+.double1bg .inner-fill,
+.double2bg .inner-fill,
+.gradient1bg .inner-fill,
+.gradient2bg .inner-fill,
+.gradient3bg .inner-fill,
+.shdWhiteHighlightbg .inner-fill,
+.tntBlackHighlightbg .inner-fill,
+.whiteHighlight1bg .inner-fill,
+.whiteHighlight2bg .inner-fill,
+.whiteHighlight3bg .inner-fill,
+.whiteHighlight4bg .inner-fill,
+.blackHighlight1bg .inner-fill,
+.blackHighlight2bg .inner-fill,
+.blackHighlight3bg .inner-fill,
+.blackHighlight4bg .inner-fill,
+.sngBlackHighlightbg .inner-fill,
+.sngWhiteHighlightbg .inner-fill {
+    --icon-color: var(--inner-icon-color) !important;
+    fill: var(--inner-icon-color) !important;
+}
+.double1bg .inner-fill .icon1,
+.double2bg .inner-fill .icon1,
+.gradient1bg .inner-fill .icon1,
+.gradient2bg .inner-fill .icon1,
+.gradient3bg .inner-fill .icon1,
+.shdWhiteHighlightbg .inner-fill .icon1,
+.tntBlackHighlightbg .inner-fill .icon1,
+.whiteHighlight1bg .inner-fill .icon1,
+.whiteHighlight2bg .inner-fill .icon1,
+.whiteHighlight3bg .inner-fill .icon1,
+.whiteHighlight4bg .inner-fill .icon1,
+.blackHighlight1bg .inner-fill .icon1,
+.blackHighlight2bg .inner-fill .icon1,
+.blackHighlight3bg .inner-fill .icon1,
+.blackHighlight4bg .inner-fill .icon1,
+.sngBlackHighlightbg .inner-fill .icon1,
+.sngWhiteHighlightbg .inner-fill .icon1 {
+    fill: var(--alter-secondary-color) !important;
+    stroke: var(--alter-secondary-color) !important;
+}
+.moodLottieBackgroundClass {
+    background-color: var(--alter-bg-color) !important;
+    fill: var(--alter-bg-color) !important;
+    stroke: var(--alter-bg-color) !important;
+}
+
+/* //illustration colors */
+.illustration1 {
+    fill: var(--item1-color);
+}
+.illustration2 {
+    fill: var(--secondary-color);
+}
+.illustration3 {
+    fill: var(--contrast-color);
+}
+.illustration4 {
+    fill: var(--single-bg-color);
+}
+
+.commonLayout .illustration1 {
+    fill: var(--item1-color);
+}
+.commonLayout .illustration2 {
+    fill: var(--secondary-color);
+}
+.commonLayout .illustration3 {
+    fill: var(--contrast-color);
+}
+.commonLayout .illustration4 {
+    fill: var(--single-bg-color);
+}
+
+/* //gradient and double color bg */
+.gradient1bg .propSlideThemeColorsListItemColorDiv,
+.gradient1bg {
+    background-image: linear-gradient(150deg, var(--theme-color), var(--accent4-color)) !important;
+    background-color: unset !important;
+}
+.gradient2bg .propSlideThemeColorsListItemColorDiv,
+.gradient2bg {
+    background-image: radial-gradient(circle at top center, var(--accent4-color), var(--theme-color) 75%) !important;
+    background-color: unset !important;
+}
+.gradient3bg .propSlideThemeColorsListItemColorDiv,
+.gradient3bg {
+    background-image: radial-gradient(var(--accent4-color), var(--theme-color)) !important;
+    background-color: unset !important;
+}
+.double1bg .propSlideThemeColorsListItemColorDiv,
+.double1bg,
+.double2bg .propSlideThemeColorsListItemColorDiv,
+.double2bg {
+    background: var(--theme-color) !important;
+}
+.double1bg .propSlideThemeColorsListItemColorDiv::before,
+.double1bg::before {
+    content: "";
+    width: 110%;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    right: 0;
+    background-color: var(--accent2-color) !important;
+    transform: rotate(-10deg);
+    transform-origin: bottom;
+}
+.double2bg .propSlideThemeColorsListItemColorDiv::before,
+.double2bg::before {
+    content: "";
+    height: 120%;
+    width: 100%;
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    background-color: var(--accent2-color) !important;
+    transform: rotate(10deg);
+    transform-origin: center;
+}
+.double1bg .BG,
+.double2bg .BG,
+.gradient1bg .BG,
+.gradient2bg .BG,
+.gradient3bg .BG {
+    background-color: transparent !important;
+}
+.commonLayout #TEXTBOX .darkBg,
+.commonLayout #BG .overlayDiv.darkBg,
+.commonLayout #GRAPHIC .clsElementBG.darkBg {
+    background-color: var(--secondary-color) !important;
+}
+.commonLayout #TEXTBOX .themeBg,
+.commonLayout #BG .overlayDiv.themeBg,
+.commonLayout #GRAPHIC .clsElementBG.themeBg {
+    background-color: var(--item1-color) !important;
+}
+.commonLayout #TEXTBOX .whiteBg,
+.commonLayout #BG .overlayDiv.whiteBg,
+.commonLayout #GRAPHIC .clsElementBG.whiteBg {
+    background-color: var(--single-bg-color) !important;
+}
+.mltHighlightWhitebg,
+.mltItemHighlightWhitebg,
+.mnoHighlightWhitebg,
+.secHighlightWhitebg,
+.sngHighlightWhitebg,
+.tntBlackWhitebg,
+.trtHighlightWhitebg,
+.dualColorWhitebg,
+.mltHighlightBlackbg,
+.mltItemHighlightBlackbg,
+.mnoHighlightBlackbg,
+.secHighlightBlackbg,
+.shdWhiteBlackbg,
+.sngHighlightBlackbg,
+.trtHighlightBlackbg,
+.dualColorBlackbg {
+    --itemset1-color-rgb: var(--accent1-color-rgb);
+    --itemset2-color-rgb: var(--accent2-color-rgb);
+    --itemset3-color-rgb: var(--accent3-color-rgb);
+    --itemset4-color-rgb: var(--accent4-color-rgb);
+    --itemset5-color-rgb: var(--accent5-color-rgb);
+    --itemset6-color-rgb: var(--accent6-color-rgb);
+    --itemset7-color-rgb: var(--accent7-color-rgb);
+    --itemset8-color-rgb: var(--accent8-color-rgb);
+    --itemset9-color-rgb: var(--accent9-color-rgb);
+    --itemset10-color-rgb: var(--accent10-color-rgb);
+    --itemset11-color-rgb: var(--accent11-color-rgb);
+    --itemset12-color-rgb: var(--accent12-color-rgb);
+}
+.double1bg,
+.double2bg,
+.gradient1bg,
+.gradient2bg,
+.gradient3bg,
+.shdWhiteHighlightbg,
+.tntBlackHighlightbg,
+.whiteHighlight1bg,
+.whiteHighlight2bg,
+.whiteHighlight3bg,
+.whiteHighlight4bg,
+.blackHighlight1bg,
+.blackHighlight2bg,
+.blackHighlight3bg,
+.blackHighlight4bg,
+.sngBlackHighlightbg,
+.sngWhiteHighlightbg {
+    --itemset1-color-rgb: var(--unique-color-rgb);
+    --itemset2-color-rgb: var(--unique-color-rgb);
+    --itemset3-color-rgb: var(--unique-color-rgb);
+    --itemset4-color-rgb: var(--unique-color-rgb);
+    --itemset5-color-rgb: var(--unique-color-rgb);
+    --itemset6-color-rgb: var(--unique-color-rgb);
+    --itemset7-color-rgb: var(--unique-color-rgb);
+    --itemset8-color-rgb: var(--unique-color-rgb);
+    --itemset9-color-rgb: var(--unique-color-rgb);
+    --itemset10-color-rgb: var(--unique-color-rgb);
+    --itemset11-color-rgb: var(--unique-color-rgb);
+    --itemset12-color-rgb: var(--unique-color-rgb);
+}

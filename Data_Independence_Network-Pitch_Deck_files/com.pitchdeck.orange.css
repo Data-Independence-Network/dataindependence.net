@@ -1,0 +1,66 @@
+:root {
+    --theme-color-rgb: 255, 135, 0;
+    --accent2-color-rgb: 250, 194, 50;
+    --accent3-color-rgb: 209, 176, 130;
+    --accent4-color-rgb: 107, 124, 143;
+    --accent5-color-rgb: 89, 154, 176;
+    --accent6-color-rgb: 89, 176, 155;
+    --contrast-color-rgb: 0, 120, 255;
+    --dark-color-rgb: 35, 43, 55;
+    --white-color-rgb: 255, 255, 255;
+    --darkgray-color-rgb: 117, 117, 117;
+    --lightgray-color-rgb: 189, 189, 189;
+}
+
+.mltHighlightWhitebg,
+.mltItemHighlightWhitebg,
+.mnoHighlightWhitebg,
+.secHighlightWhitebg,
+.sngHighlightWhitebg,
+.tntBlackWhitebg,
+.trtHighlightWhitebg {
+    --accent7-color-rgb: 217, 114, 0;
+    --accent8-color-rgb: 212, 165, 42;
+    --accent9-color-rgb: 177, 149, 110;
+    --accent10-color-rgb: 91, 105, 121;
+    --accent11-color-rgb: 75, 131, 149;
+    --accent12-color-rgb: 75, 149, 131;
+}
+
+.mltHighlightBlackbg,
+.mltItemHighlightBlackbg,
+.mnoHighlightBlackbg,
+.secHighlightBlackbg,
+.shdWhiteBlackbg,
+.sngHighlightBlackbg,
+.trtHighlightBlackbg {
+    --accent7-color-rgb: 255, 165, 64;
+    --accent8-color-rgb: 251, 209, 101;
+    --accent9-color-rgb: 220, 195, 161;
+    --accent10-color-rgb: 144, 156, 171;
+    --accent11-color-rgb: 130, 179, 195;
+    --accent12-color-rgb: 130, 195, 180;
+}
+
+:root {
+    --color1: var(--white-color);
+    --color2: var(--dark-color);
+    --color3: var(--white-color);
+    --color4: var(--white-color);
+    --color5: var(--white-color);
+    --color6: var(--white-color);
+
+    --color1-rgb: var(--white-color-rgb);
+    --color2-rgb: var(--dark-color-rgb);
+    --color3-rgb: var(--white-color-rgb);
+    --color4-rgb: var(--white-color-rgb);
+    --color5-rgb: var(--white-color-rgb);
+    --color6-rgb: var(--white-color-rgb);
+    
+    --alter-color1: var(--dark-color);
+    --alter-color2: var(--white-color);
+    --alter-color3: var(--dark-color);
+    --alter-color4: var(--dark-color);
+    --alter-color5: var(--dark-color);
+    --alter-color6: var(--dark-color);
+}

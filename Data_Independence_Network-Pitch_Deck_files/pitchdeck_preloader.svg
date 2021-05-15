@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="78px" height="86px" viewBox="0 0 78 86" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 60.1 (88133) - https://sketch.com -->
+    <title>pd_preloader</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="pd_preloader">
+            <path d="M43.4,1.54034118 L72.7051178,18.4596588 C75.4278472,20.0316274 77.1051178,22.9367452 77.1051178,26.0806824 L77.1051178,59.9193176 C77.1051178,63.0632548 75.4278472,65.9683726 72.7051178,67.5403412 L43.4,84.4596588 C40.6772705,86.0316274 37.3227295,86.0316274 34.6,84.4596588 L5.2948822,67.5403412 C2.57215276,65.9683726 0.89488223,63.0632548 0.89488223,59.9193176 L0.89488223,26.0806824 C0.89488223,22.9367452 2.57215276,20.0316274 5.2948822,18.4596588 L34.6,1.54034118 C37.3227295,-0.031627411 40.6772705,-0.031627411 43.4,1.54034118 Z" id="Polygon" fill="#007AFF" fill-rule="nonzero"></path>
+            <g id="Group-2" transform="translate(19.000000, 27.000000)" stroke="#FFFFFF" stroke-width="4">
+                <polyline id="Path" points="0 26 1.51545443e-13 1.13686838e-13 24 0 24 16 16 16 16 32 40 32 40 6"></polyline>
+                <polyline id="Path-2" points="8 26 8 8 18 8"></polyline>
+                <polyline id="Path-3" points="32 6 32 24 22 24"></polyline>
+            </g>
+        </g>
+    </g>
+</svg>
