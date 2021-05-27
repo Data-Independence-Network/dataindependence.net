@@ -2625,6 +2625,17 @@ html.no-csstransitions .home-content__main {
     position: relative;
 }
 
+#team {
+    background-color: #0D0A0B;
+    background-image: url("../images/twip-prop-airplane_flying_in_the_sky.jpg");
+    background-repeat: no-repeat;
+    background-position: center, center;
+    padding-top: 9.6rem;
+    padding-bottom: 10.2rem;
+    color: rgba(255, 255, 255, 0.5);
+    position: relative;
+}
+
 .s-testimonials .overlay {
     position: absolute;
     top: 0;
