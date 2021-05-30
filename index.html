@@ -33,8 +33,8 @@
 
     <!-- favicons
     ================================================== -->
-    <link rel="shortcut icon" href="./images/logo_orange.ico" type="image/x-icon">
-    <link rel="icon" href="./images/logo_orange.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="./images/logo.ico" type="image/x-icon">
+    <link rel="icon" href="./images/logo.ico" type="image/x-icon">
 
 </head>
 
@@ -52,9 +52,10 @@
         <ul class="header-nav">
             <li class="current"><a class="smoothscroll" href="#home" title="home">Home</a></li>
             <li><a class="smoothscroll" href="#about" title="about">About</a></li>
+            <li><a class="smoothscroll" href="#why" title="about">Why</a></li>
             <li><a class="smoothscroll" href="#team" title="about">Team</a></li>
-            <li><a class="smoothscroll" href="#technology" title="about">Tech</a></li>
             <li><a class="smoothscroll" href="#works" title="works">Apps</a></li>
+            <li><a class="smoothscroll" href="#tech" title="about">Tech</a></li>
             <li><a href="./blog/index.html" title="blog">Blog</a></li>
             <li><a class="smoothscroll" href="./Pitch_Deck.html" title="Pitch-Deck">Pitch</a></li>
         </ul>
@@ -236,149 +237,115 @@
 
 </div> <!-- end s-testimonials -->
 
-<section id="technology" class="s-about target-section">
+<section id="why" class="s-about target-section">
     <div class="row narrow section-intro has-bottom-sep">
         <div class="col-full text-center">
-            <h3>Technology</h3>
-            <h4>Distributed multi-repository databases</h4>
-            <p>
-                All of the database is organized into virtual repositories. Each device in the
-                network contains a physical relational database (SqLite) which hosts these
-                repositories. Each repository is shared across devices independently.
+            <h3>Why: Data</h3>
+            <h4>The problem</h4>
+            <p style="text-align: left;">
+                The new DApps are gaining more functionality, getting more complex and currently
+                the number of applications devs is limited due to a steep learning curve. For
+                the majority of Software Engineers (who are used to working with relational
+                databases) it is hard to write applications with complex data schemas.
             </p>
-            <iframe src="https://github.com/sponsors/autonomous-interdependent-repositories/card"
-                    title="Sponsor autonomous-interdependent-repositories" height="225"
-                    width="600" style="border: 0;"></iframe>
+            <h4>Our solution</h4>
+            <div style="text-align: left;">
+                <p>
+                    Our target users are developers for Distributed Applications. AIRport allows
+                    multiple applications to share the same schemas. It also allows to independently
+                    track data as Repositories. A Repository is a virtual database tracked in a
+                    number of tables across any number of schemas. At a high level, it's a
+                    "virtual interface" between applications and schemas.
+                    <br>
+                    <br>
+                    This:
+                <ul>
+                    <li>
+                        Allows the Application End Users to seamlessly share the data only with
+                        selected Users.
+                    </li>
+                    <li>
+                        Lowers the barrier to entry for new Apps as they can reuse existing schemas
+                        or write add-on functionality to existing Apps.
+                    </li>
+                    <li>
+                        Lowers the barrier to entry by providing exiting data to new Apps.
+                    </li>
+                    <li>
+                        Allows hybrid applications where part of the data is centralized (for large
+                        scale sharing) and part is in private Repositories.
+                    </li>
+                </ul>
+                For example in an event tracking App, where data for each event is a separate
+                Repository. Additional Apps share the schema with this App and provide functionality
+                such as event specific chat and voting system in their own schemas. With these
+                Additional apps adding data to the same Repositories (for the the same events),
+                those Repositories now span schemas of these new Apps.
+                </p>
+            </div>
+            <h4>Getting it right</h4>
+            <div style="text-align: left;">
+                <p>
+                    AIRport offers best-of-breed, high productivity developer APIS:
+                <ul>
+                    <li>
+                        Simplified JPA annotations (no session concept, easier relations)
+                    </li>
+                    <li>
+                        GraphQL like query API
+                    </li>
+                    <li>
+                        GraphQL/Firebase like hybrid solution for mutation & access rules.
+                    </li>
+                    <li>
+                        Automatic schema generation and installation
+                    </li>
+                </ul>
+                AIRport is fully functional off-line, commits are made locally and are added
+                to the "longest chain" once device is back on-line.
+                </p>
+                <p>It is meant to run as an background app and can be used by both native
+                    and web applications on the device (while also providing a web-only
+                    preview with WebSql):</p>
+                <img src="./images/AIRport-in-Cordova.png">
+                <br>
+                <br>
+                <p>
+                    The process of installing AIRport is:
+                <ul>
+                    <li>User navigates to a consumer Application that uses AIRport and
+                        creates a private Repository
+                    </li>
+                    <li>Application prompts the user to install AIRport database App (if
+                        it's not installed already)
+                    </li>
+                    <li>User installs AIRport App and navigates back to the application</li>
+                    <li>The consumer application creates the private Repository and prompts
+                        the user for who to share it
+                        with
+                    </li>
+                    <li>User shares the repository and the other users of that repository
+                        are notified
+                    </li>
+                </ul>
+                </p>
+            </div>
         </div>
     </div>
 
-    <div class="row about-content">
-
-        <div class="col-six tab-full left">
-            <b>Abstract</b>
-            <p>
-                AIR splits the data in a relational database into repositories. Each repository
-                spans multiple tables. Each table contains records from any number of
-                repositories. A repository is autonomous and represents a stand-alone unit of
-                knowledge. Repositories are interdependent and can reference other repositories. A
-                repository referencing other repositories can be used on its own (without others
-                being present). A repository is stored in a ledger (transaction log) that is
-                distributed between member devices (PC, mobile, IoT). It is secured and
-                authenticated using standard data security mechanisms. A repository has a unique
-                transaction order on each device. An overall order is computed for a repository as
-                all member devices synchronize. An AIR application controls access to its database
-                schema by other applications. CRUD (create/read/update/delete) access is
-                determined on per-table basis. A user controls repository access by applications.
-                She also determines access to her repositories by other users. Each device can
-                contain only the repositories to which its user has access to. Globally
-                repositories form an interconnected database. A device stores AIR data in a
-                database shared by all Apps on that device.
-            </p>
-        </div>
-
-        <div class="col-six tab-full right">
-            <img src="./images/Figure02.png">
-        </div>
-
-    </div> <!-- end about-content -->
-
-    <div class="row about-content about-content--buttons">
-
-        <div class="col-twelve tab-full left">
-            <a href="./Autonomous_Interdependent_Repositories.docx"
-               class="btn btn--primary full-width">Download Whitepaper</a>
-        </div>
-        <!--
-        <div class="col-six tab-full right">
-            <a href="#0" class="btn full-width">Hire Me Now</a>
-        </div>
-        -->
-
-    </div> <!-- end about-content buttons -->
-
-    <div class="row about-content about-content--timeline">
-
+    <div class="row narrow section-intro has-bottom-sep">
         <div class="col-full text-center">
-            <h3>How it works</h3>
+            <h3>Why: Support Networks</h3>
+            <h4>Coming Soon</h4>
         </div>
+    </div>
 
-        <div class="col-six tab-full left">
-            <div class="timeline">
-
-                <div class="timeline__block">
-                    <div class="timeline__bullet"></div>
-                    <div class="timeline__header">
-                        <h3>Fast</h3>
-                    </div>
-                    <div class="timeline__desc">
-                        <p>
-                            AIRport Database servers AIR Repositories and is located right on
-                            every user's device. It contains only the data that the user contains
-                            and as much of it as the user decides to keep on that device (while
-                            archiving the rest). Since it's hosted locally on the device every
-                            database operation is as fast as that device allows it to be - no
-                            central server outages or overloads, no network deplays. Just the data
-                            that you need, when you need it.
-                        </p>
-                    </div>
-                </div> <!-- end timeline__block -->
-
-                <div class="timeline__block">
-                    <div class="timeline__bullet"></div>
-                    <div class="timeline__header">
-                        <h3>Easy</h3>
-                    </div>
-                    <div class="timeline__desc">
-                        <p>
-                            Entity classes are decorated with JPA annotations. From them AIR dev
-                            tools generate a query API, which is then used in "TypeScript
-                            Instrumented Query Language" (TIQL) notation. It integrates SQL with
-                            TypeScript (with JSON-like query definition). This enables strict
-                            compile-time checks and query auto-completion. If you know JSON and
-                            SQL you can create and read TIQL queries. By default the select clause
-                            specifies object graphs and AIRport Query API retrieves fully
-                            interlinked object graphs (with more flat formats possible).
-                        </p>
-                    </div>
-                </div> <!-- end timeline__block -->
-
-            </div> <!-- end timeline -->
-        </div> <!-- end left -->
-
-        <div class="col-six tab-full right">
-            <div class="timeline">
-
-                <div class="timeline__block">
-                    <div class="timeline__bullet"></div>
-                    <div class="timeline__header">
-                        <h3>Secure</h3>
-                    </div>
-                    <div class="timeline__desc">
-                        <p>
-                            Every transaction for each AIR repository is signed by the
-                            Device+User+Application combination to ensure authenticity. It is also
-                            encrypted using repository specific key. Only the users that need to
-                            access or modify that repository are allowed to access/modify it.
-                            Transactions are (by default) shared directly between devices with no
-                            third party hosting services.
-                        </p>
-                    </div>
-                </div> <!-- end timeline__block -->
-
-                <div class="timeline__block">
-                    <div class="timeline__bullet"></div>
-                    <div class="timeline__header">
-                        <h3>Simple</h3>
-                    </div>
-                    <div class="timeline__desc">
-                        <img src="./images/Figure01.webp">
-                    </div>
-                </div> <!-- end timeline__block -->
-
-            </div> <!-- end timeline -->
-        </div> <!-- end right -->
-
-    </div> <!-- end about-content timeline -->
+    <div class="row narrow section-intro has-bottom-sep">
+        <div class="col-full text-center">
+            <h3>Why: Group Opinion</h3>
+            <h4>Coming Soon</h4>
+        </div>
+    </div>
 
 </section> <!-- end about -->
 
@@ -530,84 +497,161 @@
 
 <!-- blog
 ================================================== -->
-<section id="blog" class="s-blog target-section">
+<section id="tech" class="s-blog target-section">
 
     <div class="row narrow section-intro has-bottom-sep">
         <div class="col-full">
-            <h3>Presentations</h3>
-            <h1>Contact us to schedule a presentation</h1>
-            <p class="lead">Here is where it's been presented so far</p>
+            <h3>Technology</h3>
         </div>
     </div>
+    <div class="row about-content">
+        <div style="text-align: left;">
+            <p>
+                AIRport provides a net-like relational database of Repositories. Repositories
+                are virtual databases, each with its own transaction log. Each Repository has a
+                globally unique identifier that allows to distinguish it from other repositories
+                in the same relational database (such as WebSql, or SqLite in a Cordova based
+                App). For two Users to share a Repository it must be present on their devices,
+                and the schemas used by that repository must be installed in AIRport databases
+                on those devices.
+            </p>
+            <img src="./images/AIRport_diagram_2.png">
+            <br>
+            <br>
+            <p>
+                Each device/phone contains a single AIRport database that is shared by all
+                applications on that device. The composition of the applications on each device
+                can be different. The composition of the schemas installed in each AIRport
+                database on each device can be different as well. Each database contains only
+                the Repositories the user of that device decides to keep on it.
+            </p>
+            <img src="./images/AIRport_diagram_1.png">
+        </div>
+        <div class="col-six tab-full left">
+            <b>Abstract</b>
+            <p>
+                AIR splits the data in a relational database into repositories. Each repository
+                spans multiple tables. Each table contains records from any number of
+                repositories. A repository is autonomous and represents a stand-alone unit of
+                knowledge. Repositories are interdependent and can reference other repositories. A
+                repository referencing other repositories can be used on its own (without others
+                being present). A repository is stored in a ledger (transaction log) that is
+                distributed between member devices (PC, mobile, IoT). It is secured and
+                authenticated using standard data security mechanisms. A repository has a unique
+                transaction order on each device. An overall order is computed for a repository as
+                all member devices synchronize. An AIR application controls access to its database
+                schema by other applications. CRUD (create/read/update/delete) access is
+                determined on per-table basis. A user controls repository access by applications.
+                She also determines access to her repositories by other users. Each device can
+                contain only the repositories to which its user has access to. Globally
+                repositories form an interconnected database. A device stores AIR data in a
+                database shared by all Apps on that device.
+            </p>
+        </div>
 
-    <div class="row blog-content">
-        <div class="col-full">
+        <div class="col-six tab-full right">
+            <img src="./images/Figure02.png">
+        </div>
 
-            <div class="blog-list block-1-2 block-tab-full">
-                <article class="col-block">
+    </div> <!-- end about-content -->
 
-                    <div class="blog-date">
-                        <a href="https://world-easc.com/edea-aug-2019/">Aug 24, 2019</a>
+    <div class="row about-content about-content--buttons">
+
+        <div class="col-twelve tab-full left">
+            <a href="./Autonomous_Interdependent_Repositories.docx"
+               class="btn btn--primary full-width">Download Whitepaper</a>
+        </div>
+        <!--
+        <div class="col-six tab-full right">
+            <a href="#0" class="btn full-width">Hire Me Now</a>
+        </div>
+        -->
+
+    </div> <!-- end about-content buttons -->
+
+    <div class="row about-content about-content--timeline">
+
+        <div class="col-full text-center">
+            <h3>How it works</h3>
+        </div>
+
+        <div class="col-six tab-full left">
+            <div class="timeline">
+
+                <div class="timeline__block">
+                    <div class="timeline__bullet"></div>
+                    <div class="timeline__header">
+                        <h3>Fast</h3>
                     </div>
+                    <div class="timeline__desc">
+                        <p>
+                            AIRport Database servers AIR Repositories and is located right on
+                            every user's device. It contains only the data that the user contains
+                            and as much of it as the user decides to keep on that device (while
+                            archiving the rest). Since it's hosted locally on the device every
+                            database operation is as fast as that device allows it to be - no
+                            central server outages or overloads, no network deplays. Just the data
+                            that you need, when you need it.
+                        </p>
+                    </div>
+                </div> <!-- end timeline__block -->
 
-                    <h2 class="h01"><a href="https://world-easc.com/edea-aug-2019/">WEASC 2nd
-                        International Conference on Engineering Technology, Design, Energy &
-                        Applied Sciences (EDEA)</a></h2>
-                    <img src="./images/WAEIT-blue.webp">
-                </article>
-                <!--
-                            <article class="col-block">
+                <div class="timeline__block">
+                    <div class="timeline__bullet"></div>
+                    <div class="timeline__header">
+                        <h3>Easy</h3>
+                    </div>
+                    <div class="timeline__desc">
+                        <p>
+                            Entity classes are decorated with JPA annotations. From them AIR dev
+                            tools generate a query API, which is then used in "TypeScript
+                            Instrumented Query Language" (TIQL) notation. It integrates SQL with
+                            TypeScript (with JSON-like query definition). This enables strict
+                            compile-time checks and query auto-completion. If you know JSON and
+                            SQL you can create and read TIQL queries. By default the select clause
+                            specifies object graphs and AIRport Query API retrieves fully
+                            interlinked object graphs (with more flat formats possible).
+                        </p>
+                    </div>
+                </div> <!-- end timeline__block -->
 
-                                <div class="blog-date">
-                                    <a href="blog-single.html">Sept 15, 2017</a>
-                                </div>
+            </div> <!-- end timeline -->
+        </div> <!-- end left -->
 
-                                <h2 class="h01"><a href="blog-single.html">Photography Can Improve Your Graphic Design.</a></h2>
-                                <p>
-                                Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Pellentesque in ipsum id orci porta dapibus. Donec sollicitudin molestie malesuada. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Cras ultricies ligula sed magna dictum porta. Sed porttitor lectus nibh..
-                                </p>
+        <div class="col-six tab-full right">
+            <div class="timeline">
 
-                                <div class="blog-cat">
-                                    <a href="blog.html">Photography</a>
-                                </div>
+                <div class="timeline__block">
+                    <div class="timeline__bullet"></div>
+                    <div class="timeline__header">
+                        <h3>Secure</h3>
+                    </div>
+                    <div class="timeline__desc">
+                        <p>
+                            Every transaction for each AIR repository is signed by the
+                            Device+User+Application combination to ensure authenticity. It is also
+                            encrypted using repository specific key. Only the users that need to
+                            access or modify that repository are allowed to access/modify it.
+                            Transactions are (by default) shared directly between devices with no
+                            third party hosting services.
+                        </p>
+                    </div>
+                </div> <!-- end timeline__block -->
 
+                <div class="timeline__block">
+                    <div class="timeline__bullet"></div>
+                    <div class="timeline__header">
+                        <h3>Simple</h3>
+                    </div>
+                    <div class="timeline__desc">
+                        <img src="./images/Figure01.webp">
+                    </div>
+                </div> <!-- end timeline__block -->
 
-                            </article>
-                            <article class="col-block">
+            </div> <!-- end timeline -->
+        </div> <!-- end right -->
 
-                                <div class="blog-date">
-                                    <a href="blog-single.html">Sept 14, 2017</a>
-                                </div>
-
-                                <h2 class="h01"><a href="blog-single.html">Workspace Design Trends and Ideas.</a></h2>
-                                <p>
-                                Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Pellentesque in ipsum id orci porta dapibus. Donec sollicitudin molestie malesuada. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Cras ultricies ligula sed magna dictum porta. Sed porttitor lectus nibh dolore irure esse Duis nulla sint.
-                                </p>
-
-                                <div class="blog-cat">
-                                    <a href="blog.html">Branding</a><a href="blog.html">Wordpress</a>
-                                </div>
-                            </article>
-                            <article class="col-block">
-
-                                <div class="blog-date">
-                                    <a href="blog-single.html">Sept 12, 2017</a>
-                                </div>
-                                <h2 class="h01"><a href="blog-single.html">Using Patterns in your Branding.</a></h2>
-                                <p>
-                                Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Pellentesque in ipsum id orci porta dapibus. Donec sollicitudin molestie malesuada. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Cras ultricies ligula sed magna dictum porta. Sed porttitor lectus nibh.
-                                </p>
-
-                                <div class="blog-cat">
-                                    <a href="blog.html">Design</a><a href="blog.html">Branding</a>
-                                </div>
-                            </article>
-                -->
-            </div>
-
-        </div> <!-- end col-full -->
-    </div> <!-- end blog-content -->
-
+    </div> <!-- end about-content timeline -->
 </section> <!-- end s-blog -->
 
 
