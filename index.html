@@ -279,17 +279,22 @@
                         scale sharing) and part is in private Repositories.
                     </li>
                 </ul>
-                For example in an event tracking App, where data for each event is a separate
-                Repository. Additional Apps share the schema with this App and provide functionality
-                such as event specific chat and voting system in their own schemas. With these
-                Additional apps adding data to the same Repositories (for the the same events),
-                those Repositories now span schemas of these new Apps.
+                <div style="font-style: italic;">
+                For example in an event tracking App data for each event is a separate Repository.
+                Other Applications can build upon this App's schema and provide functionality
+                (such as  event specific chat and voting systems) in their own schemas. Using all
+                of these Apps the users add data to the same Repositories (for the the same
+                events).  Thus Repositories for events span schemas of all the Apps that together
+                provide better functionality than each one separately.  AIRport enables synergies
+                between Apps where "the whole is greater than the sum its parts" thus reducing the
+                overall costs.
+                </div>
                 </p>
             </div>
             <h4>Getting it right</h4>
             <div style="text-align: left;">
                 <p>
-                    AIRport offers best-of-breed, high productivity developer APIS:
+                    AIRport offers refined, high productivity developer APIS:
                 <ul>
                     <li>
                         Simplified JPA annotations (no session concept, easier relations)
@@ -307,7 +312,7 @@
                 AIRport is fully functional off-line, commits are made locally and are added
                 to the "longest chain" once device is back on-line.
                 </p>
-                <p>It is meant to run as an background app and can be used by both native
+                <p>It is meant to run as a background app and can be used by both native
                     and web applications on the device (while also providing a web-only
                     preview with WebSql):</p>
                 <img src="./images/AIRport-in-Cordova.png">
@@ -533,6 +538,7 @@
             </p>
             <img src="./images/AIRport_diagram_1.png">
         </div>
+        <h4>Whitepaper</h4>
         <div class="col-six tab-full left">
             <b>Abstract</b>
             <p>
