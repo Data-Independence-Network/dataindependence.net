@@ -95,14 +95,17 @@
                         The first entry in this list should have an algorithmic solution since circular dependencies
                         between schemas are disallowed.
                         <br>
+                        <br>
                         As discussed previously, backward compatibility can be accomplished with maintaining views
                         for read operations, while disallowing any modifications until the app is upgraded. The
                         solution presented today opens up a way to maintain backward write compatibility as well.
+                        <br>
                         <br>
                         The solution to dual migration of live and serialized data has so far been to maintain
                         two different versions of migration scripts. This is of course very error prone and is
                         an unnecessary source of data migration bugs. Today's post aims to provide a single upgrade
                         path approach.
+                        <br>
                         <br>
                         Making modifications to the same data across devices with different schema versions is
                         a tall order that I'm only now beginning to think about. But a key realization is
@@ -118,18 +121,20 @@
                         device. And when that version is itself upgraded it's older table versions
                         themselves become insertable views.
                         <br>
+                        <br>
                         This is a very elegant solution as it solves all of the currently known hard
                         problems of schema migration. Of course the way of actually accomplishing this
                         is yet to present itself, but a few facts will likely be present in the
                         implementation:
-
+                        
                         <h2>Virtual Views</h2>
                         The insertable views won't be traditional database views.  Instead every operation
                         coming in will contain the schema version it's operating against.  Since the API for
                         that version will already be based on that version there is no need to come up with
                         extra views.  Instead AIRport will internally adjust the operations, based on 
                         "migration view hooks" provided for the schema.
-
+                        <br>
+                        <br>
                         These hooks will have to be created on per column level and executed on per cell
                         level. This is because of inserts and updates, which may not be duable without the
                         ability to modify a cell (like inspect it and split into multiple columns). Luckly
@@ -149,6 +154,7 @@
                         in order to enable insertion from older views.  Actually there probably won't be
                         any NON NULL columns that are not IDs, but that's a discussion for a different
                         post (related to how repositories will work).
+                        <br>
                         <br>
                         Another restriction likely to be required is disallowing column removal - columns
                         may only be expanded, renamed or moved to another table. Columns can be split
@@ -180,6 +186,8 @@
                         (and probably all of the logic, looking forward towards concurrent cross version modifications).
                         This also allows for automatic detection of major/minor/patch with diff of schema versions
                         during the schema verisiong process itself, with the tree types being (as usual):
+                        <br>
+                        <br>
                         <ul>
                             <li>Patch version - no schema changes, only code</li>
                             <li>Minor version - expansion of columns string (allowing for more characters) and number
@@ -206,6 +214,7 @@
                         developers that use their schema buy being on the lookout for snaphots from them. The
                         right time to publish a schema is when all dependent Apps have published mitigating
                         snapshots themselves.
+                        <br>
                         <br>
                         One nice thing about this approach is that it standardizes when upgrade scripts can be
                         added. This means that the framework can generate the necessary harnesses that
