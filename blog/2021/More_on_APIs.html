@@ -79,18 +79,18 @@
                         </h1>
                         <ul class="entry__header-meta">
                             <li class="author">By Artem V. Shamsutdinov</li>
-                            <li class="date">September 28th, 2021</li>
+                            <li class="date">October 7th, 2021</li>
                         </ul>
                     </div> <!-- end entry__header -->
 
                     <div class="entry__content">
-                        I just got the inital implementation of application isolates working
+                        Recently I got the inital implementation of application isolates working
                         (in browser only, without pulling application code from remote location)
                         and as part of that did a pass on API implementations.
 
                         <h2>Locking down APIs</h2>
-                        One thing that hasn't come up yet though is the ability to differentiate
-                        between "Application APIs" and "External APIs".  An Application developer
+                        One thing that is likely be needed in the future is the ability to differentiate
+                        between "Application APIs" and "External APIs". An Application developer
                         should be able to lock down APIs to be either other Application facing
                         or External facing (like web UI, or anything else not running in an App
                         isolate).
@@ -119,50 +119,57 @@
                         I sent quite a bit of time developing with Hibernate (in Java world).
                         It is a great piece of technology but one thing I never liked about
                         it is the fact that entities can be attached and detached from the
-                        ORM session.  For INSERTs vs UPDATESs AIRport 
-                        <a href="">got around this</a>
+                        ORM session. For INSERTs vs UPDATEs AIRport
+                        <a
+                            href="https://autonomousinterdependentrepositories.wordpress.com/2019/09/06/entity-management/">
+                            got around this
+                        </a>
                         by maintaing an __originalValues__ property on each object retrieved
                         from the database and diffing it with the passed in values on the
-                        "save" operation.  But DELETEs cannot be just as easily maintained.
+                        "save" operation. But DELETEs cannot be just as easily maintained.
 
                         <h2>Ackward DELETEs</h2>
                         The best I can come with for deletes so far is the following:
                         <code>
                             <pre>
-/*
- * Marks the object as deleted in 
- */
-markAsDeleted(record)
+  /*
+   * Marks the object as deleted in 
+   */
+  markAsDeleted(record)
 
-/*
- *
- */
-markAsDeleted(record, array) // removes from array, maintains .__deleted__ array property
-
-/*
- *
- */
-getNonDeleted(array)
-
-/*
- *
- */
-isDeleted(record)
+  /*
+   * True if record is deleted, false otherwise
+   */
+  isDeleted(record)
                             </pre>
                         </code>
+                        This API allows the developers to explicitly mark a given
+                        object as deleted and also detect if an object has been
+                        marked as deleted.  This delete API is rather crude but
+                        purposely makes the "save" operation the segway for
+                        all entity based insert, update and delete operations (
+                        there is also no explicit update for entity API).  Of
+                        course the developers are always free to write explicit
+                        update and delete statements, expecially for bulk operations.
 
-                        not a common (discouraged even) operation so no big deal
-
-                        
+                        <h3>Rare deletes</h3>
+                        It is worth noting that I don't exect deletes to be a
+                        common operation.  There really shouldn't be much
+                        reason to delete records, expecially since they can
+                        be split into time bound Repositories and archived
+                        when no longer actively needed.  On top of that in AIRport
+                        no data is really ever deleted since it is preseved in the
+                        transaction logs.  Hence I don't exect high usage for the
+                        delete operation, just lots of archiving.
 
                         <h2>Locking down object state</h2>
-                        Thinking about deletes made me realize that one more API lockdown that
+                        Thinking about deletes made me realize that one more API lockdown
                         can be added to @Api - ability to pass in Object State.
                         <br>
                         Object state is what keeps track of if the object has been deleted or
-                        not and what the original values of the object were.  It is possible
+                        not and what the original values of the object were. It is possible
                         that the application developer wants to maintain all CRUD logic
-                        internally to the application (at least on certain APIs).  If that's
+                        internally to the application (at least on certain APIs). If that's
                         the case AIRport can accomidate that but scrubbing all object State
                         when an API is called.
                         <code>
@@ -177,13 +184,19 @@ isDeleted(record)
 }
                             </pre>
                         </code>
+
+                        Again the default will be to leave the API open to external 
+                        modifications, at this point it is hard to determine what will
+                        likely be the most common scenario - direct modifications from 
+                        modern think UIs or more traditional lockdown approach of 
+                        server side development.
                     </div> <!-- end entry content -->
 
                 </article> <!-- end column large-full entry-->
 
 
 
-                 
+
                 <div class="comments-wrap">
                 </div> <!-- end comment-respond -->
 
