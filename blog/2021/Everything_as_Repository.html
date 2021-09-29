@@ -63,10 +63,13 @@
                     <div class="media-wrap entry__media">
                         <div class="entry__post-thumb">
                             <img alt="MIT in collaboration with Commonwealth Fusion Systems created a 20 Tesla magnet"
-                                sizes="(max-width: 1000px) 100vw, 1000px" src="images/MIT-superconducting-magnet.jpg">
+                                sizes="(max-width: 1000px) 100vw, 1000px" src="images/National_Ignition_Facility.jpg">
                             <p style="text-align: center; width: 100%">
-                                with <a href="">National Laboratory</a>  
-                                <a href="">achieved</a> Q 0.7 - 70% break even on power output.
+                                with <a href="https://lasers.llnl.gov/">National Ignition Facility</a> has
+                                <a
+                                    href="https://www.llnl.gov/news/national-ignition-facility-experiment-puts-researchers-threshold-fusion-ignition">
+                                    achieved
+                                </a> Q 0.7 - 70% break even on power output with lasers.
                             </p>
                         </div>
                     </div>
@@ -82,16 +85,19 @@
                     </div> <!-- end entry__header -->
 
                     <div class="entry__content">
-                        Unlike JPA/Hibernate AIRport entity management is sessionless.  The way
-                        it accomplishes change detection is via <a href="">original values</a>
-                        tracking in a hidden object property.  Recently I've been debugging 
+                        Unlike JPA/Hibernate, AIRport entity management is sessionless. The way
+                        it accomplishes change detection is via
+                        <a
+                            href="https://autonomousinterdependentrepositories.wordpress.com/2019/09/06/entity-management/">
+                            original values</a>
+                        tracking in a hidden object property. Recently I've been debugging
                         Insert vs Update detection and realized that everything is easier with
-                        Ids that are generated.  If the id is present in the input it cannot
-                        be an Insert.  That got me thinking - should all entities be forced
-                        to have generated ids?
+                        Ids that are generated. If the Id is present in the input it cannot
+                        be an Insert. That got me thinking - should all entities be forced
+                        to have generated Ids?
                         <h2>Repository Entities - always generated Ids</h2>
-                        Well repository entities already have generated repository + Actor
-                        specific repository Ids (each AIRport acts as a unique actor for
+                        Well, repository entities already have generated repository + Actor
+                        specific repository Ids (each AIRport database acts as a unique actor for
                         a repository and hence it's auto-generated sequences are guaranteed
                         to be unique in a given repository for that Actor/database). Hence,
                         my next natural thought was - can all data in the database be
@@ -99,59 +105,59 @@
                         <h2>"Non-repository" data</h2>
                         Prior thought was that there was bound to be maintenance data
                         that wouldn't be tracked in user repositories and bundled with
-                        the schema instead.  Existance of such data is almost a certaintly.
+                        the schema instead. Existance of such data is almost a certaintly.
                         Examples of such data are dropdown values, and other lookup data.
                         <h2>Everything is better in Repositories</h2>
-                        Putting such data into repositories still works.  In fact it makes
-                        maintainance of such data much easier.  Now data-only patches are
+                        Putting such data into repositories still works. In fact it makes
+                        maintainance of such data much easier. Now data-only patches are
                         as easy as modifying data in the one of these publisher controlled
                         repositories.
                         <br>
                         Another thing this decoupling of code from data does is that it
                         allows entities other than publishers of the code provide different
-                        seed data.  This helps a lot of the application is a data driven,
+                        seed data. This helps a lot of the application is a data driven,
                         generic piece of logic, meant to be customized/skinned based on
                         different data that users (or publishers of other apps) can
                         provide.
                         <br>
-                        Even the original maintenance data repository can be allowed to
+                        Even the original maintenance-data repository can be allowed to
                         be modified and enhanced by users or can be published with
                         read-only public facing permissions, or can be completely hidden
                         from the rest of the world (other than the application itself).
-                        But more on that once the repository code is actually finished.
+                        But more on that once the repository code is actually finished...
                         <h2>Technical details</h2>
                         Another piece of information that hasn't been fully thought out
                         until now is how exactly will Repositories with references to
                         other Repositories exist in the database if the referenced
-                        repositories are not yet present in the database.  The original
+                        repositories are not yet present in the database. The original
                         thought was to disable all foreign key constraints on all tables
                         and just have dangling references to non-existing records.
                         However this suffers from schema denormalization since
                         relations are no longer enforced.
                         <br>
                         The new way is to just to disallow NON NULL columns for everything
-                        except record ids.  This is also a form of denormalization but
-                        at least it doesn't compromise relationship integrity.  What it
-                        does allow for is creating of stub records in the database, to keep
-                        track of missing repository records.  This is because such records
-                        can be can exist with nothing but Id columns filled out (because
+                        except record ids. This is also a form of denormalization but
+                        at least it doesn't compromise relationship integrity. What it
+                        does do is allow for is create stub records in the database, to keep
+                        track of missing repository records. This is because such records
+                        can exist with nothing but Id columns filled out (because
                         all other columns are NULL).
                         <br>
                         This can be taken a step further with in-code maintenance of NON
-                        NULL constraint.  That way it NON NULL can still exist for normal
-                        data and will simply be ignored for stub records.
+                        NULL constraints. That way NON NULL can still exist (virtually)
+                        for normal data and will simply be ignored for stub records.
                         <h2>Still to come</h2>
                         The initial Repository implementation will be taking place very
                         soon and more details will be releaved as a result of that, stay
                         tuned ...
-                        
+
                     </div> <!-- end entry content -->
 
                 </article> <!-- end column large-full entry-->
 
 
 
-                 
+
                 <div class="comments-wrap">
                 </div> <!-- end comment-respond -->
 

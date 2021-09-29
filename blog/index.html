@@ -76,6 +76,49 @@
                     <article class="masonry__brick entry format-standard animate-this">
 
                         <div class="entry__thumb">
+                            <a href="./2021/Everything_as_Repository.html" class="entry__thumb-link">
+                                <img src="./2021/images/thumbs/National_Ignition_Facility_thumbnail.jpg" alt="">
+                            </a>
+                        </div>
+
+                        <div class="entry__text">
+                            <div class="entry__header">
+
+                                <h2 class="entry__title"><a href="./2021/Everything_as_Repository.html">
+                                        Everything as Repository</a></h2>
+                                <div class="entry__meta">
+                                    <span class="entry__meta-cat">
+                                        Artem V. Shamsutdinov
+                                    </span>
+                                    <span class="entry__meta-date">
+                                        September 28th, 2021
+                                    </span>
+                                </div>
+
+                            </div>
+                            <div class="entry__excerpt">
+                                <p>
+                                    Unlike JPA/Hibernate, AIRport entity management is sessionless. The way
+                                    it accomplishes change detection is via
+                                    <a
+                                        href="https://autonomousinterdependentrepositories.wordpress.com/2019/09/06/entity-mamagement/">
+                                        original values</a>
+                                    tracking in a hidden object property. Recently I've been debugging
+                                    Insert vs Update detection and realized that everything is easier with
+                                    Ids that are generated. If the Id is present in the input it cannot
+                                    be an Insert. That got me thinking - should all entities be forced
+                                    to have generated Ids?
+                                    <br>
+                                    ...
+                                </p>
+                            </div>
+                        </div>
+
+                    </article> <!-- end article -->
+
+                    <article class="masonry__brick entry format-standard animate-this">
+
+                        <div class="entry__thumb">
                             <a href="./2021/Migrating_the_data.html" class="entry__thumb-link">
                                 <img src="./2021/images/thumbs/MIT-superconducting-magnet_thumbnail.jpg" alt="">
                             </a>
