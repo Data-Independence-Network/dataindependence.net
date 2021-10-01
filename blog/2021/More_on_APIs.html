@@ -190,6 +190,31 @@
                         likely be the most common scenario - direct modifications from 
                         modern think UIs or more traditional lockdown approach of 
                         server side development.
+
+                        <h2>@SaveEntryPoint()</h2>
+                        To build on top of <a href="./Solidifying_Interop.html">initial
+                        application interability thoughts</a> I'm proposing a new
+                        decorator to mark points where save operations can cascade.  As
+                        a recap - save operations that cross application schema boundaries
+                        will call into the logic of the Applications that contain the
+                        schemas with nested objects.  That way the application always
+                        has control over how the objects in it's schema get saved
+                        and can run the necessary validation logic to make sure
+                        that records are maintained in a proper order.
+                        <br>
+                        <br>
+                        A accomplish this a new @SaveEntryPoint() decorator will 
+                        be introduced. A method decorated with this decorator will always
+                        take an array of the corresponding entity objects and nothing else
+                        and there may only be one @EntitySave() method per entity type.
+                        This is necessary for the framework to make a determination what
+                        method to invoke for a given entity- if there is more than one than
+                        it becomes unclear what method to invoke.  Note that for any given
+                        save operation, this acts as an entry point.  The entire object
+                        sub-graph that belongs to this Application's schema will be
+                        processed without calling any other @SaveEntryPoint()s for nested
+                        objects.
+
                     </div> <!-- end entry content -->
 
                 </article> <!-- end column large-full entry-->
