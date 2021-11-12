@@ -31,6 +31,18 @@
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <link rel="manifest" href="site.webmanifest">
 
+    <style>
+        .support-AIRport {
+            height: 260px;
+            width: 330px;
+        }
+
+        @media screen and (max-width: 340px) {
+            .support-AIRport {
+                height: 300px;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -61,23 +73,55 @@
 
                     <div class="grid-sizer"></div>
 
-                    <article class="masonry__brick entry animate-this" style="height: 420px; width: 500px;">
-
-                        <br>
-                        <br>
-                        <br>
-                        <iframe src="https://github.com/sponsors/autonomous-interdependent-repositories/card"
-                            title="Sponsor autonomous-interdependent-repositories" height="100%" width="100%"
-                            style="height: 220px; border: 0;"></iframe>
-                        <br>
-                        <br>
+                    <article class="masonry__brick entry animate-this">
+                        <iframe class="support-AIRport" frameborder="0"
+                            src="https://github.com/sponsors/autonomous-interdependent-repositories/card"
+                            title="Sponsor autonomous-interdependent-repositories"></iframe>
                     </article>
 
                     <article class="masonry__brick entry format-standard animate-this">
 
                         <div class="entry__thumb">
-                            <a href="./2021/Securing_Turbase_data.html" class="entry__thumb-link">
-                                <img src="./2021/images/thumbs/Wendelstein_7-X_thumbnail.jpg"
+                            <a href="./2021/Follow_the_Many_to_Ones.html" class="entry__thumb-link">
+                                <img src="./2021/images/thumbs/HB11-FusionReaction_thumbnail.png" alt="">
+                            </a>
+                        </div>
+
+                        <div class="entry__text">
+                            <div class="entry__header">
+
+                                <h2 class="entry__title"><a href="./2021/Follow_the_Many_to_Ones.html">
+                                        Follow the Many to Ones</a></h2>
+                                <div class="entry__meta">
+                                    <span class="entry__meta-cat">
+                                        Artem V. Shamsutdinov
+                                    </span>
+                                    <span class="entry__meta-date">
+                                        October 31th, 2021
+                                    </span>
+                                </div>
+
+                            </div>
+                            <div class="entry__excerpt">
+                                <p>
+                                    As the name states, Autonomous Interdependent Repositories are meant to be
+                                    interdependent. This basically means that records in one repository
+                                    can have columns with ids pointing to records in other repositories. In
+                                    itself its a simple concept however it presents a number of technical
+                                    issues when actually implemented.
+                                    <br>
+                                    ...
+                                </p>
+                            </div>
+                        </div>
+
+                    </article> <!-- end article -->
+
+                    <article class="masonry__brick entry format-standard animate-this">
+
+                        <div class="entry__thumb">
+                            <a href="./2021/More_on_APIs.html" class="entry__thumb-link">
+                                <img src="./2021/images/thumbs/Tokamak_Energy_quench_resistant_partially_insulated_magnet_thumbnail.jpg"
                                     alt="">
                             </a>
                         </div>
@@ -85,8 +129,122 @@
                         <div class="entry__text">
                             <div class="entry__header">
 
+                                <h2 class="entry__title"><a href="./2021/More_on_APIs.html">
+                                        More on APIs</a></h2>
+                                <div class="entry__meta">
+                                    <span class="entry__meta-cat">
+                                        Artem V. Shamsutdinov
+                                    </span>
+                                    <span class="entry__meta-date">
+                                        October 10th, 2021
+                                    </span>
+                                </div>
+
+                            </div>
+                            <div class="entry__excerpt">
+                                <p>
+                                    Recently I got the inital implementation of application isolates working
+                                    (in browser only, without pulling application code from remote location)
+                                    and as part of that did a pass on API implementations.
+                                    <br>
+                                    ...
+                                </p>
+                            </div>
+                        </div>
+
+                    </article> <!-- end article -->
+
+                    <article class="masonry__brick entry format-standard animate-this">
+
+                        <div class="entry__thumb">
+                            <a href="./2021/Everything_as_Repository.html" class="entry__thumb-link">
+                                <img src="./2021/images/thumbs/National_Ignition_Facility_thumbnail.jpg" alt="">
+                            </a>
+                        </div>
+
+                        <div class="entry__text">
+                            <div class="entry__header">
+
+                                <h2 class="entry__title"><a href="./2021/Everything_as_Repository.html">
+                                        Everything as Repository</a></h2>
+                                <div class="entry__meta">
+                                    <span class="entry__meta-cat">
+                                        Artem V. Shamsutdinov
+                                    </span>
+                                    <span class="entry__meta-date">
+                                        September 29th, 2021
+                                    </span>
+                                </div>
+
+                            </div>
+                            <div class="entry__excerpt">
+                                <p>
+                                    Unlike JPA/Hibernate, AIRport entity management is sessionless. The way
+                                    it accomplishes change detection is via
+                                    <a
+                                        href="https://autonomousinterdependentrepositories.wordpress.com/2019/09/06/entity-mamagement/">
+                                        original values</a>
+                                    tracking in a hidden object property. Recently I've been debugging
+                                    Insert vs Update detection and realized that everything is easier with
+                                    Ids that are generated. If the Id is present in the input it cannot
+                                    be an Insert. That got me thinking - should all entities be forced
+                                    to have generated Ids?
+                                    <br>
+                                    ...
+                                </p>
+                            </div>
+                        </div>
+
+                    </article> <!-- end article -->
+
+                    <article class="masonry__brick entry format-standard animate-this">
+
+                        <div class="entry__thumb">
+                            <a href="./2021/Migrating_the_data.html" class="entry__thumb-link">
+                                <img src="./2021/images/thumbs/MIT-superconducting-magnet_thumbnail.jpg" alt="">
+                            </a>
+                        </div>
+
+                        <div class="entry__text">
+                            <div class="entry__header">
+
+                                <h2 class="entry__title"><a href="./2021/Migrating_the_data.html">
+                                        Migrating the data</a></h2>
+                                <div class="entry__meta">
+                                    <span class="entry__meta-cat">
+                                        Artem V. Shamsutdinov
+                                    </span>
+                                    <span class="entry__meta-date">
+                                        September 18th, 2021
+                                    </span>
+                                </div>
+
+                            </div>
+                            <div class="entry__excerpt">
+                                <p>
+                                    Schema migrations are hard in general. In AIRport/Turbase schema migrations
+                                    are even harder for a number of reasons:
+                                    <br>
+                                    ...
+                                </p>
+                            </div>
+                        </div>
+
+                    </article> <!-- end article -->
+
+                    <article class="masonry__brick entry format-standard animate-this">
+
+                        <div class="entry__thumb">
+                            <a href="./2021/Securing_Turbase_data.html" class="entry__thumb-link">
+                                <img src="./2021/images/thumbs/Wendelstein_7-X_thumbnail.jpg" alt="">
+                            </a>
+                        </div>
+
+                        <div class="entry__text">
+                            <div class="entry__header">
+
                                 <h2 class="entry__title"><a href="./2021/Securing_Turbase_data.html">
-                                    Securing Turbase data</a></h2>
+                                        Securing Turbase data</a></h2>
                                 <div class="entry__meta">
                                     <span class="entry__meta-cat">
                                         Artem V. Shamsutdinov
@@ -99,11 +257,14 @@
                             </div>
                             <div class="entry__excerpt">
                                 <p>
-                                    In AIRport any given virtual repository can be in multiple states at the same time.  This
-                            is because multiple users can be using the same virtual repository.  Since they may be using
-                            a repository while being offline, the repository will get out of sync with the rest of 
-                            the devices that have it.  Hence, to keep track of that Turbase version controls
-                            all of virtual repositories using a simple Directed Acyclical Graph.
+                                    In AIRport any given virtual repository can be in multiple states at the same time.
+                                    This
+                                    is because multiple users can be using the same virtual repository. Since they may
+                                    be using
+                                    a repository while being offline, the repository will get out of sync with the rest
+                                    of
+                                    the devices that have it. Hence, to keep track of that Turbase version controls
+                                    all of virtual repositories using a simple Directed Acyclical Graph.
                                     ...
                                 </p>
                             </div>
@@ -124,7 +285,7 @@
                             <div class="entry__header">
 
                                 <h2 class="entry__title"><a href="./2021/Turbase_-_AIRport_with_Ad_Engine.html">
-                                    Turbase - AIRport with Advertisement Engine</a></h2>
+                                        Turbase - AIRport with Advertisement Engine</a></h2>
                                 <div class="entry__meta">
                                     <span class="entry__meta-cat">
                                         Artem V. Shamsutdinov
@@ -137,9 +298,12 @@
                             </div>
                             <div class="entry__excerpt">
                                 <p>
-                                    For a while now AIRport has been the brand for the AIR technology.  And also for quite some time 
-                                    we've been dicussing building an adverisement engine on top of AIRport to generate revenue that
-                                    can be shared with Apps and users.  Now finally I've come up with a good enough of a brand for the
+                                    For a while now AIRport has been the brand for the AIR technology. And also for
+                                    quite some time
+                                    we've been dicussing building an adverisement engine on top of AIRport to generate
+                                    revenue that
+                                    can be shared with Apps and users. Now finally I've come up with a good enough of a
+                                    brand for the
                                     actual App that will be installed on phones and other devices - Turbase.
                                     ...
                                 </p>
@@ -152,8 +316,7 @@
 
                         <div class="entry__thumb">
                             <a href="./2021/Interdependent_Components.html" class="entry__thumb-link">
-                                <img src="./2021/images/thumbs/Tokamak_Energy_reactor_thumbnail.jpg"
-                                    alt="">
+                                <img src="./2021/images/thumbs/Tokamak_Energy_reactor_thumbnail.jpg" alt="">
                             </a>
                         </div>
 
@@ -161,7 +324,7 @@
                             <div class="entry__header">
 
                                 <h2 class="entry__title"><a href="./2021/Interdependent_Components.html">
-                                    Interdependent Components</a></h2>
+                                        Interdependent Components</a></h2>
                                 <div class="entry__meta">
                                     <span class="entry__meta-cat">
                                         Artem V. Shamsutdinov
@@ -175,12 +338,12 @@
                             <div class="entry__excerpt">
                                 <p>
                                     I've now come to a full realization of what logic in isloates
-                            mean - locally-run vetted components.  This trully changes
-                            the way AIRport applications can be written. Apps are no
-                            longer required to maintain expensive (to most people on
-                            the planet) server side components. Also that allows for a
-                            degree of independent developer specialization that is already
-                            standard among most professional programmers and UI designers.
+                                    mean - locally-run vetted components. This trully changes
+                                    the way AIRport applications can be written. Apps are no
+                                    longer required to maintain expensive (to most people on
+                                    the planet) server side components. Also that allows for a
+                                    degree of independent developer specialization that is already
+                                    standard among most professional programmers and UI designers.
                                     ...
                                 </p>
                             </div>
@@ -692,7 +855,9 @@
 
                     <article class="masonry__brick entry format-link animate-this">
 
-                        <div class="entry__thumb">
+                        <div class="entry__thumb"
+                            onclick="window.open('https://autonomousinterdependentrepositories.wordpress.com/', '_blank');"
+                            style="cursor: pointer;">
                             <div class="link-wrap">
                                 <h2>Previous posts</h2>
                                 <cite>
