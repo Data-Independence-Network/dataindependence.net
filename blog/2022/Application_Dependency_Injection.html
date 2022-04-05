@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+
+    <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title>AIR Blog</title>
+    <meta name="description" content="Application Dependency Injection">
+    <meta name="author" content="Artem V Shamsutdinov">
+
+    <!-- mobile specific metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/vendor.css">
+    <link rel="stylesheet" href="../css/main.css">
+
+    <!-- script
+    ================================================== -->
+    <script src="../js/modernizr.js"></script>
+
+    <!-- favicons
+    ================================================== -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="manifest" href="../site.webmanifest">
+
+</head>
+
+<body class="ss-bg-white">
+
+    <!-- preloader
+================================================== -->
+    <div id="preloader">
+        <div id="loader" class="dots-fade">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+    <div id="top" class="s-wrap site-wrapper">
+
+        <!-- site header
+    ================================================== -->
+        <header class="s-header header">
+        </header> <!-- end s-header -->
+
+
+        <!-- site content
+    ================================================== -->
+        <div class="s-content content">
+            <main class="row content__page">
+
+                <article class="column large-full entry format-standard">
+
+                    <div class="media-wrap entry__media">
+                        <div class="entry__post-thumb">
+                            <img alt=""
+                                sizes="(max-width: 1000px) 100vw, 1000px" src="images/Future_good_news.jpg">
+                            <p style="text-align: center; width: 100%">
+                                Future good news.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="content__page-header entry__header">
+                        <h1 class="display-1 entry__title">
+                            Application Dependency Injection
+                        </h1>
+                        <ul class="entry__header-meta">
+                            <li class="author">By Artem V. Shamsutdinov</li>
+                            <li class="date">Future date</li>
+                        </ul>
+                    </div> <!-- end entry__header -->
+
+                    <div class="entry__content">
+                        <p>
+                            A key factor in Turbase (and thus AIRport) adoption will be the ease of
+                            writing applications. One key feature that needs to be done in a
+                            developer friendly way is Dependency Injection.
+                        </p>
+                        <h2>Current Implementation</h2>
+                        <p>
+                            Internal AIRport dependency injection is done "on the stack", with tokens.
+                            First there is a library level tokens.ts file that defines dependency
+                            injection tokens for a library:
+                        </p>
+                        <pre><code><b>import</b> {domain} <b>from</b> '@airport/di'
+<b>import</b> {IMyClass} <b>from</b> './MyClass'
+<b>import</b> {IMyOtherClass} <b>from</b> './MyOtherClass'
+
+<b>const</b> airport = domain('air')
+<b>const</b> myLibrary = airport.lib('myLibrary')
+
+<b>const</b> MY_CLASS = myLibrary.token&lt;IMyClass&gt;('MY_CLASS')
+<b>const</b> MY_OTHER_CLASS = myLibrary.token&lt;IMyOtherClass&gt;('MY_OTHER_CLASS')</code></pre>
+                        <p>
+                            Each injectable class is defined in its own file (with it's interface)
+                            sometimes being defined in the same file.
+                        </p>
+                        <pre><code><b>import</b> { container, DI} <b>from</b> '@airport/di'
+<b>import</b> { MY_CLASS, MY_OTHER_CLASS } <b>from</b> './tokens'
+
+<b>export interface</b> IMyClass {
+
+    myMethod(): Promise&lt;void&gt;
+
+}
+
+<b>export class</b> MyClass <b>implements</b> IMyClass {
+
+    myMethod(): Promise&lt;void&gt; {
+        const myOtherClass = await container(this).get(MY_OTHER_CLASS)
+
+        await myOtherClass.myOtherMethod()
+    }
+
+}
+DI.set(MY_CLASS, MyClass)</code></pre>
+                        <p>
+                            This gives AIRport the ability to upgrade the framework and applications
+                            without having to reload them. AIRport may be running on a device for
+                            a long period of time. During that time patches may be made to AIRport.
+                            Critical patches will have be installed on the device AIRport runs on.
+                            Requiring a full reload of the framework or the running applications
+                            will necessarily consume battery power on the device and may be percieved
+                            as being very intrusive and inconvenient. With "on the stack" injection
+                            a patch with changed classes may be downloaded on to the devices and then
+                            executed via an additional script tag. That patch will simply re-register
+                            the changed classes with the dependency injection library. The DI library
+                            will then flip the switch to the new classes at the most opportune time (
+                            whenever there are no active transactions running on the system).
+                        </p>
+                        <p>
+                            Token based injection allows to accomplish that with relative ease while
+                            still allowing for typesafety (with each token specifying the interface
+                            of the class it retrieves).
+                        </p>
+                        <h2>Making it developer friendly</h2>
+                        <p>
+                            However it is not fair to make an average developer learn this specialized
+                            dependency injection system - even more things to learn and remember on top
+                            of learning a new framework. Thus, I've come up with a wrapper for this
+                            system, which makes dependency injection seamless.
+                        </p>
+                        <h3>Property injection</h3>
+                        <p>
+                            Access of the underlying injected classes must be done at runtime but
+                            the whole process can be hidden behind a get() property. The new
+                            dependency injection wrapper works by automatically converting class
+                            properties which are cast as the classes or interfaces of injectable
+                            objects. Here is what the above example looks like in the wrapped
+                            version:
+                        </p>
+
+                        <pre><code><b>import</b> { Inject } <b>from</b> '@airport/di'
+<b>import</b> { IMyOtherClass } <b>from</b> './MyOtherClass'
+
+<b>export interface</b> IMyClass {
+
+    myMethod(): Promise&lt;void&gt;
+
+}
+
+@Injectable()
+<b>class</b> MyClass <b>implements</b> IMyClass {
+
+    @Inject()
+    myOtherClass: IMyOtherClass
+
+    myMethod(): Promise&lt;void&gt; {
+        await myOtherClass.myOtherMethod()
+    }
+
+}</code></pre>
+                        <h2>How it works</h2>
+                        <p>
+                            @Injectable() decorator is now used to distinguish injectable classes from
+                            other classes.  @Api() classes are automatically injectable.  @Inject() 
+                            decorator is used to distinguish injected properties from other ones.
+                        </p>
+                        <p>
+                            Every AIRport application is already pre-processed to generate Query and Object
+                            interfaces from the DLL objects. This same process now examines all of non-DDL
+                            and non-generated sources and creates injection descriptors from them:
+                        </p>
+
+                        <pre><code><b>import</b> {domain} <b>from</b> '@airport/di'
+<b>import</b> {IMyClass} <b>from</b> './MyClass'
+<b>import</b> {IMyOtherClass} <b>from</b> './MyOtherClass'
+
+<b>const</b> airport = domain('air')
+<b>const</b> myLibrary = airport.lib('myLibrary')
+
+<b>const</b> MY_CLASS = myLibrary.token&lt;IMyClass&gt;({
+    class: 'MyClass',
+    interface: 'IMyClass',
+    token: 'MY_CLASS'
+})
+<b>const</b> MY_OTHER_CLASS = myLibrary.token&lt;IMyOtherClass&gt;({
+    class: 'MyOtherClass',
+    interface: 'IMyOtherClass',
+    token: 'MY_OTHER_CLASS'
+})
+
+MY_CLASS.setDependencies({
+    myOtherClass: MY_OTHER_CLASS
+})</code></pre>
+                        <p>
+                            tokens.ts now becomes generated by the system.  All class interfaces
+                            for @Inject()ed classes are also now generated (and don't have to
+                            be created manually).
+                        </p>
+                        <p>
+                            When an object of a particular class is first retrieved by the dependency
+                            injection system, all of the properities defined in the 'setDepenencies'
+                            descriptor are replaced with getters that syncronously retrieve the needed
+                            dependency. A separate method (get${PROPERTY_NAME}Async) is also provided
+                            to retireve the dependency asyncronously, in case its retrieval needs to
+                            block while other resources load.
+                        </p>
+                        <p>
+                            Also, the token descriptor now keeps track of the class and the (now generated)
+                            interface.  These are now added to a JSON descriptor file.  That file allows the
+                            AIRport preprocessor to process dependencies from other projects.  
+                        </p>
+                        <p>
+                            This creates a limitation of not having the same class name being defined
+                            twice in the same application, but that really shouldn't be a problem.
+                        </p>
+                    </div> <!-- end entry content -->
+
+                </article> <!-- end column large-full entry-->
+
+                <div class="comments-wrap">
+                </div> <!-- end comment-respond -->
+
+            </main>
+
+        </div> <!-- end s-content -->
+
+
+        <!-- footer
+    ================================================== -->
+        <footer class="s-footer footer">
+        </footer>
+
+    </div> <!-- end s-wrap -->
+
+
+    <!-- Java Script
+================================================== -->
+    <script src="../js/post-component-loader.js"></script>
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <script src="../js/plugins.js"></script>
+    <script src="../js/main.js"></script>
+
+</body>
