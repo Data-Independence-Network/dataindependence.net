@@ -63,9 +63,9 @@
                     <div class="media-wrap entry__media">
                         <div class="entry__post-thumb">
                             <img alt=""
-                                sizes="(max-width: 1000px) 100vw, 1000px" src="images/Future_good_news.jpg">
+                                sizes="(max-width: 1000px) 100vw, 1000px" src="images/Joint_European_Torus.jpg">
                             <p style="text-align: center; width: 100%">
-                                Future good news.
+                                The <a>Joint European Torus</a> (JET) more than doubled the amount of fusion energy produced in a single “shot” – breaking the 1997 record.
                             </p>
                         </div>
                     </div>
@@ -76,7 +76,7 @@
                         </h1>
                         <ul class="entry__header-meta">
                             <li class="author">By Artem V. Shamsutdinov</li>
-                            <li class="date">Future date</li>
+                            <li class="date">Aprl 19th, 2022</li>
                         </ul>
                     </div> <!-- end entry__header -->
 
@@ -234,6 +234,30 @@ MY_CLASS.setDependencies({
                         <p>
                             This creates a limitation of not having the same class name being defined
                             twice in the same application, but that really shouldn't be a problem.
+                        </p>
+                        <h2>
+                            Transaction tracking
+                        </h2>
+                        <p>
+                            I'm currently working on tracking transactions across applications and 
+                            another benefit that getter based dependency injection system brings is
+                            ability to track transactions.
+                        </p>
+                        <p>
+                            As described <a href="./Application_Interoperability.html">previously</a>
+                            transactions can run across multiple appilcations.  This means that
+                            (at least in environments that support multiple parallel transactions)
+                            for any given application, multiple transactions can be in-flight at
+                            any given point in time.  This means that an application must be able
+                            to pass the correct Transaction Id for every DAO.save call it performs.
+                            This in turn means that there must be tracking of what DAO calls are
+                            made from which @Api() invocation.
+                        </p>
+                        <h3>Injectable object pool</h3>
+                        <p>
+                            This can be accomplished by assigning a unique object (for each injected
+                            type) to a given @Api() call thread.  Every time a getter is invoked to
+                            retrieve an @Injectable() object 
                         </p>
                     </div> <!-- end entry content -->
 
