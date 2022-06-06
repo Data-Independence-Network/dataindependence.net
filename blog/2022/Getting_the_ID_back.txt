@@ -1,0 +1,181 @@
+# Getting the ID back
+
+I'm now writing applications in AIRport and have found that working with AIRport ids
+is cumbersome.  The reason for that is the fact that an Id of an entity
+is spread across 3 different entities:
+
+MyEntity {
+    actor: {
+        id: 123
+    },
+    actorRecordId: 456,
+    repository: {
+        id: 789
+    },
+}
+
+## UUIDs
+These are included as foreign keys in every Repository Entity but the Ids are 
+unique to the local AIRport database only.  If you want to get the truly unique
+ids you have to join to the Actor and Repository tables:
+
+MyEntity {
+    actor: {
+        uuId: '123e4567-e89b-12d3-a456-426614174000'
+    },
+    actorRecordId: 456,
+    repository: {
+        id: '456e4567-e12b-34d3-a123-316614174000'
+    },
+}
+
+### Performance
+Reason for pulling out UuIds out of records is space savings.  As it stands right
+now each UUID has to be stored as a string which eats up 72 bytes.  And there
+are for UUIDs to store - Actor UUID, Repository UUID, Original Actor UUID
+and Original Repository UUID.  This adds up to 288 bytes per record.  On top of
+that you have to add space for idexes for each one of these.  With that it
+becomes at least half a kilobyte per record.
+
+Modern phones have plenty of storage space (latest IPhone models at the time
+of writing of this blog post come with at least 128GB of storage).  However
+AIRport can also run in browser where it runs an SqlJs instance in memory.  This
+is where the difference really matters.  If web AIRport has 10 repositories
+loaded with just 1000 records each the UUIDs alone will take up 5MB worth of RAM.
+
+For this reason I'm still keeping UUIDs normalized in their own tables and
+require joining to these tables to retrieve them.  Of course joining more tables
+in queries has a negative impact on performace as well, but Actor and Repository
+are much smaller tables (especially on Mobile devices) and impact is minimal.
+
+On the server querying these can make more of an impact.  Though, eventually
+the repositories will be loaded into memory on the processing nodes, thus
+reducing the impact the databases.
+
+## Usability
+But the main issue with raw AIRport UUIDs is usability.  Not only do you have
+to include the related entities in queries but you also have to properly query
+them, which can be very error prone.  On top of that, if you want to use these
+ids as part of a link you now have to manually compose them into a single string
+and decompose them at query time.
+
+## New whole "id"
+For this reason from now on all Repository Entities now include a transient "id" field:
+
+@MappedSuperclass()
+export class RepositoryEntity {
+
+    ....
+
+    @Transient()
+    id: string
+
+}
+
+This field is implemented with a getter/setter pair.  These are defined when
+the record is recieved from the framework (by either an AIRport App or anything that
+invokes APIs).
+
+All the getter does is grab the uuids and the actorRecordId and concatenate them
+into one large id:
+
+'456e4567-e12b-34d3-a123-316614174000-123e4567-e89b-12d3-a456-426614174000-456'
+
+## Automatic Retrieval
+To make retrieval of these transparent the Dao superclass now includes _find
+and _findOne methods.  These methods take a query as an input and automatically
+join in all of the required tables for every entity in the select clause.
+
+export class Dao {
+
+    protected _find(query) { ... }
+
+    protected _findOne(query) { ... }
+
+    protected _findAsIs(query) { ... }
+
+    protected _findOneAsIs(query) { ... }
+
+}
+
+The class also implements _findAsIs and _findOneAsIs methods, which will not
+make these joins, in case you need to retrieve just the records themselves.
+
+## Easier Queries
+To make querying "by id" easier Dao also includes the "findById" method
+which takes the composite ID, and automatically constructs the necessary
+join to query the record.
+
+For easy querying in joins all Query entites and relations now include
+an "equals" and "in" methods that allow for joining by the composite id
+(or just joining to another entity by a Query Object or actual object
+references).
+
+export class MyDao {
+
+    async myFind(
+        compositeBId: string,
+        compositeCIds: string[],
+    ): Promise<MyRecord[]> {
+        let m: QMyRecord,
+            b: QMyBRecord,
+            c: QMyCRecord
+        return await this._find({
+            select: {
+                '*': Y,
+                b: {
+                    '*': Y,
+                    'c': {}
+                }
+            },
+            from: [
+                m = Q.MyRecord,
+                b = m.b.leftJoin(),
+                c = b.c.leftJoin()
+            ],
+            where: and(
+                // equals on the query entity object
+                b.equals(compositeBId),
+                // in on the query relation object
+                b.c.in(compositeCIds)
+            )
+        })
+    }
+}
+
+## Bonus
+As a bonus to that another field is added to RepositoryEntity that
+pulls in the User record (normally joined via the Actor table):
+
+MyEntity {
+    actor: {
+        user: {
+            username: 'abc',
+            email: 'abc@def.com'
+        }
+    },
+}
+
+@MappedSuperclass()
+export class RepositoryEntity {
+
+    ....
+
+    @Column({name: 'CREATED_AT'})
+    createdAt: Date
+
+    @Transient()
+    createdBy: string
+
+}
+
+The user record is also retrieved by the Dao's _find and _findOne
+methods and is automatically filled in with a getter at object
+retrieval time.
+
+
+## Final effect
+Putting in this tooling makes AIRport ID scheme transparent. From
+the user (Application developer) point of view they just work with
+the 'id' field of every record and dont' have interface with the
+underlying support table structure.
