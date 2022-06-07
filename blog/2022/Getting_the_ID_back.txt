@@ -15,7 +15,7 @@ MyEntity {
 }
 
 ## UUIDs
-These are included as foreign keys in every Repository Entity but the Ids are 
+These are included as foreign keys in every AIR Entity but the Ids are 
 unique to the local AIRport database only.  If you want to get the truly unique
 ids you have to join to the Actor and Repository tables:
 
@@ -63,7 +63,7 @@ and decompose them at query time.
 For this reason from now on all Repository Entities now include a transient "id" field:
 
 @MappedSuperclass()
-export class RepositoryEntity {
+export class AirEntity {
 
     ....
 
@@ -144,7 +144,7 @@ export class MyDao {
 }
 
 ## Bonus
-As a bonus to that another field is added to RepositoryEntity that
+As a bonus to that another field is added to AirEntity that
 pulls in the User record (normally joined via the Actor table):
 
 MyEntity {
@@ -157,7 +157,7 @@ MyEntity {
 }
 
 @MappedSuperclass()
-export class RepositoryEntity {
+export class AirEntity {
 
     ....
 
@@ -172,6 +172,49 @@ export class RepositoryEntity {
 The user record is also retrieved by the Dao's _find and _findOne
 methods and is automatically filled in with a getter at object
 retrieval time.
+
+## Opting out
+
+Having access to "id" of the record is really only needed in the
+cases where there record id is used to retrieve an entity graph.
+There will always be tables that are never queried by id, yet
+the default _find and _findOne methods will join the tables
+needed to get id (and createdBy) for every table in the "select"
+clause.  So, to mitigate concerns over application performance
+developers now also have a choice to opt of out of joining to
+id and user tables all together by extending one of the following
+classes:
+
+@MappedSuperclass()
+export class AirEntityNoId {
+    
+    @Transient()
+    createdBy: string
+
+}
+
+@MappedSuperclass()
+export class AirEntityNoCreatedBy {
+    
+    @Transient()
+    id: string
+
+}
+
+@MappedSuperclass()
+export class AirEntityNoIdNoCreatedBy {
+
+}
+
+These classes do not perform automatic joins when using
+Dao._find(One) methods.  Specifically:
+
+- AirEntityNoId: Does not join to Repository table
+
+- AirEntityNoCreatedBy: Does not join to User table
+
+- AirEntityNoIdNoCreatedBy: Does not join to Repository,
+    Actor or User tables
 
 
 ## Final effect
