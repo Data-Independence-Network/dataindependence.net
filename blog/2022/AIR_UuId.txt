@@ -1,4 +1,4 @@
-# Getting the ID back
+# AIR UuId
 
 I'm now writing applications in AIRport and have found that working with AIRport ids
 is cumbersome.  The reason for that is the fact that an Id of an entity
@@ -6,34 +6,40 @@ is spread across 3 different entities:
 
 MyEntity {
     actor: {
+        // backed by a foreign key column in MyEntity
         id: 123
     },
     actorRecordId: 456,
     repository: {
+        // backed by a foreign key column in MyEntity
         id: 789
     },
 }
 
 ## UUIDs
-These are included as foreign keys in every AIR Entity but the Ids are 
-unique to the local AIRport database only.  If you want to get the truly unique
-ids you have to join to the Actor and Repository tables:
+
+Moreover the ids are local to the AIR database and can differ between AIRport 
+databases. Globally the records are identified by UuIds for Repository
+ and Actor (in combination with actorRecordId). To get uuIds you have to join
+ to the Actor and Repository tables:
 
 MyEntity {
     actor: {
+        // Exists only in 
         uuId: '123e4567-e89b-12d3-a456-426614174000'
     },
     actorRecordId: 456,
     repository: {
-        id: '456e4567-e12b-34d3-a123-316614174000'
+        uuId: '456e4567-e12b-34d3-a123-316614174000'
     },
 }
 
 ### Performance
+
 Reason for pulling out UuIds out of records is space savings.  As it stands right
-now each UUID has to be stored as a string which eats up 72 bytes.  And there
-are for UUIDs to store - Actor UUID, Repository UUID, Original Actor UUID
-and Original Repository UUID.  This adds up to 288 bytes per record.  On top of
+now each UuId has to be stored as a string which eats up 72 bytes.  And there
+are for UuIds to store - Actor UuId, Repository UuId, Original Actor UuId
+and Original Repository UuId.  This adds up to 288 bytes per record.  On top of
 that you have to add space for idexes for each one of these.  With that it
 becomes at least half a kilobyte per record.
 
@@ -41,9 +47,12 @@ Modern phones have plenty of storage space (latest IPhone models at the time
 of writing of this blog post come with at least 128GB of storage).  However
 AIRport can also run in browser where it runs an SqlJs instance in memory.  This
 is where the difference really matters.  If web AIRport has 10 repositories
-loaded with just 1000 records each the UUIDs alone will take up 5MB worth of RAM.
+loaded with just 1000 records each the UuIds alone will take up 5MB worth of RAM.
+As of 2022 IPhone 14s will come with 6GB or RAM (only). And, since there is no
+way to tell how much data users will keep in web AIRports or how long living web
+AIRport instances will be, every byte matters.
 
-For this reason I'm still keeping UUIDs normalized in their own tables and
+For this reason I'm still keeping UuIds normalized in their own tables and
 require joining to these tables to retrieve them.  Of course joining more tables
 in queries has a negative impact on performace as well, but Actor and Repository
 are much smaller tables (especially on Mobile devices) and impact is minimal.
@@ -53,14 +62,14 @@ the repositories will be loaded into memory on the processing nodes, thus
 reducing the impact the databases.
 
 ## Usability
-But the main issue with raw AIRport UUIDs is usability.  Not only do you have
+But the main issue with raw AIRport UuIds is usability.  Not only do you have
 to include the related entities in queries but you also have to properly query
 them, which can be very error prone.  On top of that, if you want to use these
 ids as part of a link you now have to manually compose them into a single string
 and decompose them at query time.
 
-## New whole "id"
-For this reason from now on all Repository Entities now include a transient "id" field:
+## New whole "UuId"
+For this reason from now on all Repository Entities now include a transient "UuId" field:
 
 @MappedSuperclass()
 export class AirEntity {
@@ -68,7 +77,7 @@ export class AirEntity {
     ....
 
     @Transient()
-    id: string
+    uuId: string
 
 }
 
@@ -77,7 +86,7 @@ the record is recieved from the framework (by either an AIRport App or anything 
 invokes APIs).
 
 All the getter does is grab the uuids and the actorRecordId and concatenate them
-into one large id:
+into one large uuId:
 
 '456e4567-e12b-34d3-a123-316614174000-123e4567-e89b-12d3-a456-426614174000-456'
 
@@ -102,20 +111,20 @@ The class also implements _findAsIs and _findOneAsIs methods, which will not
 make these joins, in case you need to retrieve just the records themselves.
 
 ## Easier Queries
-To make querying "by id" easier Dao also includes the "findById" method
-which takes the composite ID, and automatically constructs the necessary
+To make querying "by uuId" easier Dao also includes the "findByUuId" method
+which takes the composite UuId, and automatically constructs the necessary
 join to query the record.
 
 For easy querying in joins all Query entites and relations now include
-an "equals" and "in" methods that allow for joining by the composite id
+an "equals" and "in" methods that allow for joining by the composite UuId
 (or just joining to another entity by a Query Object or actual object
 references).
 
 export class MyDao {
 
     async myFind(
-        compositeBId: string,
-        compositeCIds: string[],
+        compositeBUuId: string,
+        compositeCUuIds: string[],
     ): Promise<MyRecord[]> {
         let m: QMyRecord,
             b: QMyBRecord,
@@ -135,9 +144,9 @@ export class MyDao {
             ],
             where: and(
                 // equals on the query entity object
-                b.equals(compositeBId),
+                b.equals(compositeBUuId),
                 // in on the query relation object
-                b.c.in(compositeCIds)
+                b.c.in(compositeCUuIds)
             )
         })
     }
@@ -161,11 +170,8 @@ export class AirEntity {
 
     ....
 
-    @Column({name: 'CREATED_AT'})
-    createdAt: Date
-
     @Transient()
-    createdBy: string
+    createdBy: User
 
 }
 
@@ -175,7 +181,7 @@ retrieval time.
 
 ## Opting out
 
-Having access to "id" of the record is really only needed in the
+Having access to "UuId" of the record is really only needed in the
 cases where there record id is used to retrieve an entity graph.
 There will always be tables that are never queried by id, yet
 the default _find and _findOne methods will join the tables
@@ -186,7 +192,7 @@ id and user tables all together by extending one of the following
 classes:
 
 @MappedSuperclass()
-export class AirEntityNoId {
+export class AirEntityNoUuId {
     
     @Transient()
     createdBy: string
@@ -197,7 +203,7 @@ export class AirEntityNoId {
 export class AirEntityNoCreatedBy {
     
     @Transient()
-    id: string
+    uuId: string
 
 }
 
@@ -209,16 +215,16 @@ export class AirEntityNoIdNoCreatedBy {
 These classes do not perform automatic joins when using
 Dao._find(One) methods.  Specifically:
 
-- AirEntityNoId: Does not join to Repository table
+- AirEntityNoUuId: Does not join to Repository table
 
 - AirEntityNoCreatedBy: Does not join to User table
 
-- AirEntityNoIdNoCreatedBy: Does not join to Repository,
+- AirEntityNoUuIdNoCreatedBy: Does not join to Repository,
     Actor or User tables
 
 
 ## Final effect
-Putting in this tooling makes AIRport ID scheme transparent. From
+Putting in this tooling makes AIRport UUID scheme transparent. From
 the user (Application developer) point of view they just work with
-the 'id' field of every record and dont' have interface with the
+the 'uuId' field of every record and dont' have interface with the
 underlying support table structure.
