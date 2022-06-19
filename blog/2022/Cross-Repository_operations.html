@@ -97,74 +97,109 @@
                         <h2>Record tracking</h2>
                         <p>
                             As described <a href="../2021/Follow_the_Many_to_Ones.html">previously</a>
-                            when a record gets added to a repository it brings along with it all of the
+                            when a record gets added to a Repository it brings along with it all of the
                             records it points to via @ManyToOne() relationships. However it still retains
                             information about the original record that it was pointing to. This is done
                             for every AIR Entity with the "original" fields:
                         </p>
                         <pre><code>@MappedSuperclass()
-export class AirEntity {
+<b>export class</b> AirEntity {
 
-    // These contain identifiers for the current repository of this
-    // (possibly copied) record
+    // Follwing properties contain identifiers for the
+    // current repository of this (possibly copied) record
+    
+    @ManyToOne()
+    @JoinColumn({
+        name: 'REPOSITORY_ID', referencedColumnName: 'ID',
+        nullable: <b>false</b>
+    })
     repository: Repository
-    actor: Actor
-    actorRecordId: number
 
-    // These contain identifiers for the original repository
-    // of this (possibly copied) record
+    @Id()
+    @ManyToOne()
+    @JoinColumn({
+        name: 'ACTOR_ID', referencedColumnName: 'ID',
+        nullable: <b>false</b>
+    })
+    actor: Actor
+    
+    @Id()
+    @Column({ name: 'ACTOR_RECORD_ID', nullable: <b>false</b> })
+    @GeneratedValue()
+    actorRecordId: <b>number</b>
+
+
+    // Following properties contain identifiers for the original
+    // repository of this (possibly copied) record
+	
+    @ManyToOne()
+    @JoinColumn({
+        name: 'ORIGINAL_REPOSITORY_ID', referencedColumnName: 'ID',
+        nullable: <b>false</b>
+    })
     originalRepository: Repository
+
+    @ManyToOne()
+    @JoinColumn({
+        name: 'ORIGINAL_ACTOR_ID', referencedColumnName: 'ID',
+        nullable: <b>false</b>
+	})
     originalActor: Actor
-    originalActorRecordId: number
+    
+    @Column({ name: 'ORIGINAL_ACTOR_RECORD_ID', nullable: <b>false</b> })
+    originalActorRecordId: <b>number</b>
 
 }</code></pre>
                         <h2>
                             Basic operations
                         </h2>
                         <p>
-                            The core concept of AIRport is that all of the operations
-                            it performs by default do not cross repository boundaries. This means
+                            The core concept of AIRport is that by default database operations
+                            do not cross Repository boundaries. This means
                             that all relational queries will use the
-                            "repository"/"actor"/"actorRecordId" fields for joining records.
+                            "repository"/"actor"/"actorRecordId" fields for joining records
+                            across database tables.
                         </p>
                         <p>
-                            Also all "save" operations will only modify records in the repository
-                            of the root records passed into the operation.
-                            This works for the majority of the cases but sometimes you really do
-                            need to query across repositories or make modifications across them.
+                            It also means that "save" method of
+                            <a href="https://www.geeksforgeeks.org/data-access-object-pattern/">DAO</a>
+                            objects will modify only the Repository of the passed-in top level records.
+                            This works for the majority of use cases but sometimes you
+                            need to query across Repositories and make modifications across them.
                         </p>
                         <h2>
                             Working across Repositories
                         </h2>
                         <p>
-                            The solution to this is to introduce a @CrossRepository() decorator
-                            to Dao methods. All query and save operations in them will work
-                            across repositories.
+                            The solution to this is to introduce the @CrossRepository() decorator
+                            to <a href="https://stackoverflow.com/questions/19154202/data-access-object-dao-in-java">
+                                Dao methods</a>. All database operations in Dao methods decorated
+                            with @CrossRepository() will work across repositories.
                         </p>
-                        <pre><code>class MyDao {
+                        <pre><code><b>class</b> MyDao {
 
     @CrossRepository()
-    async myCrossRepositoryMethod(
-        myRecordUuIds: string[],
-        myRecords: MyRecord[]
+    <b>async</b> myCrossRepositoryMethod(
+        myRecordUuIds: <b>string</b>[],
+        myRecords: MyRe<b></b>cord[]
     ) {
         // This find queries across repositories
-        let mr: QMyRecord,
-            or: QOtherRecord
-        this._find({
+        let myRec: QMyRecord,
+            othRec: QOtherRecord
+            <b>this</b>._find({
             select: {
                 '*': Y,
                 otherRecords: {}
             },
             from: [
-                mr = Q.MyRecord,
-                or = mr.otherRecords.leftJoin()
+                myRec = Q.MyRecord,
+                othRec = mr.otherRecords.leftJoin()
             ],
-            where: mr.in(myRecordUuIds)
+            where: myRec.in(myRecordUuIds)
         })
 
         // This save works across repositories
-        this.save(myRecords)
+        <b>this</b>.save(myRecords)
     }
 }</code></pre>
                         <h2>
@@ -172,14 +207,16 @@ export class AirEntity {
                         </h2>
                         <h3>Invocation mechanics</h3>
                         <p>
-                            The @CrossRepository() decorator is kept track of with on the stack
-                            state via AIRport's <a href="../2022/Dependency_Injection.html">
-                                dependency injection</a>. At the time of injection of the
-                            Dao all methods are wrapped and cross-repository methods are marked
-                            as such. During invocation of these methods a new stack of currently
-                            executed DAO calls is created. If a method is a cross-repository
-                            one, the database API invocation is marked as being a
-                            cross-repository one as well.
+                            The @CrossRepository() decorator is tracked
+                            <a href="https://www.geeksforgeeks.org/stack-vs-heap-memory-allocation/">
+                                on the stack</a> through AIRport's
+                            <a href="../2022/Dependency_Injection.html">
+                                dependency injection</a>. At the time of
+                            <a
+                                href="https://www.freecodecamp.org/news/a-quick-intro-to-dependency-injection-what-it-is-and-when-to-use-it-7578c84fa88f/">
+                                object injection</a> all cross-repository methods are marked.
+                            All database operations in these methods are marked as being
+                            cross-repository as well.
                         </p>
                         <p>
                             If a non cross-repository method is invoked within a cross-repository
@@ -193,13 +230,17 @@ export class AirEntity {
                         </h3>
                         <p>
                             Cross-repository queries are actually pretty easy. When joining
-                            records across repositories the original
-                            repository/actor/actorRecordId fields are used. Since they are always
-                            populated (for non-copied records they contain the same values
-                            as regular repository/actor/actorRecordId) the query works in the
-                            same way as non cross-repository equivalent unless there are
-                            copied records. Joining by original identifiers will find the
-                            original records, not their copies within this repository.
+                            records across Repositories the "original"
+                            repository/actor/actorRecordId foreign key fields are used. For
+                            records originating in this Repository "original" fields contain
+                            the same values as regular repository/actor/actorRecordId
+                            foreign key fields. So, the query works in the same way as non
+                            cross-repository equivalent, unless the records (referenced by
+                            the foreign key fields) are copied from another repository,
+                            <a href="http://localhost:8080/blog/2021/Follow_the_Many_to_Ones.html">
+                                as required in AIRport</a>. Thus, joining by "original" fields
+                            will return the original records, not their copies within this
+                            repository (if they were copied).
                         </p>
                         <p>
                         <h3> Peristence details.</h3>
@@ -208,10 +249,9 @@ export class AirEntity {
                             ignore nested entities that do not belong to the same repository
                             as the parent record. In cross-repository methods AIRport will
                             perform the save across all repositories present in the graph.
-                            Specifically (because normal foreign keys of persisten records
-                            always point to the current repository) this means that for
-                            all nested records in the passed in object graph that do
-                            not belong to the current repository:
+                            Because non-"original" foreign keys of persistend records
+                            always point to the current repository, following rules apply
+                            all nested records that do not belong to the current repository:
                         </p>
                         <ul>
                             <li>
@@ -227,13 +267,11 @@ export class AirEntity {
                                 record copies it has foreign keys to).
                             </li>
                             <li>
-                                Record Deletes: by definition deleted records must be going
-                                against records in the current repository. If AIRport sees
-                                a record that needs to be deleted and does not belong to the
-                                current repository it will throw an error. In the case
-                                where the deleted record has original foreign keys pointing
-                                to another repository, the pointed-to record in the other
-                                repository will be deleted as well.
+                                Record Deletes: by definition existing nested records are
+                                in the current repository. If the deleted record's
+                                "original" foreign keys point to another repository, the
+                                pointed-to record in the other repository will be deleted
+                                as well.
                             </li>
                         </ul>
 
@@ -241,33 +279,39 @@ export class AirEntity {
                         <p>
                             Cross-repository queries work just fine in centralized databases but
                             are tricky in decentralized environments. This is because the
-                            referenced repository may not be present on the local device. To
-                            get around that limitation cross-repository queries will inspect the
-                            result set and if there are missing links will attempt to load that
-                            data by fetching the missing repositories (and subsequently will
-                            re-run the query before it's returned). Same goes for
-                            cross-repository persistence operations - referenced repositories
-                            will be loaded (though they are most likely already on the device
-                            since they are passed into the operation). This can lead to poor
-                            performance characteristics of the queries.
+                            referenced repository may not be present on the local device. Thus,
+                            for cross-repository queries AIRport will inspect the result set
+                            before returing it. If there are missing nested records (from
+                            repositories that are not present in the local database) it will
+                            fetch the missing repositories from the network (and subsequently
+                            re-run the query before its' result is returned). Same goes for
+                            cross-repository persistence operations - missing referenced
+                            repositories will be loaded from the network. Naturally, this can
+                            lead to poor database performance.
                         </p>
-                        <h2>Enabling server optimizations</h2>
+                        <h2>Enabling back-end optimizations</h2>
 
 
-                        Eventually Cross-Repository queries will give AIRport a hint in
-                        server environments of wether the query needs to go against a
-                        relational database or can be peformed locally against a
-                        repository (which is polled into memory from a
-                        <a href="https://www.scylladb.com/">faster</a>, wide colum database).
+                        Eventually Cross-Repository queries will give a hint to the AIRport
+                        app servers in back-end environments. Cross-Repository operations
+                        will go against the backing relational database while normal
+                        operations will be performed in-memory against a locally cached
+                        repository, which is either already in the local in-memory database,
+                        or is
+                        <a href="https://dataindependence.net/blog/2022/Solving_Id_Problems.html#performance">
+                            pulled into memory</a> from a <a href="https://www.scylladb.com/">
+                            wide colum database</a> which is an order of magnitude faster
+                        than the backing relational database.
 
                         <h2>Interdependence is here</h2>
                         <p>
-                            Cross-Repository queries finally make AIRport repositories
-                            Interdependent (as described in the name of Autonomous Interdependent
-                            Repositories)! With the cross-repository queries other repositories are
-                            automatically pulled to the AIRport device (as a result of a query
-                            and not with a manual action). And with cross-repository persistence
-                            other repositories are also updated.
+                            Cross-Repository operations complete the core AIRport spec
+                            by making Repositories interdependent: "AIR" in AIRport stands
+                            for "Autonomous Interdependent Repositories". When a Dao
+                            method is decorated with @CrossRepository() all of its
+                            database operations automatically load all Repositories
+                            referenced in these operations, making network requests if
+                            necessary.
                         </p>
                     </div><!-- end entry content -->
 
