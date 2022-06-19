@@ -117,19 +117,27 @@
     },
     actorRecordId: 456,
     repository: {
-        uuId: '456e4567-e12b-34d3-a123-316614174000'
+        uuId: 'IPFS-QmcRD4wkPPi6dig81r5sLj9Zm1gDCL4zgpEj9CfuRrGbzF'
     },
 }</code></pre>
 
-                        <h3>Performance</h3>
+                        <h3 id="performance">Performance</h3>
                         <p>
-                            Reason for pulling out UuIds out of records is space savings. As it stands right
-                            now each UuId has to be stored as a string which eats up 72 bytes. And there
-                            are 4 UuIds to store - Actor UuId, Repository UuId, Original Actor UuId
-                            and Original Repository UuId. This adds up to 288 bytes per record. On top of
-                            that you have to add space for idexes for each one of these. With that it
-                            becomes at least half a kilobyte per record.
+                            AIRport UUIDs are strings that are at least 90 characters long (and will
+                            probably average 92 characters in most cases):
+                        </p>
+                        <pre><code>IPFS-QmcRD4wkPPi6dig81r5sLj9Zm1gDCL4zgpEj9CfuRrGbzF-123e4567-e89b-12d3-a456-426614174000-123</code></pre>
+                        <p>
 
+                            Reason for pulling out UuIds out of records is space savings. There
+                            are 4 UuIds to store - Actor UuId, Repository UuId, Original Actor UuId
+                            and Original Repository UuId (with originals neccessarily populated for
+                            cross-repository queries). This adds up to 368 bytes per record. On top of
+                            that you have to add space for indexes for each one of these. With that it
+                            can come close 1K per record or more, depending on number of foreign keys
+                            and indexes.
+                        </p>
+                        <p>
                             Modern phones have plenty of storage space (latest IPhone models at the time
                             of writing of this blog post come with at least 128GB of storage). However
                             AIRport can also run in browser where it runs an SqlJs instance in memory. This
@@ -138,7 +146,8 @@
                             As of 2022 IPhone 14s will come with 6GB or RAM (only). And, since there is no
                             way to tell how much data users will keep in web AIRports or how long living web
                             AIRport instances will be, every byte matters.
-
+                        </p>
+                        <p>
                             For this reason I'm still keeping UuIds normalized in their own tables and
                             require joining to these tables to retrieve them. Of course joining more tables
                             in queries has a negative impact on performace as well, but Actor and Repository
@@ -174,7 +183,7 @@
                             All the getter does is grab the uuids and the actorRecordId and concatenate them
                             into one large uuId:
                         </p>
-                        <pre><code>'456e4567-e12b-34d3-a123-316614174000-123e4567-e89b-12d3-a456-426614174000-456'</code></pre>
+                        <pre><code>'IPFS-QmcRD4wkPPi6dig81r5sLj9Zm1gDCL4zgpEj9CfuRrGbzF-123e4567-e89b-12d3-a456-426614174000-123'</code></pre>
 
                         <h2>Automatic Retrieval</h2>
                         <p>
