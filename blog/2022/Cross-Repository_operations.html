@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+
+    <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title>AIR Blog</title>
+    <meta name="description" content="Application Interoperability">
+    <meta name="author" content="Artem V Shamsutdinov">
+
+    <!-- mobile specific metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/vendor.css">
+    <link rel="stylesheet" href="../css/main.css">
+
+    <!-- script
+    ================================================== -->
+    <script src="../js/modernizr.js"></script>
+
+    <!-- favicons
+    ================================================== -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="manifest" href="../site.webmanifest">
+
+</head>
+
+<body class="ss-bg-white">
+
+    <!-- preloader
+================================================== -->
+    <div id="preloader">
+        <div id="loader" class="dots-fade">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+    <div id="top" class="s-wrap site-wrapper">
+
+        <!-- site header
+    ================================================== -->
+        <header class="s-header header">
+        </header> <!-- end s-header -->
+
+
+        <!-- site content
+    ================================================== -->
+        <div class="s-content content">
+            <main class="row content__page">
+
+                <article class="column large-full entry format-standard">
+
+                    <div class="media-wrap entry__media">
+                        <div class="entry__post-thumb">
+                            <img alt="A new law unchains fusion energy" sizes="(max-width: 1000px) 100vw, 1000px"
+                                src="images/greenwald-equation.png">
+                            <p style="text-align: center; width: 100%">
+                                <a href="https://www.epfl.ch/en/">EPFL</a> physicists
+                                <a href="https://phys.org/news/2022-05-law-unchains-fusion-energy.html">
+                                    revised
+                                </a> one of the fundamental laws foundational to plasma and fusion research.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="content__page-header entry__header">
+                        <h1 class="display-1 entry__title">
+                            Cross-Repository operations
+                        </h1>
+                        <ul class="entry__header-meta">
+                            <li class="author">By Artem V. Shamsutdinov</li>
+                            <li class="date">June 19th, 2022</li>
+                        </ul>
+                    </div> <!-- end entry__header -->
+
+                    <div class="entry__content">
+                        <p>
+                            At the core of <a
+                                href="https://github.com/autonomous-interdependent-repositories/AIRport">AIRport</a> are
+                            <a
+                                href="https://patents.google.com/patent/US10902016B2/en?q=autonomous+interdependent+repositories&oq=autonomous+interdependent+repositories">
+                                Autonomous Interdependent Repositories</a>. Repositories contain
+                            all of the records necessary for work on a particular unit, such as
+                            a UI page while storing everything in a relational database via a
+                            virtual Repository layer.
+                        </p>
+                        <h2>Record tracking</h2>
+                        <p>
+                            As described <a href="../2021/Follow_the_Many_to_Ones.html">previously</a>
+                            when a record gets added to a repository it brings along with it all of the
+                            records it points to via @ManyToOne() relationships. However it still retains
+                            information about the original record that it was pointing to. This is done
+                            for every AIR Entity with the "original" fields:
+                        </p>
+                        <pre><code>@MappedSuperclass()
+export class AirEntity {
+
+    // These contain identifiers for the current repository of this
+    // (possibly copied) record
+    repository: Repository
+    actor: Actor
+    actorRecordId: number
+
+    // These contain identifiers for the original repository
+    // of this (possibly copied) record
+    originalRepository: Repository
+    originalActor: Actor
+    originalActorRecordId: number
+
+}</code></pre>
+                        <h2>
+                            Basic operations
+                        </h2>
+                        <p>
+                            The core concept of AIRport is that all of the operations
+                            it performs by default do not cross repository boundaries. This means
+                            that all relational queries will use the
+                            "repository"/"actor"/"actorRecordId" fields for joining records.
+                        </p>
+                        <p>
+                            Also all "save" operations will only modify records in the repository
+                            of the root records passed into the operation.
+                            This works for the majority of the cases but sometimes you really do
+                            need to query across repositories or make modifications across them.
+                        </p>
+                        <h2>
+                            Working across Repositories
+                        </h2>
+                        <p>
+                            The solution to this is to introduce a @CrossRepository() decorator
+                            to Dao methods. All query and save operations in them will work
+                            across repositories.
+                        </p>
+                        <pre><code>class MyDao {
+
+    @CrossRepository()
+    async myCrossRepositoryMethod(
+        myRecordUuIds: string[],
+        myRecords: MyRecord[]
+    ) {
+        // This find queries across repositories
+        let mr: QMyRecord,
+            or: QOtherRecord
+        this._find({
+            select: {
+                '*': Y,
+                otherRecords: {}
+            },
+            from: [
+                mr = Q.MyRecord,
+                or = mr.otherRecords.leftJoin()
+            ],
+            where: mr.in(myRecordUuIds)
+        })
+
+        // This save works across repositories
+        this.save(myRecords)
+    }
+}</code></pre>
+                        <h2>
+                            How this works.
+                        </h2>
+                        <h3>Invocation mechanics</h3>
+                        <p>
+                            The @CrossRepository() decorator is kept track of with on the stack
+                            state via AIRport's <a href="../2022/Dependency_Injection.html">
+                                dependency injection</a>. At the time of injection of the
+                            Dao all methods are wrapped and cross-repository methods are marked
+                            as such. During invocation of these methods a new stack of currently
+                            executed DAO calls is created. If a method is a cross-repository
+                            one, the database API invocation is marked as being a
+                            cross-repository one as well.
+                        </p>
+                        <p>
+                            If a non cross-repository method is invoked within a cross-repository
+                            one it will still respect the repository boundaries for all of
+                            the queries executed within it. Same mechanism works for
+                            cross-repository methods being called from non cross-repository ones,
+                            in an inverse way.
+                        </p>
+                        <h3>
+                            Query details
+                        </h3>
+                        <p>
+                            Cross-repository queries are actually pretty easy. When joining
+                            records across repositories the original
+                            repository/actor/actorRecordId fields are used. Since they are always
+                            populated (for non-copied records they contain the same values
+                            as regular repository/actor/actorRecordId) the query works in the
+                            same way as non cross-repository equivalent unless there are
+                            copied records. Joining by original identifiers will find the
+                            original records, not their copies within this repository.
+                        </p>
+                        <p>
+                        <h3> Peristence details.</h3>
+                        <p>
+                            Persistence operations are also pretty easy. Normally AIRport will
+                            ignore nested entities that do not belong to the same repository
+                            as the parent record. In cross-repository methods AIRport will
+                            perform the save across all repositories present in the graph.
+                            Specifically (because normal foreign keys of persisten records
+                            always point to the current repository) this means that for
+                            all nested records in the passed in object graph that do
+                            not belong to the current repository:
+                        </p>
+                        <ul>
+                            <li>
+                                Record Creation: records will
+                                be created in both the the referenced repository and in the
+                                repository of the parent record (as copies).
+                            </li>
+                            <li>
+                                Record Updates: records will be updated in the referenced
+                                repository and a copy of the record will be created in
+                                the repository of the parent record (replacing the currently
+                                pointed to record, which will be deleted, along will all
+                                record copies it has foreign keys to).
+                            </li>
+                            <li>
+                                Record Deletes: by definition deleted records must be going
+                                against records in the current repository. If AIRport sees
+                                a record that needs to be deleted and does not belong to the
+                                current repository it will throw an error. In the case
+                                where the deleted record has original foreign keys pointing
+                                to another repository, the pointed-to record in the other
+                                repository will be deleted as well.
+                            </li>
+                        </ul>
+
+                        <h2>Use with care</h2>
+                        <p>
+                            Cross-repository queries work just fine in centralized databases but
+                            are tricky in decentralized environments. This is because the
+                            referenced repository may not be present on the local device. To
+                            get around that limitation cross-repository queries will inspect the
+                            result set and if there are missing links will attempt to load that
+                            data by fetching the missing repositories (and subsequently will
+                            re-run the query before it's returned). Same goes for
+                            cross-repository persistence operations - referenced repositories
+                            will be loaded (though they are most likely already on the device
+                            since they are passed into the operation). This can lead to poor
+                            performance characteristics of the queries.
+                        </p>
+                        <h2>Enabling server optimizations</h2>
+
+
+                        Eventually Cross-Repository queries will give AIRport a hint in
+                        server environments of wether the query needs to go against a
+                        relational database or can be peformed locally against a
+                        repository (which is polled into memory from a
+                        <a href="https://www.scylladb.com/">faster</a>, wide colum database).
+
+                        <h2>Interdependence is here</h2>
+                        <p>
+                            Cross-Repository queries finally make AIRport repositories
+                            Interdependent (as described in the name of Autonomous Interdependent
+                            Repositories)! With the cross-repository queries other repositories are
+                            automatically pulled to the AIRport device (as a result of a query
+                            and not with a manual action). And with cross-repository persistence
+                            other repositories are also updated.
+                        </p>
+                    </div><!-- end entry content -->
+
+                </article> <!-- end column large-full entry-->
+
+                <div class="comments-wrap">
+                </div> <!-- end comment-respond -->
+
+            </main>
+
+        </div> <!-- end s-content -->
+
+
+        <!-- footer
+    ================================================== -->
+        <footer class="s-footer footer">
+        </footer>
+
+    </div> <!-- end s-wrap -->
+
+
+    <!-- Java Script
+    ================================================== -->
+    <script src="../js/post-component-loader.js"></script>
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <script src="../js/plugins.js"></script>
+    <script src="../js/main.js"></script>
+
+</body>
