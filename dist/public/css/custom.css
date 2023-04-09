@@ -1,0 +1,32 @@
+.row.team.din {
+    margin: 0;
+    padding-left: 10%;
+    padding-right: 10%;
+    width: 100%;
+}
+
+.row.team.din .group {
+    text-align: center;
+}
+
+.row.team.din .group .group__name {
+    color: #FFFFFF;
+}
+
+.row.team.din .group img {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.row.team.din td {
+    border: none;
+    padding: 1.5rem 0.2rem;
+    text-align: center;
+    width: 50%;
+}
+
+.team__avatar.team__member {
+    position: relative;
+    left: initial;
+    top: initial;
+}
