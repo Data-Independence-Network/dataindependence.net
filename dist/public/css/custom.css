@@ -30,3 +30,23 @@
     left: initial;
     top: initial;
 }
+
+
+
+@media only screen and (min-width: 1800px) {
+    .the-team .the-team.earth-view .row.team.din {
+        padding-top: 25em;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .the-team.earth-view .row.team.din {
+        padding-top: 10em;
+    }
+}
+
+@media only screen and (min-width: 800px) {
+    .the-team .row.team.din {
+        padding-top: 5em;
+    }
+}
